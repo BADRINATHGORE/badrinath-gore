@@ -46,14 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Subject: must be at least 3 characters and not a single word like "Hi"
-    if (subject.length < 3 || subject.split(/\s+/).length < 1) {
-      alert("Subject must be at least 3 characters long.");
+    if (subject.length < 2 || subject.split(/\s+/).length < 1) {
+      alert("Subject must be at least 2 characters long.");
       return;
     }
 
     // Message: must be 6+ words
-    if (message.split(/\s+/).filter(Boolean).length < 6) {
-      alert("Message must contain at least 6 words.");
+    if (message.split(/\s+/).filter(Boolean).length < 4) {
+      alert("Message must contain at least 4 words.");
       return;
     }
 
