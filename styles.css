@@ -143,6 +143,12 @@ a:hover {
     padding-bottom: 6rem;
   }
 
+   .padding-medium1 {
+    padding-top: 6rem;
+   padding: 20px;
+    padding-bottom: 6rem;
+  }
+
   .padding-large {
     padding-top: 0rem;
     padding-bottom: 10rem;
@@ -508,3 +514,100 @@ button.filter-button:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
+
+
+/* Lighter background for the image container */
+.banner-image-container {
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 15px;
+  border-radius: 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animated gradient border */
+.banner-image-container::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  z-index: -1;
+  background: linear-gradient(45deg, #ffc0cb, #add8e6, #90ee90, #ffc0cb); /* Lighter tones */
+  background-size: 300% 300%;
+  animation: animated-border 6s ease infinite;
+  border-radius: 20px;
+}
+
+
+/* Animation keyframes */
+@keyframes animated-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+  /* === Desktop Position Adjustments === */
+@media (min-width: 992px) {
+  .move-left-more {
+    transform: translateX(-180px); /* Moves image 220px to the left */
+  }
+
+  .move-down-more {
+    position: relative;
+    top: 204px; /* Moves image 174px downward */
+  }
+}
+
+/* === Banner Image Container with Animated Tricolor Border === */
+.banner-image-container {
+  padding: 15px;
+  border-radius: 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+
+  border: 4px solid orange;                 /* Start with orange border */
+  animation: tricolor-border 4s linear infinite; /* Tricolor animation */
+  background-color: transparent;            /* No background */
+  
+  /* Optional Enhancements */
+  box-shadow: 0 0 12px rgba(255, 165, 0, 0.3); /* Soft glow */
+  transition: border-color 1s ease-in-out;     /* Smooth transitions */
+}
+
+/* === Tricolor Border Animation === */
+@keyframes tricolor-border {
+  0% {
+    border-color: orange;
+  }
+  33% {
+    border-color: white;
+  }
+  66% {
+    border-color: green;
+  }
+  100% {
+    border-color: orange;
+  }
+}
+
+ 
+ 
+  #he .position-absolute img {
+    position: relative;
+    height: 550px;
+    left: -110px;
+    width: -350px;
+    bottom: -450px;
+  }
+ 
