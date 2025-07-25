@@ -605,9 +605,9 @@ button.filter-button:hover {
  
   #he .position-absolute img {
     position: relative;
-    height: 550px;
+    height: 450px;
     left: -110px;
-    width: -350px;
+    width: -120px;
     bottom: -450px;
   }
  
