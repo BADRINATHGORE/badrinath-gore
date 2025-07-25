@@ -60,14 +60,23 @@ background-position: center;
 background-size: cover;">
   -->
  
-  <body style="
-  background-image: url('images/background.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 210vh;
-  margin: 0;
-">
+<style>
+       body {
+      background-image: url('images/background.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed; /* Optional: makes it stay fixed while scrolling */
+    }
+
+    </style>
+
+<!-- <body style="background-image: url(images/background.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;"> -->
+
+<body> 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="page-add" viewBox="0 0 20 20">
