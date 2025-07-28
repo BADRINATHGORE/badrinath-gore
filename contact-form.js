@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Disable submit button
     submitBtn.disabled = true;
-    submitBtn.innerHTML = "Sending...";
+    submitBtn.innerHTML = "Submitting...";
 
     // Add current time
     document.getElementById("time").value = new Date().toLocaleString();
