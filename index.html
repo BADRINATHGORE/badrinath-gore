@@ -253,7 +253,9 @@ background-size: cover;"> -->
  
            <section id="hero" class="padding-medium1">
 
-            <div id="he">
+            <!--- 
+               
+               <div id="he">
         <div class="container-fluid padding-side text-white"data-aos="fade-up" data-aos-duration="1600" >
             <div class="d-none d-lg-block position-absolute bottom-0 end-0">
                 <img src="images/banner-img.png" alt="img" class="img-fluid">
@@ -264,7 +266,47 @@ background-size: cover;"> -->
                 <div class="col-lg-6 text-center d-lg-none" data-aos="fade-up" data-aos-duration="1400">
                     <img src="images/banner-img.png" alt="img" class="img-fluid">
                 </div>
-       
+
+               --->
+
+
+               <div id="he">
+    <div class="container-fluid padding-side text-white" data-aos="fade-up" data-aos-duration="1600">
+        <div class="d-none d-lg-block position-absolute bottom-0 end-0">
+            <img src="images/banner-img.png" alt="img" class="img-fluid banner-image">
+        </div>
+    </div>
+
+    <div class="row align-items-center">
+        <div class="col-lg-6 text-center d-lg-none" data-aos="fade-up" data-aos-duration="1400">
+            <img src="images/banner-img.png" alt="img" class="img-fluid banner-image">
+        </div>
+    </div>
+</div>
+
+<style>
+    .banner-image {
+        border: 5px solid;
+        border-image-slice: 1;
+        animation: rainbow-border 8s linear infinite;
+        padding: 5px; /* Optional: adds space between image and border */
+    }
+
+    @keyframes rainbow-border {
+        0%, 100% {
+            border-image-source: linear-gradient(45deg, #FF6B6B, #87CEEB, #9C27B0, #FFD700, #4A148C);
+        }
+        25% {
+            border-image-source: linear-gradient(45deg, #87CEEB, #9C27B0, #FFD700, #4A148C, #FF6B6B);
+        }
+        50% {
+            border-image-source: linear-gradient(45deg, #9C27B0, #FFD700, #4A148C, #FF6B6B, #87CEEB);
+        }
+        75% {
+            border-image-source: linear-gradient(45deg, #FFD700, #4A148C, #FF6B6B, #87CEEB, #9C27B0);
+        }
+    }
+</style>
 
  
                 <div class="col-lg-6 ms-lg-5">
@@ -425,6 +467,7 @@ background-size: cover;"> -->
 </body>
 
 </html>
+
 
 
 
