@@ -342,52 +342,54 @@ background-size: cover;"> -->
         </ul>
     </nav>
    
-
-<!-- Footer Section -->
+ <!-- Footer -->
 <footer class="text-center py-4" style="font-family: 'Inter', sans-serif;">
 
-  <p class="fs-6 animated-text" style="margin-bottom: 5px; line-height: 1.6;">
-    <span style="color: #1C1C1C;">Designing</span>
-    <span style="color: #262626;">& Developing</span>
-    <span style="color: #2E2E2E;">with passion</span>
-    <span style="color: #383838;">and precision.</span><br>
+  <p class="fs-6 animated-footer-text" style="margin-bottom: 5px; line-height: 1.6;">
+    <!-- Line 1 -->
+    <span style="color: #87CEEB;">Designing</span>       <!-- Sky Blue -->
+    <span style="color: #9C27B0;">& Developing</span>    <!-- Purple -->
+    <span style="color: #FF6B6B;">with passion</span>    <!-- Light Red -->
+    <span style="color: #FFFFFF; text-shadow: 0 0 2px rgba(0,0,0,0.3);">and precision.</span><br>  <!-- White -->
 
-    <span style="color: #383838;">©</span>
-    <span id="year" style="color: #2E2E2E;"></span>
-    <span style="color: #262626;">Badrinath Gore.</span>
-    <span style="color: #1C1C1C;">All Rights Reserved.</span>
+    <!-- Line 2 -->
+    <span style="color: #9C27B0;">©</span>              <!-- Purple -->
+    <span id="year" style="color: #87CEEB;"></span>      <!-- Sky Blue -->
+    <span style="color: #FF6B6B;">Badrinath Gore.</span> <!-- Light Red -->
+    <span style="color: #FFFFFF; text-shadow: 0 0 2px rgba(0,0,0,0.3);">All Rights Reserved.</span>  <!-- White -->
   </p>
 </footer>
 
-<!-- Auto-update year -->
+<!-- Auto-update Year -->
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-<!-- Optional CSS Animation -->
+<!-- Animation -->
 <style>
-  .animated-text span {
+  .animated-footer-text span {
     opacity: 0;
-    animation: fadeInUp 1s ease-in-out forwards;
+    animation: fadeInUp 0.8s ease-in-out forwards;
   }
 
-  .animated-text span:nth-child(1) { animation-delay: 0.1s; }
-  .animated-text span:nth-child(2) { animation-delay: 0.2s; }
-  .animated-text span:nth-child(3) { animation-delay: 0.3s; }
-  .animated-text span:nth-child(4) { animation-delay: 0.4s; }
-  .animated-text span:nth-child(5) { animation-delay: 0.5s; }
-  .animated-text span:nth-child(6) { animation-delay: 0.6s; }
-  .animated-text span:nth-child(7) { animation-delay: 0.7s; }
-  .animated-text span:nth-child(8) { animation-delay: 0.8s; }
+  /* Staggered animation delays */
+  .animated-footer-text span:nth-child(1) { animation-delay: 0.1s; }
+  .animated-footer-text span:nth-child(2) { animation-delay: 0.2s; }
+  .animated-footer-text span:nth-child(3) { animation-delay: 0.3s; }
+  .animated-footer-text span:nth-child(4) { animation-delay: 0.4s; }
+  .animated-footer-text span:nth-child(5) { animation-delay: 0.5s; }
+  .animated-footer-text span:nth-child(6) { animation-delay: 0.6s; }
+  .animated-footer-text span:nth-child(7) { animation-delay: 0.7s; }
+  .animated-footer-text span:nth-child(8) { animation-delay: 0.8s; }
 
   @keyframes fadeInUp {
     from {
-      transform: translateY(10px);
       opacity: 0;
+      transform: translateY(10px);
     }
     to {
-      transform: translateY(0px);
       opacity: 1;
+      transform: translateY(0);
     }
   }
 </style>
@@ -418,6 +420,7 @@ background-size: cover;"> -->
 </body>
 
 </html>
+
 
 
 
