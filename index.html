@@ -269,39 +269,50 @@ background-size: cover;"> -->
 
                --->
 
-
-               <div id="he">
+<div id="he">
     <div class="container-fluid padding-side text-white" data-aos="fade-up" data-aos-duration="1600">
-        <div class="d-none d-lg-block position-absolute bottom-0 end-0">
-            <img src="images/banner-img.png" alt="img" class="img-fluid banner-image">
+
+        <!-- Desktop Image on Right -->
+        <div class="d-none d-lg-block position-absolute bottom-0 end-0 text-center">
+            <div class="d-flex flex-column align-items-center">
+                <img src="images/banner-img.png" alt="img" class="img-fluid banner-image">
+                <br>
+                <div class="resume-btn" data-aos="fade-up" data-aos-duration="1600">
+                    <a href="images/BadrinathGore.pdf" download class="resume-btn">
+                        <button>
+                            <span>MY RESUME</span>
+                            <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16">
+                                <path d="M.5 9.9a.5.5 0 0 1 .5.5V13a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10.4a.5.5 0 0 1 1 0V13a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V10.4a.5.5 0 0 1 .5-.5z"/>
+                                <path d="M7.646 10.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 1 0-.708-.708L8.5 9.293V1.5a.5.5 0 0 0-1 0v7.793L5.354 7.146a.5.5 0 1 0-.708.708l3 3z"/>
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <br>
-        <br>
+        <br><br>
 
-                         <div  class="resume-btn" data-aos="fade-up" data-aos-duration="1600">    
-  <a href="images/BadrinathGore.pdf" download class="resume-btn">
-
-    <button>
-      <span>MY RESUME</span>
-      <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16">
-        <path d="M.5 9.9a.5.5 0 0 1 .5.5V13a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10.4a.5.5 0 0 1 1 0V13a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V10.4a.5.5 0 0 1 .5-.5z"/>
-        <path d="M7.646 10.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 1 0-.708-.708L8.5 9.293V1.5a.5.5 0 0 0-1 0v7.793L5.354 7.146a.5.5 0 1 0-.708.708l3 3z"/>
-      </svg>
-    </button>
-  </a>
- </div>  
-        
-    </div>
-                   
-
-    <div class="row align-items-center">
-        <div class="col-lg-6 text-center d-lg-none" data-aos="fade-up" data-aos-duration="1400">
-            <img src="images/banner-img.png" alt="img" class="img-fluid banner-image">
+        <!-- Mobile Image (center) + Resume Button -->
+        <div class="row align-items-center d-lg-none text-center" data-aos="fade-up" data-aos-duration="1400">
+            <div class="col-12">
+                <img src="images/banner-img.png" alt="img" class="img-fluid banner-image">
+                <br>
+                <div class="resume-btn mt-3" data-aos="fade-up" data-aos-duration="1600">
+                    <a href="images/BadrinathGore.pdf" download class="resume-btn">
+                        <button>
+                            <span>MY RESUME</span>
+                            <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16">
+                                <path d="M.5 9.9a.5.5 0 0 1 .5.5V13a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10.4a.5.5 0 0 1 1 0V13a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V10.4a.5.5 0 0 1 .5-.5z"/>
+                                <path d="M7.646 10.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 1 0-.708-.708L8.5 9.293V1.5a.5.5 0 0 0-1 0v7.793L5.354 7.146a.5.5 0 1 0-.708.708l3 3z"/>
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
 
-  
+    </div>
 </div>
 
 <style>
@@ -309,7 +320,9 @@ background-size: cover;"> -->
         border: 5px solid;
         border-image-slice: 1;
         animation: rainbow-border 8s linear infinite;
-        padding: 5px; /* Optional: adds space between image and border */
+        padding: 5px;
+        max-width: 100%;
+        height: auto;
     }
 
     @keyframes rainbow-border {
@@ -326,12 +339,26 @@ background-size: cover;"> -->
             border-image-source: linear-gradient(45deg, #FFD700, #4A148C, #FF6B6B, #87CEEB, #9C27B0);
         }
     }
-</style>
 
+    .resume-btn button {
+        background-color: #4A148C;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .resume-btn button:hover {
+        background-color: #6A1B9A;
+        transform: scale(1.05);
+    }
+</style>
  
                 <div class="col-lg-6 ms-lg-5">
           
-                    <br>
+                    
                     <br>
     <!---      <div  class="resume-btn" data-aos="fade-up" data-aos-duration="1600">    
   <a href="images/BadrinathGore.pdf" download class="resume-btn">
@@ -547,6 +574,7 @@ background-size: cover;"> -->
 </body>
 
 </html>
+
 
 
 
