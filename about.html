@@ -430,15 +430,64 @@
             </li> 
         </ul>
     </nav>
+   
+ <!-- Footer 
+<footer class="text-center py-4" style="font-family: 'Inter', sans-serif;">
+--->
+    <footer class="text-center py-4" style="font-family: 'Inter', sans-serif;">
+    <!---
+  <p class="fs-6 animated-footer-text" style="margin-bottom: 5px; line-height: 1.6;">
+    --->
+     <p class="fs-6 animated-footer-text" data-aos="fade-up" data-aos-duration="1600" style="margin-bottom: 5px; line-height: 1.6">
+      
+      <!-- Line 1 -->
+    <span style="color: #87CEEB;">Designing</span>       <!-- Sky Blue -->
+    <span style="color: #9C27B0;">& Developing</span>    <!-- Purple -->
+    <span style="color: #FF6B6B;">with passion</span>    <!-- Light Red -->
+    <span style="color: #FFFFFF; text-shadow: 0 0 2px rgba(0,0,0,0.3);">and precision.</span><br>  <!-- White -->
 
-<footer class="text-center text-white py-4" style="font-family: 'Inter', sans-serif;">
-  <p class="fs-5" data-aos="fade-up" data-aos-duration="1600" style="margin-bottom: 5px;">
-    Designing & Developing with passion and precision. <br>
-     © 2025 Badrinath Gore. All Rights Reserved.
-
+    <!-- Line 2 -->
+    <span style="color: #9C27B0;">©</span>              <!-- Purple -->
+    <span id="year" style="color: #87CEEB;"></span>      <!-- Sky Blue -->
+    <span style="color: #FF6B6B;">Badrinath Gore.</span> <!-- Light Red -->
+    <span style="color: #FFFFFF; text-shadow: 0 0 2px rgba(0,0,0,0.3);">All Rights Reserved.</span>  <!-- White -->
   </p>
-  
 </footer>
+
+<!-- Auto-update Year -->
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<!-- Animation -->
+<style>
+  .animated-footer-text span {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-in-out forwards;
+  }
+
+  /* Staggered animation delays */
+  .animated-footer-text span:nth-child(1) { animation-delay: 0.1s; }
+  .animated-footer-text span:nth-child(2) { animation-delay: 0.2s; }
+  .animated-footer-text span:nth-child(3) { animation-delay: 0.3s; }
+  .animated-footer-text span:nth-child(4) { animation-delay: 0.4s; }
+  .animated-footer-text span:nth-child(5) { animation-delay: 0.5s; }
+  .animated-footer-text span:nth-child(6) { animation-delay: 0.6s; }
+  .animated-footer-text span:nth-child(7) { animation-delay: 0.7s; }
+  .animated-footer-text span:nth-child(8) { animation-delay: 0.8s; }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
 
 <br>
 <br>
@@ -463,3 +512,4 @@
 </body>
 
 </html>
+
