@@ -349,20 +349,21 @@ background-size: cover;"> -->
   <div class="footer-bottom">
 
     
-  
+  <!---
   
 <footer class="text-center text-white py-4" style="font-family: 'Inter', sans-serif;">
-  <h6 class="fs-5" data-aos="fade-up" data-aos-duration="1600" style="margin-bottom: 5px;">
+  <p  class="fs-5" data-aos="fade-up" data-aos-duration="1600" style="margin-bottom: 5px;">
     Designing & Developing with passion and precision. <br>
-     © 2025 Badrinath Gore. All Rights Reserved.
+     © <span id="year"></span> Badrinath Gore. All Rights Reserved.
 
-  </h6>
-  
+  </p>
 </footer>
-
-
-
-
+      
+<script>
+  // Get the current year and set it in the span
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+   
   
   </div>
 </footer>
@@ -370,11 +371,23 @@ background-size: cover;"> -->
 <br>
 <br>
 
+
+--->
+
+      <footer class="text-center text-white py-4" style="font-family: 'Inter', sans-serif;">
+  <p class="fs-6" data-aos="fade-up" data-aos-duration="1600" style="margin-bottom: 5px; line-height: 1.6;">
+    <span style="color: #D8BFD8;">Designing & Developing with passion and precision.</span><br>
+    <span style="color: #A0E7E5;">© <span id="year"></span> Badrinath Gore. All Rights Reserved.</span>
+  </p>
+</footer>
+
 <script>
-  document.getElementById('footer-year').textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-
+      <br>
+<br>
+      
     <!-- script ================================================== -->
     <script src="js/jquery-1.11.0.min.js"></script>
 
@@ -397,4 +410,5 @@ background-size: cover;"> -->
 </body>
 
 </html>
+
 
