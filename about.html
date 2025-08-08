@@ -214,188 +214,247 @@
         </div>
     </nav>
 
-    <section id="hero" class="padding-medium position-relative">
-        <div class="container-fluid padding-side text-white">
-            <div class="row gap-5 flex-column align-items-center">
-                <div class="col-lg-9">
-                    <h3 class="banner-size fw-medium display-3" data-aos="fade-up" data-aos-duration="1200">
-                        About me<span class="text-primary"> Badrinath Gore </span>
-                    </h3>
-                    <p class="fs-4 fst-italic my-4" data-aos="fade-up" data-aos-duration="1400">
-                        Turning Ideas into Digital Reality & Scalable Solutions
-                    </p>
-                    <p data-aos="fade-up" data-aos-duration="1400">
-                        With a passion for coding and an eye for design, I specialize in developing high-performance web applications. From front-end magic to back-end logic, I create solutions that are user-friendly, responsive, and secure.
-                    </p>
-               
- 
- 
- 
- 
-  
- 
- 
- <style>
-  .custom-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  .custom-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
-  .custom-card:active {
-    transform: scale(0.95);
-  }
+<section id="hero" class="padding-medium position-relative">
+  <div class="container-fluid padding-side text-white" style="max-width:1200px; margin:auto;">
+    <div class="row gap-5 flex-column align-items-center">
 
-  /* Make grid always 2 columns */
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+      <div class="col-lg-9 px-3 px-md-0">
+        <h3 class="banner-size fw-medium display-3" data-aos="fade-up" data-aos-duration="1200" style="font-size:2.5rem;">
+          About me<span class="text-primary"> Badrinath Gore </span>
+        </h3>
+        <p class="fs-4 fst-italic my-4" data-aos="fade-up" data-aos-duration="1400" style="font-size:1.25rem;">
+          Turning Ideas into Digital Reality & Scalable Solutions
+        </p>
+        <p data-aos="fade-up" data-aos-duration="1400" style="font-size:1rem; line-height:1.5;">
+          With a passion for coding and an eye for design, I specialize in developing high-performance web applications. From front-end magic to back-end logic, I create solutions that are user-friendly, responsive, and secure.
+        </p>
+      </div>
 
-  @media (max-width: 400px) {
-    .card-container {
-      gap: 10px;
-    }
-  }
-</style>
-<div class="col-lg-9    ">
-                    <h1 class="banner-size fw-medium display-3 mb-4" data-aos="fade-up" data-aos-duration="1600">
+      <style>
+        .custom-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+          border-radius: 10px;
+        }
 
-<div class="container mt-5">
-  <div class="card-container">
-    <!-- Card 1 -->
-    <a href="professionalSummery.html" style="text-decoration: none;">
-      <div class="card h-100 text-center p-3 custom-card" style="background-color: #f9f1f1; border: 3px solid red; color: purple;">
-        <img src="images/badrinath.png" class="card-img-top" style="border: 3px solid orange;" alt="Image 1">
-        <h4 class="mt-3" style="color: green">Professional Summary</h4>
-      </div>
-    </a>
-    <!-- Card 2 -->
-    <a href="skills.html" style="text-decoration: none;">
-      <div class="card h-100 text-center p-3 custom-card" style="background-color: #f1f9f1; border: 3px solid orange; color: purple;">
-        <img src="images/skills.jpeg" class="card-img-top" style="border: 3px solid red;" alt="Image 2">
-        <h4 class="mt-3" style="color: purple">Skills</h4>
-      </div>
-    </a>
-    <!-- Card 3 -->
-    <a href="Hobbies.html" style="text-decoration: none;">
-      <div class="card h-100 text-center p-3 custom-card" style="background-color: #f1f4f9; border: 3px solid green; color: purple;">
-        <img src="images/intress.jpeg" class="card-img-top" style="border: 3px solid chocolate;" alt="Image 3">
-        <h4 class="mt-3" style="color: brown">Hobbies</h4>
-      </div>
-    </a>
-    <!-- Card 4 -->
-    <a href="education.html" style="text-decoration: none;">
-      <div class="card h-100 text-center p-3 custom-card" style="background-color: #fff8f1; border: 3px solid purple; color: purple;">
-        <img src="images/education.jpeg" class="card-img-top" style="border: 3px solid green;" alt="Image 4">
-        <h4 class="mt-3" style="color: red">Education</h4>
-      </div>
-    </a>
-  </div>
-</div>
-</div>
- 
-        
-        
-       <br>
-       <br>
-   <div class="col-lg-9    ">
-                    <h1 class="banner-size fw-medium display-3 mb-4" data-aos="fade-up" data-aos-duration="1600">
-   
-<!-- Address Section -->
-<div class="about-info mb-4 text-center">
-    <h3 class="section-title">Address</h3>
+        .custom-card:hover {
+          transform: scale(1.05);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
 
-    <div class="row g-3 mt-4">
-        <!-- Permanent Address -->
-        <div class="col-12 col-md-6 address-block" style="color: red;">
-            <h4 class="fw-bold">Permanent Address</h4>
-            <p>
+        .custom-card:active {
+          transform: scale(0.95);
+        }
+
+        /* Card grid: 2 columns on desktop, 1 column on tablet/mobile */
+        .card-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+
+        .card-img-top {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+          border-radius: 6px;
+        }
+
+        .view-more-text {
+          font-size: 0.85rem;
+          color: #555;
+          margin-top: 4px;
+          font-style: italic;
+          transition: color 0.3s ease;
+        }
+
+        .custom-card:hover .view-more-text {
+          color: purple;
+        }
+
+        @media (max-width: 768px) {
+          .card-container {
+            grid-template-columns: 1fr;
+            gap: 15px;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .card-container {
+            gap: 10px;
+          }
+        }
+      </style>
+
+      <div class="col-lg-9 px-3 px-md-0 mt-4">
+        <div class="card-container">
+          <!-- Card 1 -->
+          <a href="professionalSummery.html" style="text-decoration: none;">
+            <div class="card h-100 text-center p-3 custom-card" style="background-color: #f9f1f1; border: 3px solid red; color: purple;">
+              <img src="images/badrinath.png" class="card-img-top" style="border: 3px solid orange;" alt="Image 1">
+              <h4 class="mt-3" style="color: green;">Professional Summary</h4>
+              <p class="view-more-text">Click here to view more</p>
+            </div>
+          </a>
+          <!-- Card 2 -->
+          <a href="skills.html" style="text-decoration: none;">
+            <div class="card h-100 text-center p-3 custom-card" style="background-color: #f1f9f1; border: 3px solid orange; color: purple;">
+              <img src="images/skills.jpeg" class="card-img-top" style="border: 3px solid red;" alt="Image 2">
+              <h4 class="mt-3" style="color: purple;">Skills</h4>
+              <p class="view-more-text">Click here to view more</p>
+            </div>
+          </a>
+          <!-- Card 3 -->
+          <a href="Hobbies.html" style="text-decoration: none;">
+            <div class="card h-100 text-center p-3 custom-card" style="background-color: #f1f4f9; border: 3px solid green; color: purple;">
+              <img src="images/intress.jpeg" class="card-img-top" style="border: 3px solid chocolate;" alt="Image 3">
+              <h4 class="mt-3" style="color: brown;">Hobbies</h4>
+              <p class="view-more-text">Click here to view more</p>
+            </div>
+          </a>
+          <!-- Card 4 -->
+          <a href="education.html" style="text-decoration: none;">
+            <div class="card h-100 text-center p-3 custom-card" style="background-color: #fff8f1; border: 3px solid purple; color: purple;">
+              <img src="images/education.jpeg" class="card-img-top" style="border: 3px solid green;" alt="Image 4">
+              <h4 class="mt-3" style="color: red;">Education</h4>
+              <p class="view-more-text">Click here to view more</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-9 px-3 px-md-0 mt-5 mb-5 text-center">
+        <!-- Address Section -->
+        <div class="about-info mb-4">
+          <h3 class="section-title">Address</h3>
+
+          <div class="row g-3 mt-4 justify-content-center">
+            <!-- Permanent Address -->
+            <div class="col-12 col-md-6 address-block" style="color: red;">
+              <h4 class="fw-bold">Permanent Address</h4>
+              <p>
                 At. Sawkheda Bk, Post. Borgaon Bazar,<br>
                 Ta. Sillod, Dist. Ch. Sambhajinagar,<br>
                 Maharashtra, India 431113
-            </p>
-        </div>
+              </p>
+            </div>
 
-        <!-- Current Address -->
-        <div class="col-12 col-md-6 address-block" style="color: green;">
-            <h4 class="fw-bold">Current Address</h4>
-            <p>
-                Near SR Nagar Police Station & Nagarjuna High School,<br>
+            <!-- Current Address -->
+            <div class="col-12 col-md-6 address-block" style="color: green;">
+              <h4 class="fw-bold">Current Address</h4>
+              <p>
+                Near SR Nagar Police Station &amp; Nagarjuna High School,<br>
                 East Srinivas Nagar Colony, SR Nagar,<br>
                 Hyderabad, India 500038
-            </p>
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <style>
+        /* Gradient "Address" heading */
+        .section-title {
+          font-size: 2.5rem;
+          font-weight: bold;
+          background: linear-gradient(90deg, purple, deeppink);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          display: inline-block;
+          animation: fadeDown 1s ease-in-out forwards;
+          position: relative;
+        }
+
+        /* Underline animation */
+        .section-title::after {
+          content: '';
+          position: absolute;
+          bottom: -6px;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 3px;
+          width: 0;
+          background: linear-gradient(90deg, purple, deeppink);
+          animation: underlineGrow 1.2s ease forwards 0.5s;
+        }
+
+        /* Fade-up animation for address blocks */
+        .address-block {
+          animation: fadeUp 1s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeDown {
+          from {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes underlineGrow {
+          from {
+            width: 0;
+          }
+
+          to {
+            width: 60%;
+          }
+        }
+
+        /* Responsive font adjustments */
+        @media (max-width: 992px) {
+          .section-title {
+            font-size: 2rem;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .section-title {
+            font-size: 1.7rem;
+          }
+
+          .about-info p {
+            font-size: 1rem;
+          }
+
+          .about-info h4 {
+            font-size: 1.2rem;
+          }
+
+          .banner-size {
+            font-size: 1.8rem !important;
+          }
+
+          p.fs-4 {
+            font-size: 1.1rem !important;
+          }
+
+          p.fst-italic {
+            font-size: 1rem !important;
+          }
+        }
+      </style>
+
     </div>
-</div>
-</div>
-
-<!-- CSS -->
-<style>
-/* Gradient "Address" heading */
-.section-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    background: linear-gradient(90deg, purple, deeppink);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    animation: fadeDown 1s ease-in-out forwards;
-    position: relative;
-}
-
-/* Underline animation */
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 3px;
-    width: 0;
-    background: linear-gradient(90deg, purple, deeppink);
-    animation: underlineGrow 1.2s ease forwards 0.5s;
-}
-
-/* Fade-up animation for address blocks */
-.address-block {
-    animation: fadeUp 1s ease-in-out;
-}
-
-/* Animations */
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes underlineGrow {
-    from { width: 0; }
-    to { width: 60%; }
-}
-
-/* Responsive font adjustments */
-@media (max-width: 576px) {
-    .section-title {
-        font-size: 2rem;
-    }
-    .about-info p {
-        font-size: 1rem;
-    }
-    .about-info h4 {
-        font-size: 1.2rem;
-    }
-}
-</style>
-
-
+  </div>
+</section>
         
     </section>
 
@@ -516,4 +575,5 @@
 </body>
 
 </html>
+
 
