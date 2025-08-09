@@ -201,45 +201,88 @@
     }
 
    
-    
-    
-    
     @media print {
-  /* Hide all elements on the first page */
-  body > :first-child {
+  /* Remove forced page break */
+  body::after {
+    content: none !important;
+  }
+  
+  /* Hide non-content elements */
+  .preloader,
+  #header-nav,
+  #side-nav,
+  footer,
+  .print-btn,
+  .navbar-brand {
     display: none !important;
   }
   
-  /* Force content to start on page 2 */
-  body {
-    display: block;
-    position: relative;
-  }
-  body::after {
-    content: "";
-    display: block;
-    page-break-after: always;
-    break-after: page;
-  }
-
-  /* Your existing print styles */
-  .print-btn, .navbar-brand {
-    display: none !important;
-  }
+  /* Reset positioning */
   .container {
-    border: none !important;
-    background: none !important;
-    box-shadow: none !important;
-    margin: 10mm auto !important;
-    page-break-inside: avoid;
+    position: static !important;
+    left: 0 !important;
+    max-width: 100% !important;
   }
+  
+  /* Remove background colors */
+  .container,
+  .extra-info {
+    background: none !important;
+  }
+  
+  /* Adjust margins and padding */
   body, html {
     background: #fff !important;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
   }
-}
+  
+  /* Remove border and shadow */
+  .container {
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  
+  /* Remove colored borders */
+  section h2 {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+  
+  /* Remove section borders */
+  section {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* Adjust spacing */
+  section {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Remove animations */
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  /* Ensure content starts at top */
+  [data-aos] {
+    padding: 0 !important;
+  }
+  
+  /* Improve link visibility */
+  a {
+    color: #000 !important;
+    text-decoration: underline !important;
+  }
+        }
+    
+    
+
 
 
 
