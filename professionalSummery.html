@@ -200,26 +200,33 @@
       }
     }
 
+    
     /* PRINT STYLES */
     @media print {
-      /* Hide print button */
-      .print-btn {
-        display: none !important;
-      }
-      .container {
-        border: none !important;
-        background: none !important;
-        box-shadow: none !important;
-        margin: 10mm auto !important;
-        page-break-inside: avoid;
-      }
-      body, html {
-        background: #fff !important;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
+  /* Hide print button */
+  .print-btn {
+    display: none !important;
+  }
+  /* Hide the logo */
+  .navbar-brand {
+    display: none !important;
+  }
+  .container {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    margin: 10mm auto !important;
+    page-break-inside: avoid;
+  }
+  body, html {
+    background: #fff !important;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
     }
+
+        
   </style>
     
      
