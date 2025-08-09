@@ -217,33 +217,21 @@
     display: none !important;
   }
   
-  /* Reset positioning */
+  /* Reset positioning and layout */
   .container {
     position: static !important;
     left: 0 !important;
     max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   
-  /* Remove background colors */
+  /* Remove decorative elements */
   .container,
   .extra-info {
     background: none !important;
-  }
-  
-  /* Adjust margins and padding */
-  body, html {
-    background: #fff !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-  }
-  
-  /* Remove border and shadow */
-  .container {
-    border: none !important;
     box-shadow: none !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
+    border: none !important;
   }
   
   /* Remove colored borders */
@@ -256,11 +244,15 @@
   section {
     border-bottom: none !important;
     padding-bottom: 0 !important;
+    margin-bottom: 1rem !important;
   }
   
-  /* Adjust spacing */
-  section {
-    margin-bottom: 1rem !important;
+  /* Reset body styles */
+  body, html {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
   }
   
   /* Remove animations */
@@ -269,9 +261,10 @@
     transform: none !important;
   }
   
-  /* Ensure content starts at top */
-  [data-aos] {
-    padding: 0 !important;
+  /* Improve text readability */
+  body {
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
   }
   
   /* Improve link visibility */
@@ -280,7 +273,6 @@
     text-decoration: underline !important;
   }
         }
-    
     
 
 
