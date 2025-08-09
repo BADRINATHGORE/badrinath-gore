@@ -203,7 +203,7 @@
 
    
     @media print {
-  /* Hide non-essential UI elements for clean print */
+  /* Hide non-essential UI elements */
   .preloader,
   #header-nav,
   #side-nav,
@@ -216,24 +216,26 @@
   footer {
     display: block !important;
     background: #fff !important;
-    color: #333 !important;
+    color: #555 !important;
     padding: 1rem 0 !important;
-    margin: 10px !important; /* 10px margin all around */
-    border-top: 1px solid #00aaff !important; /* Skyblue top border */
+    margin: 10px 0 !important;
+    border-top: 1px solid #888 !important; /* keep only footer top border */
     text-align: center !important;
     font-size: 10pt !important;
   }
 
-  /* Ensure the page background is white and no margin/padding on body/html */
+  /* Page background and reset margins */
   body,
   html {
     background: #fff !important;
-    margin: 0 !important;
+    margin: 10px 0 0 0 !important; /* top margin 10px */
     padding: 0 !important;
     height: auto !important;
+    color: #222 !important;
+    font-family: Arial, sans-serif !important;
   }
 
-  /* Container uses full width without margin/padding and no shadows */
+  /* Container full width, no decoration */
   .container {
     margin: 0 !important;
     padding: 0 !important;
@@ -243,7 +245,7 @@
     border: none !important;
   }
 
-  /* Make sure images, SVGs, and graphics show properly and scale */
+  /* Show images and graphics properly */
   img,
   svg,
   .graphic,
@@ -253,49 +255,37 @@
     height: auto !important;
   }
 
-  /* Section headings get a skyblue left border with subtle animation */
+  /* Section headings - no borders */
   section h2 {
-    border-left: 5px solid #00aaff !important;
-    padding-left: 0.5rem !important;
-    animation: borderGlow 3s ease-in-out infinite !important;
+    border: none !important;
+    padding-left: 0 !important;
+    margin-bottom: 0.5rem !important;
+    color: #111 !important;
   }
 
-  /* Section bottom border styling */
+  /* Remove horizontal lines from sections */
   section {
-    border-bottom: 1px solid #00aaff !important;
+    border-bottom: none !important;
     padding-bottom: 0.5rem !important;
     margin-bottom: 1rem !important;
   }
 
-  /* Links styled in skyblue and underlined */
+  /* Links styling */
   a {
-    color: #00aaff !important;
+    color: #0066cc !important;
     text-decoration: underline !important;
   }
 
-  /* Disable any animations from data-aos attributes for print clarity */
+  /* Disable animations */
   [data-aos] {
     opacity: 1 !important;
     transform: none !important;
   }
 
-  /* Improve overall text readability */
+  /* Text readability */
   body {
     font-size: 12pt !important;
-    line-height: 1.4 !important;
-  }
-
-  /* Keyframes for the subtle border glow animation on section headings */
-  @keyframes borderGlow {
-    0%,
-    100% {
-      border-color: #00aaff;
-      box-shadow: none;
-    }
-    50% {
-      border-color: #0099dd;
-      box-shadow: 0 0 8px #00aaff;
-    }
+    line-height: 1.5 !important;
   }
 }
 
