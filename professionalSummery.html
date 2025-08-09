@@ -205,10 +205,23 @@
     
     
     @media print {
-  /* Hide first section or header */
-  .container > :first-child {
+  /* Hide all elements on the first page */
+  body > :first-child {
     display: none !important;
   }
+  
+  /* Force content to start on page 2 */
+  body {
+    display: block;
+    position: relative;
+  }
+  body::after {
+    content: "";
+    display: block;
+    page-break-after: always;
+    break-after: page;
+  }
+
   /* Your existing print styles */
   .print-btn, .navbar-brand {
     display: none !important;
@@ -227,7 +240,10 @@
     height: 100%;
   }
 }
-  </style>
+
+
+
+        </style>
     
      
 </head>
