@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badrinath Gore - About</title>
+    <title>Badrinath Gore - Hobbies</title>
+    
+     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
    <link rel="icon" href="images/badriLogo1.png" sizes="32x32" type="image/x-icon">
  
@@ -27,6 +32,121 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    
+    
+    
+    <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       
+      
+      color: #333;
+ }
+ 
+
+        
+    h1 {
+      text-align: center;
+      color: green;
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+    .hobbies-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hobby-card {
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      box-shadow: 0 6px 15px rgb(75 0 130 / 0.2);
+      display: flex;
+      flex-direction: column;
+    }
+    .hobby-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgb(75 0 130 / 0.35);
+    }
+    /* Different background for the entire card */
+    .hobby-card:nth-child(1) {
+      background: #f3e8ff; /* light lavender */
+    }
+    .hobby-card:nth-child(2) {
+      background: #e6f0ff; /* light baby blue */
+    }
+    .hobby-card:nth-child(3) {
+      background: #fff0f5; /* light pink */
+    }
+    .hobby-card:nth-child(4) {
+      background: #e0ffe0; /* light mint green */
+    }
+    .hobby-card:nth-child(5) {
+      background: #fff7e6; /* light creamy yellow */
+    }
+    .hobby-card:nth-child(6) {
+      background: #fff0e6; /* light peach */
+    }
+    .hobby-card:nth-child(7) {
+      background: #e6fff7; /* light aqua */
+    }
+
+    /* Different background color behind the image */
+    .hobby-img-wrapper {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    .hobby-card:nth-child(1) .hobby-img-wrapper {
+      background-color: #d9ccff;
+    }
+    .hobby-card:nth-child(2) .hobby-img-wrapper {
+      background-color: #cce0ff;
+    }
+    .hobby-card:nth-child(3) .hobby-img-wrapper {
+      background-color: #ffd6e8;
+    }
+    .hobby-card:nth-child(4) .hobby-img-wrapper {
+      background-color: #ccffcc;
+    }
+    .hobby-card:nth-child(5) .hobby-img-wrapper {
+      background-color: #fff1cc;
+    }
+    .hobby-card:nth-child(6) .hobby-img-wrapper {
+      background-color: #ffe6d9;
+    }
+    .hobby-card:nth-child(7) .hobby-img-wrapper {
+      background-color: #ccfff9;
+    }
+
+    .hobby-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 4px solid #4B0082;
+      display: block;
+    }
+    .hobby-info {
+      padding: 15px 20px;
+      text-align: center;
+      flex-grow: 1;
+    }
+    .hobby-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #4B0082;
+    }
+    .hobby-desc {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.4;
+    }
+  </style>
+    
 </head>
 
 <body>
@@ -109,7 +229,7 @@
 
     <nav id="header-nav" class="navbar navbar-expand-lg py-4 z-1" data-bs-theme="dark">
         <div class="container-fluid padding-side">
-            <a class="navbar-brand" href="index.html"><img src="images/badriLogo.png" alt="logo"style="margin-left: -45px;"></a>
+            <a class="navbar-brand" href="index.html"><img src="images/badriLogo.png" alt="logo"style="margin-left: -55px;"></a>
 
             <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -214,426 +334,75 @@
         </div>
     </nav>
 
-<div class="container-fluid padding-side text-white" data-aos="fade-up" data-aos-duration="1600">
+     
+     <div style="padding: 20px">
+     
+     <h1>My Hobbies</h1>
 
+  <div class="hobbies-container">
 
+    <div class="hobby-card">
+      <div class="hobby-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Coding" class="hobby-img" />
+      </div>
+      <div class="hobby-info">
+        <h2 class="hobby-title">Coding</h2>
+        <p class="hobby-desc">Creating software and solving challenges with code.</p>
+      </div>
+    </div>
 
+    <div class="hobby-card">
+      <div class="hobby-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Working" class="hobby-img" />
+      </div>
+      <div class="hobby-info">
+        <h2 class="hobby-title">Working</h2>
+        <p class="hobby-desc">Engaging actively in projects and team collaborations.</p>
+      </div>
+    </div>
 
-<section id="hero" class="padding-medium position-relative" style="background: #121212;">  
-  <div class="container-fluid padding-side text-white" style="max-width: 1200px; margin: auto; padding: 0 15px;">  
-    <div class="row gap-5 flex-column align-items-center">  <div class="col-lg-9 px-0 text-center">  
-    <h3  
-      class="banner-size fw-medium display-3"  
-      data-aos="fade-up"  
-      data-aos-duration="1200"  
-      style="font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.1; font-weight: 600;"  
-    >  
-      About me<span class="text-primary"> Badrinath Gore </span>  
-    </h3>  
+    <div class="hobby-card">
+      <div class="hobby-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Development" class="hobby-img" />
+      </div>
+      <div class="hobby-info">
+        <h2 class="hobby-title">Development</h2>
+        <p class="hobby-desc">Building apps and websites to solve real problems.</p>
+      </div>
+    </div>
 
-    <!-- Typing Effect -->  
-    <p class="typing-effect fs-5 fst-italic mt-2 mb-4"data-aos="fade-up"  
-    data-aos-duration="1200" style="min-height: 1.5rem; color: #bb86fc;"></p>  
+    <div class="hobby-card">
+      <div class="hobby-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Traveling" class="hobby-img" />
+      </div>
+      <div class="hobby-info">
+        <h2 class="hobby-title">Traveling</h2>
+        <p class="hobby-desc">Exploring new places and cultures to expand horizons.</p>
+      </div>
+    </div>
 
-    <p  
-      data-aos="fade-up"  
-      data-aos-duration="1400"  
-      style="font-size: clamp(0.9rem, 2vw, 1rem); line-height: 1.5; margin-bottom: 2rem;"  
-    >  
-      With a passion for coding and an eye for design, I specialize in developing high-performance web applications. From front-end magic to back-end logic, I create solutions that are user-friendly, responsive, and secure.  
-    </p>  
-  </div>  
+    <div class="hobby-card">
+      <div class="hobby-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80" alt="Reading Books" class="hobby-img" />
+      </div>
+      <div class="hobby-info">
+        <h2 class="hobby-title">Reading</h2>
+        <p class="hobby-desc">Absorbing knowledge and stories from books and articles.</p>
+      </div>
+    </div>
 
-  <style>  
-    /* Typing effect styles */  
-    .typing-effect {  
-      font-weight: 500;  
-      font-family: monospace, monospace;  
-      border-right: 2px solid #bb86fc;  
-      white-space: nowrap;  
-      overflow: hidden;  
-      letter-spacing: 2px;  
-      animation: blink-caret 0.75s step-end infinite;  
-    }  
+     
+    </div>
 
-    @keyframes blink-caret {  
-      0%, 100% {  
-        border-color: transparent;  
-      }  
-      50% {  
-        border-color: #bb86fc;  
-      }  
-    }  
+  </div></div>
+     
+     
 
-    /* Animated gradient border for cards */  
-    .animated-border {  
-      position: relative;  
-      border-radius: 12px;  
-      overflow: hidden;  
-      z-index: 0;  
-    }  
+   
 
-    .animated-border::before {  
-      content: "";  
-      position: absolute;  
-      top: -3px;  
-      left: -3px;  
-      right: -3px;  
-      bottom: -3px;  
-      background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #fb7185);  
-      background-size: 800% 800%;  
-      animation: gradientAnimation 15s ease infinite;  
-      border-radius: 15px;  
-      z-index: -1;  
-      filter: blur(5px);  
-      opacity: 0.7;  
-    }  
-
-    @keyframes gradientAnimation {  
-      0% {  
-        background-position: 0% 50%;  
-      }  
-      50% {  
-        background-position: 100% 50%;  
-      }  
-      100% {  
-        background-position: 0% 50%;  
-      }  
-    }  
-
-    /* Card container with spacing */  
-    .card-container {  
-      display: grid;  
-      grid-template-columns: repeat(2, 1fr);  
-      gap: 25px;  
-      width: 100%;  
-    }  
-
-    @media (max-width: 768px) {  
-      .card-container {  
-        grid-template-columns: 1fr;  
-        gap: 20px;  
-      }  
-    }  
-
-    /* Card styles */  
-    .custom-card {  
-      transition: transform 0.3s ease, box-shadow 0.3s ease;  
-      cursor: pointer;  
-      border-radius: 12px;  
-      display: flex;  
-      flex-direction: column;  
-      justify-content: flex-start;  
-      height: 100%;  
-      position: relative;  
-      z-index: 1;  
-      background-clip: padding-box;  
-      background-color: #f9f1f1;  
-      padding: 20px; /* Increased padding */  
-      color: purple;  
-      text-decoration: none;  
-      border: 5px solid; /* Add border, color defined below */  
-      box-sizing: border-box;  
-    }  
-
-    /* Different border colors for each card */  
-    .custom-card:nth-child(1) {  
-      border-color: #ff6ec4; /* pinkish */  
-    }  
-    .custom-card:nth-child(2) {  
-      border-color: #7873f5; /* purple */  
-    }  
-    .custom-card:nth-child(3) {  
-      border-color: #4ade80; /* green */  
-    }  
-    .custom-card:nth-child(4) {  
-      border-color: #fb7185; /* reddish-pink */  
-    }  
-
-    .custom-card:hover {  
-      transform: scale(1.05);  
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);  
-    }  
-
-    .custom-card:active {  
-      transform: scale(0.95);  
-    }  
-
-    /* Card images with border and padding */  
-    .card-img-top {  
-      width: 100%;  
-      height: 180px;  
-      object-fit: cover;  
-      border-radius: 10px;  
-      display: block;  
-      border: 5px solid; /* border color defined below */  
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  
-      margin-bottom: 1rem;  
-      background-color: #ddd;  
-      box-sizing: border-box;  
-    }  
-
-    /* Different border colors for each card */
-.custom-card:nth-child(1) {
-  border-color: #ff9800; /* orange */
-}
-.custom-card:nth-child(2) {
-  border-color: #03a9f4; /* light blue */
-}
-.custom-card:nth-child(3) {
-  border-color: #9c27b0; /* deep purple */
-}
-.custom-card:nth-child(4) {
-  border-color: #8bc34a; /* light green */
-}
-
-/* Different border colors for images (NOT matching the card) */
-.custom-card:nth-child(1) .card-img-top {
-  border-color: #4caf50; /* green */
-}
-.custom-card:nth-child(2) .card-img-top {
-  border-color: #e91e63; /* pink */
-}
-.custom-card:nth-child(3) .card-img-top {
-  border-color: #2196f3; /* blue */
-}
-.custom-card:nth-child(4) .card-img-top {
-  border-color: #ff5722; /* deep orange */
-}
-
-    /* Adjust image height for smaller devices */  
-    @media (max-width: 992px) {  
-      .card-img-top {  
-        height: 160px;  
-      }  
-    }  
-
-    @media (max-width: 768px) {  
-      .card-img-top {  
-        height: 200px;  
-      }  
-    }  
-
-    @media (max-width: 480px) {  
-      .card-img-top {  
-        height: 140px;  
-      }  
-      .custom-card {  
-        padding: 15px;  
-      }  
-    }  
-
-    /* View more text */  
-    .view-more-text {  
-      font-size: 0.85rem;  
-      color: #555;  
-      margin-top: auto;  
-      font-style: italic;  
-      transition: color 0.3s ease;  
-    }  
-
-    .custom-card:hover .view-more-text {  
-      color: purple;  
-    }  
-
-    /* Address section styles */  
-    .section-title {  
-      font-size: clamp(1.7rem, 4vw, 2.5rem);  
-      font-weight: bold;  
-      background: linear-gradient(90deg, purple, deeppink);  
-      -webkit-background-clip: text;  
-      -webkit-text-fill-color: transparent;  
-      display: inline-block;  
-      animation: fadeDown 1s ease-in-out forwards;  
-      position: relative;  
-      margin-bottom: 1rem;  
-    }  
-
-    .section-title::after {  
-      content: '';  
-      position: absolute;  
-      bottom: -6px;  
-      left: 50%;  
-      transform: translateX(-50%);  
-      height: 3px;  
-      width: 0;  
-      background: linear-gradient(90deg, purple, deeppink);  
-      animation: underlineGrow 1.2s ease forwards 0.5s;  
-    }  
-
-    .address-block {  
-      animation: fadeUp 1s ease-in-out;  
-    }  
-
-    @keyframes fadeUp {  
-      from {  
-        opacity: 0;  
-        transform: translateY(40px);  
-      }  
-      to {  
-        opacity: 1;  
-        transform: translateY(0);  
-      }  
-    }  
-
-    @keyframes fadeDown {  
-      from {  
-        opacity: 0;  
-        transform: translateY(-30px);  
-      }  
-      to {  
-        opacity: 1;  
-        transform: translateY(0);  
-      }  
-    }  
-
-    @keyframes underlineGrow {  
-      from {  
-        width: 0;  
-      }  
-      to {  
-        width: 60%;  
-      }  
-    }  
-
-    @media (max-width: 576px) {  
-      .about-info p {  
-        font-size: 1rem;  
-      }  
-      .about-info h4 {  
-        font-size: 1.2rem;  
-      }  
-    }  
-  </style>
-
-<div style="padding: 10px">  
-      <div class="col-lg-9 px-0 mt-4" style="width: 100%;">  
-        <div class="card-container" >  
-            
-            <!-- Card 1 -->  
-      <a href="professionalSummery.html" class="custom-card animated-border" data-aos="fade-up"  
-      data-aos-duration="1400"  >  
-        <img src="images/professional Summery.jpg" class="card-img-top" alt="Professional Summary" />  
-        <h4 style="color: green;">Professional Summary</h4>  
-        <p class="view-more-text">Click here to view more</p>  
-      </a>  
-
-      <!-- Card 2 -->  
-      <a href="skills.html" class="custom-card animated-border" data-aos="fade-up"  
-      data-aos-duration="1400"  style="background-color: #f1f9f1; color: purple;">  
-        <img src="images/skills.jpg" class="card-img-top" alt="Skills" />  
-        <h4 style="color: purple;">Skills</h4>  
-        <p class="view-more-text">Click here to view more</p>  
-      </a>  
-
-      <!-- Card 3 -->  
-      <a href="Hobbies.html" class="custom-card animated-border" data-aos="fade-up"  
-      data-aos-duration="1400"   style="background-color: #f1f4f9; color: purple;">  
-        <img src="images/intress.jpeg" class="card-img-top" alt="Hobbies" />  
-        <h4 style="color: brown;">Hobbies</h4>  
-        <p class="view-more-text">Click here to view more</p>  
-      </a>  
-
-      <!-- Card 4 -->  
-      <a href="education.html" class="custom-card animated-border" data-aos="fade-up"  
-      data-aos-duration="1400"   style="background-color: #fff8f1; color: purple;">  
-        <img src="images/education.jpeg" class="card-img-top" alt="Education" />  
-        <h4 style="color: red;">Education</h4>  
-        <p class="view-more-text">Click here to view more</p>  
-      </a>  
-
-    </div>  
-  </div></div>  
-    
-    
-
-
-  <div class="col-lg-9 px-0 mt-5 mb-5 text-center" 
-data-aos="fade-up"  
-      data-aos-duration="1400"   style="width: 100%;">  
-    <!-- Address Section -->  
-    <div class="about-info mb-4">  
-      <h3 class="section-title">Address</h3>  
-
-      <div class="row g-3 mt-4 justify-content-center">  
-        <!-- Permanent Address -->  
-        <div class="col-12 col-md-6 address-block" style="color: red;">  
-          <h4 class="fw-bold">Permanent Address</h4>  
-          <p>  
-            At. Sawkheda Bk, Post. Borgaon Bazar,<br />  
-            Ta. Sillod, Dist. Ch. Sambhajinagar,<br />  
-            Maharashtra, India 431113  
-          </p>  
-        </div>  
-
-        <!-- Current Address -->  
-        <div class="col-12 col-md-6 address-block" style="color: green;">  
-          <h4 class="fw-bold">Current Address</h4>  
-          <p>  
-            Near SR Nagar Police Station &amp; Nagarjuna High School,<br />  
-            East Srinivas Nagar Colony, SR Nagar,<br />  
-            Hyderabad, India 500038  
-          </p>  
-        </div>  
-      </div>  
-    </div>  
-  </div>  
-
-</div></div>
-
-  </div>  
-  </div>    <script>  
-    // Typing effect script  
-    const phrases = [  
-      "Web Developer",
-      "App Developer",  
-      "Programmer",
-    "Software Engineer", 
-      "Problem Solver",  
-      "UI/UX Enthusiast",  
-      "Lifelong Learner",  
-    ];  
-    let currentPhraseIndex = 0;  
-    let currentCharIndex = 0;  
-    const typingSpeed = 120;  
-    const erasingSpeed = 70;  
-    const delayBetweenPhrases = 2000;  
-    const typingElement = document.querySelector(".typing-effect");  
-  
-    function type() {  
-      if (currentCharIndex < phrases[currentPhraseIndex].length) {  
-        typingElement.textContent += phrases[currentPhraseIndex].charAt(currentCharIndex);  
-        currentCharIndex++;  
-        setTimeout(type, typingSpeed);  
-      } else {  
-        setTimeout(erase, delayBetweenPhrases);  
-      }  
-    }  
-  
-    function erase() {  
-      if (currentCharIndex > 0) {  
-        typingElement.textContent = phrases[currentPhraseIndex].substring(0, currentCharIndex - 1);  
-        currentCharIndex--;  
-        setTimeout(erase, erasingSpeed);  
-      } else {  
-        currentPhraseIndex++;  
-        if (currentPhraseIndex >= phrases.length) currentPhraseIndex = 0;  
-        setTimeout(type, typingSpeed + 500);  
-      }  
-    }  
-  
-    document.addEventListener("DOMContentLoaded", () => {  
-      if (phrases.length) setTimeout(type, 1000);  
-    });  
-  </script>  </section>  
-
-
-
-
-
-
-
-
+         
+         
+         
     <nav id="side-nav" class="navbar-side p-3 p-lg-3 me-lg-5 text-center" data-bs-theme="dark">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -644,7 +413,7 @@ data-aos="fade-up"
                 </a>
             </li>
           <li class="nav-item">
-                <a class="nav-link active" href="about.html">
+                <a class="nav-link" href="about.html">
                     <svg width="24" height="24">
                         <use xlink:href="#person"></use>
                     </svg>
@@ -670,7 +439,11 @@ data-aos="fade-up"
         </ul>
     </nav>
    
-   
+        
+         <br>
+         
+       <br>  
+    
  
 <!-- Footer 
 <footer class="text-center py-4" style="font-family: 'Inter', sans-serif;">
