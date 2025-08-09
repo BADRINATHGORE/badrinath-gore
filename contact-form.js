@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Send Email
     emailjs.sendForm("service_vzpsmcs", "template_hxlnzk1", form)
       .then(() => {
-        alert("Message sent successfully!");
+        alert("Message Submitted successfully!");
         sessionStorage.setItem("email_sent", "true");
         form.reset();
         resetButton();
