@@ -203,39 +203,29 @@
 
    
     @media print {
-  /* Hide non-essential UI elements */
-  .preloader,
-  #header-nav,
-  #side-nav,
-  .print-btn,
-  .navbar-brand {
-    display: none !important;
+  /* Standard 1-inch margins all around for official documents */
+  @page {
+    margin: 1in !important; /* ~25.4mm standard print margin */
   }
 
-  /* Show and style footer */
-  footer {
-    display: block !important;
+  /* Body and html with serif font for official look */
+  body, html {
     background: #fff !important;
-    color: #555 !important;
-    padding: 1rem 0 !important;
-    margin: 10px 0 !important;
-    border-top: 1px solid #888 !important; /* keep only footer top border */
-    text-align: center !important;
-    font-size: 10pt !important;
-  }
-
-  /* Page background and reset margins */
-  body,
-  html {
-    background: #fff !important;
-    margin: 10px 0 0 0 !important; /* top margin 10px */
+    margin: 0 !important;      /* margin handled by @page */
     padding: 0 !important;
     height: auto !important;
-    color: #222 !important;
-    font-family: Arial, sans-serif !important;
+    color: #000 !important;    /* pure black text */
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
   }
 
-  /* Container full width, no decoration */
+  /* Add 10px padding top inside body after page margin */
+  body {
+    padding-top: 10px !important;
+  }
+
+  /* Container fills width but no extra decoration */
   .container {
     margin: 0 !important;
     padding: 0 !important;
@@ -245,7 +235,29 @@
     border: none !important;
   }
 
-  /* Show images and graphics properly */
+  /* Hide navigation and UI elements */
+  .preloader,
+  #header-nav,
+  #side-nav,
+  .print-btn,
+  .navbar-brand {
+    display: none !important;
+  }
+
+  /* Footer styling - simple, centered, smaller text */
+  footer {
+    display: block !important;
+    background: #fff !important;
+    color: #000 !important;
+    padding: 0.5rem 0 !important;
+    margin: 20px 0 0 0 !important;  /* margin-top bigger for separation */
+    border-top: 1px solid #000 !important;
+    text-align: center !important;
+    font-size: 10pt !important;
+    font-family: "Times New Roman", Times, serif !important;
+  }
+
+  /* Images & graphics scale properly */
   img,
   svg,
   .graphic,
@@ -255,40 +267,38 @@
     height: auto !important;
   }
 
-  /* Section headings - no borders */
+  /* Section headings - bold, underlined, no color */
   section h2 {
     border: none !important;
     padding-left: 0 !important;
+    border-bottom: 1px solid #000 !important;
     margin-bottom: 0.5rem !important;
-    color: #111 !important;
+    color: #000 !important;
+    font-weight: bold !important;
+    font-size: 14pt !important;
+    font-family: "Times New Roman", Times, serif !important;
+    text-transform: uppercase !important;
   }
 
-  /* Remove horizontal lines from sections */
+  /* Section spacing with subtle border */
   section {
-    border-bottom: none !important;
+    border-bottom: 1px solid #000 !important;
     padding-bottom: 0.5rem !important;
     margin-bottom: 1rem !important;
   }
 
-  /* Links styling */
+  /* Links: standard blue with underline */
   a {
-    color: #0066cc !important;
+    color: #0000ee !important;
     text-decoration: underline !important;
   }
 
-  /* Disable animations */
+  /* Remove all animations */
   [data-aos] {
     opacity: 1 !important;
     transform: none !important;
   }
-
-  /* Text readability */
-  body {
-    font-size: 12pt !important;
-    line-height: 1.5 !important;
-  }
 }
-
 
         </style>
     
