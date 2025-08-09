@@ -202,35 +202,36 @@
 
    
     @media print {
-  /* Remove footer from hidden elements to show it */
+  /* Hide unwanted UI elements */
   .preloader,
   #header-nav,
   #side-nav,
-  /* footer, */      /* <-- removed footer here */
   .print-btn,
   .navbar-brand {
     display: none !important;
   }
-  
-  /* Style footer for print */
+
+  /* Show footer with margin */
   footer {
     display: block !important;
     background: #fff !important;
     color: #333 !important;
     padding: 1rem 0 !important;
-    border-top: 1px solid #00aaff !important;  /* skyblue border on top */
+    margin: 10px !important;   /* 10px margin all sides */
+    border-top: 1px solid #00aaff !important;  /* skyblue top border */
     text-align: center !important;
     font-size: 10pt !important;
   }
-  
-  /* The rest of your print styles */
+
+  /* Body and html full white background, no margin/padding */
   body, html {
     background: #fff !important;
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
   }
-  
+
+  /* Container full width with no margin/padding */
   .container {
     margin: 0 !important;
     padding: 0 !important;
@@ -239,39 +240,58 @@
     box-shadow: none !important;
     border: none !important;
   }
-  
+
+  /* Images and graphics visible */
   img, svg, .graphic, .decorative {
     display: inline !important;
     max-width: 100% !important;
     height: auto !important;
   }
-  
+
+  /* Section header left border with subtle glow animation */
   section h2 {
     border-left: 5px solid #00aaff !important;
     padding-left: 0.5rem !important;
+    animation: borderGlow 3s ease-in-out infinite !important;
   }
-  
+
+  /* Section bottom border */
   section {
     border-bottom: 1px solid #00aaff !important;
     padding-bottom: 0.5rem !important;
     margin-bottom: 1rem !important;
   }
-  
+
+  /* Links in skyblue and underlined */
   a {
     color: #00aaff !important;
     text-decoration: underline !important;
   }
-  
+
+  /* Disable animations */
   [data-aos] {
     opacity: 1 !important;
     transform: none !important;
   }
-  
+
+  /* Text readability */
   body {
     font-size: 12pt !important;
     line-height: 1.4 !important;
   }
-        }
+
+  /* Border glow animation keyframes */
+  @keyframes borderGlow {
+    0%, 100% {
+      border-color: #00aaff;
+      box-shadow: none;
+    }
+    50% {
+      border-color: #0099dd;
+      box-shadow: 0 0 8px #00aaff;
+    }
+  }
+    }
 
 
 
