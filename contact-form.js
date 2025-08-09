@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Send Email
     emailjs.sendForm("service_vzpsmcs", "template_hxlnzk1", form)
       .then(() => {
-        alert("Message Submitted successfully!");
+        alert("Form Submitted successfully!");
         sessionStorage.setItem("email_sent", "true");
         form.reset();
         resetButton();
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // window.location.href = "thank.html";
       })
       .catch((error) => {
-        alert("Failed to send message:\n" + JSON.stringify(error));
+        alert("Failed form not submitted:\n" + JSON.stringify(error));
         resetButton();
       });
 
