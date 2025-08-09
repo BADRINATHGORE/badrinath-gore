@@ -202,52 +202,28 @@
 
    
     @media print {
-  /* Remove forced page break */
-  body::after {
-    content: none !important;
-  }
-  
-  /* Hide non-content elements */
+  /* Remove footer from hidden elements to show it */
   .preloader,
   #header-nav,
   #side-nav,
-  footer,
+  /* footer, */      /* <-- removed footer here */
   .print-btn,
   .navbar-brand {
     display: none !important;
   }
   
-  /* Reset positioning and layout */
-  .container {
-    position: static !important;
-    left: 0 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
+  /* Style footer for print */
+  footer {
+    display: block !important;
+    background: #fff !important;
+    color: #333 !important;
+    padding: 1rem 0 !important;
+    border-top: 1px solid #00aaff !important;  /* skyblue border on top */
+    text-align: center !important;
+    font-size: 10pt !important;
   }
   
-  /* Remove decorative elements */
-  .container,
-  .extra-info {
-    background: none !important;
-    box-shadow: none !important;
-    border: none !important;
-  }
-  
-  /* Remove colored borders */
-  section h2 {
-    border-left: none !important;
-    padding-left: 0 !important;
-  }
-  
-  /* Remove section borders */
-  section {
-    border-bottom: none !important;
-    padding-bottom: 0 !important;
-    margin-bottom: 1rem !important;
-  }
-  
-  /* Reset body styles */
+  /* The rest of your print styles */
   body, html {
     background: #fff !important;
     margin: 0 !important;
@@ -255,26 +231,47 @@
     height: auto !important;
   }
   
-  /* Remove animations */
+  .container {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  img, svg, .graphic, .decorative {
+    display: inline !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  section h2 {
+    border-left: 5px solid #00aaff !important;
+    padding-left: 0.5rem !important;
+  }
+  
+  section {
+    border-bottom: 1px solid #00aaff !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  a {
+    color: #00aaff !important;
+    text-decoration: underline !important;
+  }
+  
   [data-aos] {
     opacity: 1 !important;
     transform: none !important;
   }
   
-  /* Improve text readability */
   body {
     font-size: 12pt !important;
     line-height: 1.4 !important;
   }
-  
-  /* Improve link visibility */
-  a {
-    color: #000 !important;
-    text-decoration: underline !important;
-  }
         }
-    
-
 
 
 
