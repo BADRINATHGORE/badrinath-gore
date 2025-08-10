@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
+    
+    
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badrinath Gore - Professional Summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <title>Badrinath Gore - Professional Summary</title>
     
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -35,138 +36,202 @@
     
     
     
-    
     <style>
-    /* Reset & base */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-       
-      color: #222;
-       
-    }
-
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    padding: 0;
+     
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    /* Removed position and left/right offsets to prevent horizontal scroll */
+    background: #f0f8ff;
+    padding: 0rem; /* you can adjust to e.g. 1rem if needed */
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
+  }
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1e90ff; /* dodger blue */
+  }
+  header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.3rem;
+    color: #0a47a1; /* deeper blue */
+  }
+  header p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4682b4; /* steel blue */
+  }
+  section {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #87ceeb; /* sky blue border */
+  }
+  section:last-child {
+    border-bottom: none;
+  }
+  section h2 {
+    color: #4169e1; /* royal blue */
+    font-size: 1.8rem;
+    margin-bottom: 0.7rem;
+    border-left: 6px solid #87ceeb;
+    padding-left: 10px;
+    font-weight: 700;
+  }
+  p,
+  ul {
+    font-size: 1rem;
+    color: #333;
+  }
+  ul {
+    list-style-type: square;
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+  strong {
+    color: #1e90ff;
+  }
+  /* Contact styles */
+  section.contact p {
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #555;
+  }
+  /* Hover effect on links */
+  section.contact a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  section.contact a:hover {
+    color: #104e8b;
+  }
+  /* Additional info style */
+  .extra-info {
+    background-color: #e1f0ff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #87ceeb;
+    margin-top: 1rem;
+    font-style: italic;
+    color: #4169e1;
+  }
+  /* Print button container */
+  .print-btn {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .print-btn button {
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .print-btn button:hover {
+    background-color: #104e8b;
+  }
+  /* Responsive Typography and Layout */
+  @media (max-width: 768px) {
     .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #f0f8ff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
+      padding: 1.5rem;
+      margin: 0 15px;
     }
-
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #1e90ff; /* dodger blue */
-    }
-
     header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.3rem;
-      color: #0a47a1; /* deeper blue */
+      font-size: 2.2rem;
     }
-
     header p {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #4682b4; /* steel blue */
+      font-size: 1.1rem;
     }
-
-    section {
-      margin-bottom: 2rem;
-      padding-bottom: 1rem;
-      border-bottom: 2px solid #87ceeb; /* sky blue border */
-    }
-
-    section:last-child {
-      border-bottom: none;
-    }
-
     section h2 {
-      color: #4169e1; /* royal blue */
-      font-size: 1.8rem;
-      margin-bottom: 0.7rem;
-      border-left: 6px solid #87ceeb;
-      padding-left: 10px;
-      font-weight: 700;
+      font-size: 1.5rem;
     }
-
     p,
     ul {
-      font-size: 1rem;
-      color: #333;
+      font-size: 0.95rem;
     }
-
     ul {
-      list-style-type: square;
-      padding-left: 1.2rem;
-      margin-top: 0.5rem;
+      padding-left: 1rem;
     }
-
-    ul li {
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
+  }
+  @media (max-width: 480px) {
+    .container {
+      padding: 1rem;
+      margin: 0 10px;
     }
-
-    strong {
-      color: #1e90ff;
+    header h1 {
+      font-size: 1.8rem;
     }
-
-    /* Responsive typography */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p,
-      section h2 {
-        font-size: 1.4rem;
-      }
-
-      p,
-      ul {
-        font-size: 0.9rem;
-      }
+    header p {
+      font-size: 1rem;
     }
-
-    /* Contact styles */
-    section.contact p {
-      margin-bottom: 0.3rem;
-      font-weight: 600;
-      color: #555;
+    section h2 {
+      font-size: 1.3rem;
     }
-
-    /* Hover effect on links */
-    section.contact a {
-      color: #1e90ff;
-      text-decoration: none;
-      transition: color 0.3s ease;
+    p,
+    ul {
+      font-size: 0.9rem;
     }
-
-    section.contact a:hover {
-      color: #104e8b;
+    ul {
+      padding-left: 0.8rem;
     }
-
-    /* Additional info style */
+  }
+  /* Print-specific styles */
+  @media print {
+    body {
+      background: white;
+      padding: 0;
+    }
+    .print-container {
+      box-shadow: none;
+      border-radius: 0;
+      max-width: 100%;
+    }
+    .preloader,
+    #header-nav,
+    #side-nav,
+    .print-btn,
+    .navbar-brand {
+      display: none !important;
+    }
+    .print-btn-container {
+      display: none;
+    }
+    .container {
+      padding: 1.5rem;
+    }
     .extra-info {
-      background-color: #e1f0ff;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid #87ceeb;
-      margin-top: 1rem;
-      font-style: italic;
-      color: #4169e1;
+      border: 1px solid #ccc;
     }
-  </style> 
-    
-    
+    a {
+      text-decoration: underline;
+    }
+    a:after {
+      display: none;
+    }
+  }
+</style>
+
+     
 </head>
 
 <body>
@@ -360,9 +425,10 @@
      
      
      <div data-aos="fade-up"  
-      data-aos-duration="1600"   style="padding: 20px">
+      data-aos-duration="1600"   style="padding: 25px">
 
-  <div class="container"role="main" >
+<div class="container" role="main" style="padding: 20px">
+
     <header>
       <h1>Badrinath Gore</h1>
       <p>Aspiring Full Stack Java Developer</p>
@@ -397,7 +463,7 @@
         <li>Mobile Development: Android Studio, Java for Android</li>
         <li>Web Technologies: HTML5, CSS3, JavaScript (basic)</li>
         <li>Databases: MySQL, SQLite</li>
-        <li>Tools & Platforms: Git, Visual Studio Code, Android Studio, Pycharm, Jupiter Notebook, Eclipse IDD </li>
+        <li>Tools & Platforms: Git, Visual Studio Code, Android Studio, Pycharm, Jupiter Notebook, Eclipse IDD</li>
       </ul>
     </section>
 
@@ -424,8 +490,7 @@
       <h2>Projects</h2>
       <ul>
         <li><strong>Smart College Management System Application:</strong> Developed a console-based application in Java to manage student staff records with CRUD operations.</li>
-        <li><strong>Final Year Project: A Graph Based Approch To Detect Drift In Text Data:</strong> Developed a method using graph theory to identify changes and shifts in text data over time, improving accuracy in monitoring evolving information streams.
-</li>
+        <li><strong>Final Year Project: A Graph Based Approch To Detect Drift In Text Data:</strong> Developed a method using graph theory to identify changes and shifts in text data over time, improving accuracy in monitoring evolving information streams.</li>
         <li><strong>Personal Portfolio Website:</strong> Designed a responsive website using HTML, CSS, and JavaScript to showcase projects and skills.</li>
       </ul>
     </section>
@@ -435,11 +500,9 @@
       <ul>
         <li>Android Development Basics — Completed Internship Certificate</li>
         <li>MSBTE Diploma in Information Technology</li>
-       <li>Artificial Intelligence & Machine Learning Workshop</li>
-       
-       <li> cyber security basic</li>
+        <li>Artificial Intelligence & Machine Learning Workshop</li>
+        <li>Cyber Security Basics</li>
       </ul>
-      
     </section>
 
     <section>
@@ -455,14 +518,21 @@
       <h2>Contact</h2>
       <p>Email: <a href="mailto:badrinathgore2002@gmail.com">badrinathgore2002@gmail.com</a></p>
       <p>Phone: <a href="tel:+919067168044">+91 9067168044</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/badrinath-gore-002246243" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/badrinath-gore-002246243 </a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/badrinath-gore-002246243" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/badrinath-gore-002246243</a></p>
     </section>
 
     <div class="extra-info">
       <p><strong>Note:</strong> Always eager to learn new technologies and contribute to team success. Open to full-time opportunities in software development and mobile applications.</p>
     </div>
+
+
+    <div class="print-btn">
+      <button onclick="window.print()">🖨 Print Summary</button>
+    </div>
+</div>
+    </div>
   </div>
-  </div>
+         
          
          
          
@@ -587,4 +657,3 @@
 </body>
 
 </html>
-
