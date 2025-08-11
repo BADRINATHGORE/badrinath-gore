@@ -18,6 +18,8 @@ This is main CSS file that contains custom style rules used in this template
 
 /** Base Styles
 --------------------------------------------------------------*/
+
+ 
 :root {
   --primary-color: #B99CEE;
   --secondary-color: ;
@@ -186,7 +188,6 @@ svg.social-icon {
 svg.social-icon:hover {
   color: var(--primary-color);
 }
-
 
 /* bootstrap button override
     --------------------------------------------------------------*/
@@ -601,8 +602,6 @@ button.filter-button:hover {
   }
 }
 
- 
- 
   #he .position-absolute img {
     position: relative;
     height: 450px;
@@ -611,3 +610,18 @@ button.filter-button:hover {
     bottom: -450px;
   }
  
+
+.logo-img {
+  margin-left: 0; /* Default for mobile/tablet */
+}
+
+@media (min-width: 1025px) {
+  .logo-img {
+    margin-left: -110px; /* Apply only on larger screens */
+  }
+}
+@media (min-width: 1025px) and (max-width: 1920px) {
+  .logo-img {
+    margin-left: -110px;
+  }
+}
