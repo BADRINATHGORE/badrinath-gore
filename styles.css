@@ -222,6 +222,7 @@ svg.social-icon:hover {
   background: #ac87f0;
   border: none;
   color: white;
+  border-radius: 10px;
   cursor: pointer;
   outline: none;
   overflow: hidden;
