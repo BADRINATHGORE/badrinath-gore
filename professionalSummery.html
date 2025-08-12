@@ -127,7 +127,7 @@
     background-color: #e1f0ff;
     padding: 15px;
     border-radius: 8px;
-    border: 1px solid #87ceeb;
+    border: 2px solid #87ceeb;
     margin-top: 1rem;
     font-style: italic;
     color: #4169e1;
@@ -528,22 +528,19 @@
 
 
     <div class="print-btn">
-  <button id="printButton">🖨 Print Summary</button>
-</div>
+     <button onclick="handlePrint()">🖨 Print Summary</button>
 
 <script>
-document.getElementById("printButton").addEventListener("click", function () {
-  if (typeof window.print === "function") {
-    try {
+  function handlePrint() {
+    if (typeof window.print === 'function') {
       window.print();
-    } catch (e) {
-      alert("Printing is not supported in this browser. You can take a screenshot instead.");
+    } else {
+      alert('Printing is not supported on this device or browser.');
     }
-  } else {
-    alert("Your browser or device does not support printing. Please try on a desktop browser.");
   }
-});
 </script>
+
+    </div>
 </div>
     </div>
   </div>
