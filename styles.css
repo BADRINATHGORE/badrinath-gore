@@ -491,6 +491,7 @@ a.nav-link:hover {
 
 .image-zoom img {
   transition: transform 0.3s ease-out;
+  
 }
 
 .image-zoom:hover img {
