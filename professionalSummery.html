@@ -528,8 +528,22 @@
 
 
     <div class="print-btn">
-      <button onclick="window.print()">🖨 Print Summary</button>
-    </div>
+  <button id="printButton">🖨 Print Summary</button>
+</div>
+
+<script>
+document.getElementById("printButton").addEventListener("click", function () {
+  if (typeof window.print === "function") {
+    try {
+      window.print();
+    } catch (e) {
+      alert("Printing is not supported in this browser. You can take a screenshot instead.");
+    }
+  } else {
+    alert("Your browser or device does not support printing. Please try on a desktop browser.");
+  }
+});
+</script>
 </div>
     </div>
   </div>
