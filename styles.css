@@ -449,6 +449,7 @@ a.nav-link:hover {
     right: 0;
     width: 100%;
     z-index: 1000;
+    height: 60px;
     margin: 0px;
     border-radius: 0px;
     display: flex;
@@ -619,11 +620,11 @@ button.filter-button:hover {
 
 @media (min-width: 1025px) {
   .logo-img {
-    margin-left: -110px; /* Apply only on larger screens */
+    margin-left: -115px; /* Apply only on larger screens */
   }
 }
 @media (min-width: 1025px) and (max-width: 1920px) {
   .logo-img {
-    margin-left: -110px;
+    margin-left: -150px;
   }
 }
