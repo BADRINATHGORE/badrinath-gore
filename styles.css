@@ -434,7 +434,7 @@ a.nav-link:hover {
   nav.navbar-side {
     position: fixed;
     top: 50%;
-    right: -10;
+    right: 0;
     transform: translateY(-50%);
     background: rgb(255 255 255 / 30%);
     border-radius: 20px;
@@ -442,20 +442,19 @@ a.nav-link:hover {
 }
 
 @media only screen and (max-width: 991px) {
- 
-
   nav.navbar-side {
-  background: #5b5377;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1000;
-  border-radius: 0;
-  display: flex;
-  padding: 0px;
-  justify-content: space-evenly;
-}
+    background: #5b5377;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    margin: 0px;
+    border-radius: 0px;
+    display: flex;
+    padding: 0px;
+    justify-content: space-evenly;
+  }
 
   .navbar-nav {
     flex-direction: row;
@@ -620,11 +619,11 @@ button.filter-button:hover {
 
 @media (min-width: 1025px) {
   .logo-img {
-    margin-left: -115px; /* Apply only on larger screens */
+    margin-left: -110px; /* Apply only on larger screens */
   }
 }
 @media (min-width: 1025px) and (max-width: 1920px) {
   .logo-img {
-    margin-left: -150px;
+    margin-left: -110px;
   }
 }
