@@ -95,15 +95,14 @@ This is main CSS file that contains custom style rules used in this template
      cursor: pointer;
      transition: all 0.3s ease-out;
  }
- 
- .nav-container {
+ /* .nav-container {
      justify-content: space-between;
      align-items: center;
      max-width: 20000px;
      width: 100%;
      margin: right;
      padding: 0 30px;
- }
+ } */
  
  a:hover {
      text-decoration: none;
