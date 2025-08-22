@@ -588,7 +588,7 @@ Section Styles
  #he .position-absolute img {
      position: relative;
      height: 450px;
-     left: -110px;
+     left: -70px;
      width: -120px;
      bottom: -450px;
  }
@@ -611,3 +611,4 @@ Section Styles
      }
 
  }
+
