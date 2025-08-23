@@ -600,7 +600,7 @@ Section Styles
  
  @media (min-width: 1025px) {
      .logo-img {
-         margin-left: -80px;
+         margin-left: -110px;
          /* Apply only on larger screens */
      }
  }
@@ -611,4 +611,5 @@ Section Styles
      }
 
  }
+
 
