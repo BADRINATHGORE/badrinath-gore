@@ -5,20 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Badrinath Gore - Skills</title>
-    
-    
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-   <link rel="icon" href="images/badriLogo1.png" sizes="32x32" type="image/x-icon">
- 
+
+    <link rel="icon" href="images/badriLogo1.png" sizes="32x32" type="image/x-icon">
+
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
     <!--Bootstrap ================================================== -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <!--vendor css ================================================== -->
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
@@ -32,271 +31,269 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    
-    
-    
-    
+
+
+
+
     <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-       
-      margin: 0;
-      
-      color: #222;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: #222;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1e90ff;
+            margin-bottom: 1rem;
+        }
+        
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Category Section */
+        
+        section.skill-category {
+            margin-bottom: 3rem;
+        }
+        
+        section.skill-category h2 {
+            border-left: 6px solid #87ceeb;
+            padding-left: 12px;
+            color: #4169e1;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        /* Grid of cards */
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+        }
+        /* Individual card */
+        
+        .skill-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgb(0 0 0 / 0.2);
+        }
+        /* Skill image */
+        
+        .skill-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            border: 3px solid white;
+            border-radius: 50%;
+            background: rgba(255 255 255 / 0.2);
+            padding: 5px;
+        }
+        /* Different colors for cards - frontend */
+        /* Feel free to change colors */
+        
+        .frontend .skill-card:nth-child(1) {
+            background: #6a91f5;
+            border: 3px solid #405ad6;
+        }
+        
+        .frontend .skill-card:nth-child(2) {
+            background: #59c0ff;
+            border: 3px solid #2890e3;
+            color: #003d66;
+        }
+        
+        .frontend .skill-card:nth-child(3) {
+            background: #f063a4;
+            border: 3px solid #cc2e84;
+        }
+        
+        .frontend .skill-card:nth-child(4) {
+            background: #ff8c42;
+            border: 3px solid #e07b00;
+        }
+        
+        .frontend .skill-card:nth-child(5) {
+            background: #563d7c;
+            border: 3px solid #462e5a;
+        }
+        /* backend */
+        
+        .backend .skill-card:nth-child(1) {
+            background: #45b6af;
+            border: 3px solid #2f827d;
+        }
+        
+        .backend .skill-card:nth-child(2) {
+            background: #7ac857;
+            border: 3px solid #4a7c24;
+            color: #0a2f00;
+        }
+        
+        .backend .skill-card:nth-child(3) {
+            background: #ef7c8e;
+            border: 3px solid #bc3e51;
+        }
+        
+        .backend .skill-card:nth-child(4) {
+            background: #f9a825;
+            border: 3px solid #b27c00;
+            color: #3e2b00;
+        }
+        
+        .backend .skill-card:nth-child(5) {
+            background: #795548;
+            border: 3px solid #563d2f;
+        }
+        
+        .backend .skill-card:nth-child(6) {
+            background: #607d8b;
+            border: 3px solid #455a64;
+        }
+        /* database */
+        
+        .database .skill-card:nth-child(1) {
+            background: #ff9f1c;
+            border: 3px solid #c37000;
+            color: #3e2b00;
+        }
+        
+        .database .skill-card:nth-child(2) {
+            background: #0077c2;
+            border: 3px solid #004974;
+        }
+        
+        .database .skill-card:nth-child(3) {
+            background: #ff5c8a;
+            border: 3px solid #b02f56;
+        }
+        /* tools */
+        
+        .tools .skill-card:nth-child(1) {
+            background: #4d79ff;
+            border: 3px solid #2f4ddb;
+        }
+        
+        .tools .skill-card:nth-child(2) {
+            background: #24292e;
+            border: 3px solid #121417;
+        }
+        
+        .tools .skill-card:nth-child(3) {
+            background: #0db7ed;
+            border: 3px solid #087c9b;
+            color: #003d66;
+        }
+        
+        .tools .skill-card:nth-child(4) {
+            background: #ff9900;
+            border: 3px solid #b26a00;
+            color: #3e2b00;
+        }
+        
+        .tools .skill-card:nth-child(5) {
+            background: #f47c3c;
+            border: 3px solid #b0581e;
+        }
+        
+        .tools .skill-card:nth-child(6) {
+            background: #ffca28;
+            border: 3px solid #b28f00;
+            color: #3e2b00;
+        }
+        
+        .tools .skill-card:nth-child(7) {
+            background: #61affe;
+            border: 3px solid #2979c8;
+            color: #003d66;
+        }
+        /* soft skills */
+        
+        .soft-skills .skill-card:nth-child(1) {
+            background: #4a90e2;
+            border: 3px solid #2d5d9f;
+        }
+        
+        .soft-skills .skill-card:nth-child(2) {
+            background: #f07c82;
+            border: 3px solid #a34b4f;
+            color: #400026;
+        }
+        
+        .soft-skills .skill-card:nth-child(3) {
+            background: #ffb100;
+            border: 3px solid #b27c00;
+            color: #4a4000;
+        }
+        
+        .soft-skills .skill-card:nth-child(4) {
+            background: #7ed6df;
+            border: 3px solid #439698;
+            color: #144227;
+        }
+        /* code editors & IDEs */
+        
+        .code-editors .skill-card:nth-child(1) {
+            background: #007acc;
+            border: 3px solid #005f99;
+        }
+        
+        .code-editors .skill-card:nth-child(2) {
+            background: #3ddc84;
+            border: 3px solid #2b7a59;
+            color: #003d00;
+        }
+        
+        .code-editors .skill-card:nth-child(3) {
+            background: #d13135;
+            border: 3px solid #8f1e21;
+        }
+        
+        .code-editors .skill-card:nth-child(4) {
+            background: #0078d7;
+            border: 3px solid #004e8c;
+        }
+        
+        .code-editors .skill-card:nth-child(5) {
+            background: #2d2d30;
+            border: 3px solid #1a1a1a;
+        }
+        
+        .code-editors .skill-card:nth-child(6) {
+            background: #ff4b2b;
+            border: 3px solid #b2371f;
+        }
+        
+        .code-editors .skill-card:nth-child(7) {
+            background: #f6ad55;
+            border: 3px solid #a77434;
+            color: #3e2b00;
+        }
+        /* Responsive */
+        
+        @media (max-width: 480px) {
+            .skill-card img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
 
-    h1 {
-      text-align: center;
-      color: #1e90ff;
-      margin-bottom: 1rem;
-    }
-
-    .skills-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Category Section */
-    section.skill-category {
-      margin-bottom: 3rem;
-    }
-
-    section.skill-category h2 {
-      border-left: 6px solid #87ceeb;
-      padding-left: 12px;
-      color: #4169e1;
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-    }
-
-    /* Grid of cards */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 20px;
-    }
-
-    /* Individual card */
-    .skill-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 12px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-      text-align: center;
-      font-weight: 600;
-      color: white;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgb(0 0 0 / 0.2);
-    }
-
-    /* Skill image */
-    .skill-card img {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-      margin-bottom: 10px;
-      border: 3px solid white;
-      border-radius: 50%;
-      background: rgba(255 255 255 / 0.2);
-      padding: 5px;
-    }
-
-    /* Different colors for cards - frontend */
-    /* Feel free to change colors */
-    .frontend .skill-card:nth-child(1) {
-      background: #6a91f5;
-      border: 3px solid #405ad6;
-    }
-
-    .frontend .skill-card:nth-child(2) {
-      background: #59c0ff;
-      border: 3px solid #2890e3;
-      color: #003d66;
-    }
-
-    .frontend .skill-card:nth-child(3) {
-      background: #f063a4;
-      border: 3px solid #cc2e84;
-    }
-
-    .frontend .skill-card:nth-child(4) {
-      background: #ff8c42;
-      border: 3px solid #e07b00;
-    }
-
-    .frontend .skill-card:nth-child(5) {
-      background: #563d7c;
-      border: 3px solid #462e5a;
-    }
-
-    /* backend */
-    .backend .skill-card:nth-child(1) {
-      background: #45b6af;
-      border: 3px solid #2f827d;
-    }
-
-    .backend .skill-card:nth-child(2) {
-      background: #7ac857;
-      border: 3px solid #4a7c24;
-      color: #0a2f00;
-    }
-
-    .backend .skill-card:nth-child(3) {
-      background: #ef7c8e;
-      border: 3px solid #bc3e51;
-    }
-
-    .backend .skill-card:nth-child(4) {
-      background: #f9a825;
-      border: 3px solid #b27c00;
-      color: #3e2b00;
-    }
-
-    .backend .skill-card:nth-child(5) {
-      background: #795548;
-      border: 3px solid #563d2f;
-    }
-
-    .backend .skill-card:nth-child(6) {
-      background: #607d8b;
-      border: 3px solid #455a64;
-    }
-
-    /* database */
-    .database .skill-card:nth-child(1) {
-      background: #ff9f1c;
-      border: 3px solid #c37000;
-      color: #3e2b00;
-    }
-
-    .database .skill-card:nth-child(2) {
-      background: #0077c2;
-      border: 3px solid #004974;
-    }
-
-    .database .skill-card:nth-child(3) {
-      background: #ff5c8a;
-      border: 3px solid #b02f56;
-    }
-
-    /* tools */
-    .tools .skill-card:nth-child(1) {
-      background: #4d79ff;
-      border: 3px solid #2f4ddb;
-    }
-
-    .tools .skill-card:nth-child(2) {
-      background: #24292e;
-      border: 3px solid #121417;
-    }
-
-    .tools .skill-card:nth-child(3) {
-      background: #0db7ed;
-      border: 3px solid #087c9b;
-      color: #003d66;
-    }
-
-    .tools .skill-card:nth-child(4) {
-      background: #ff9900;
-      border: 3px solid #b26a00;
-      color: #3e2b00;
-    }
-
-    .tools .skill-card:nth-child(5) {
-      background: #f47c3c;
-      border: 3px solid #b0581e;
-    }
-
-    .tools .skill-card:nth-child(6) {
-      background: #ffca28;
-      border: 3px solid #b28f00;
-      color: #3e2b00;
-    }
-
-    .tools .skill-card:nth-child(7) {
-      background: #61affe;
-      border: 3px solid #2979c8;
-      color: #003d66;
-    }
-
-    /* soft skills */
-    .soft-skills .skill-card:nth-child(1) {
-      background: #4a90e2;
-      border: 3px solid #2d5d9f;
-    }
-
-    .soft-skills .skill-card:nth-child(2) {
-      background: #f07c82;
-      border: 3px solid #a34b4f;
-      color: #400026;
-    }
-
-    .soft-skills .skill-card:nth-child(3) {
-      background: #ffb100;
-      border: 3px solid #b27c00;
-      color: #4a4000;
-    }
-
-    .soft-skills .skill-card:nth-child(4) {
-      background: #7ed6df;
-      border: 3px solid #439698;
-      color: #144227;
-    }
-
-    /* code editors & IDEs */
-    .code-editors .skill-card:nth-child(1) {
-      background: #007acc;
-      border: 3px solid #005f99;
-    }
-
-    .code-editors .skill-card:nth-child(2) {
-      background: #3ddc84;
-      border: 3px solid #2b7a59;
-      color: #003d00;
-    }
-
-    .code-editors .skill-card:nth-child(3) {
-      background: #d13135;
-      border: 3px solid #8f1e21;
-    }
-
-    .code-editors .skill-card:nth-child(4) {
-      background: #0078d7;
-      border: 3px solid #004e8c;
-    }
-
-    .code-editors .skill-card:nth-child(5) {
-      background: #2d2d30;
-      border: 3px solid #1a1a1a;
-    }
-
-    .code-editors .skill-card:nth-child(6) {
-      background: #ff4b2b;
-      border: 3px solid #b2371f;
-    }
-
-    .code-editors .skill-card:nth-child(7) {
-      background: #f6ad55;
-      border: 3px solid #a77434;
-      color: #3e2b00;
-    }
-
-    /* Responsive */
-    @media (max-width: 480px) {
-      .skill-card img {
-        width: 50px;
-        height: 50px;
-      }
-    }
-  </style>
-    
 </head>
 
 <body>
@@ -379,40 +376,51 @@
 
     <nav id="header-nav" class="navbar navbar-expand-lg py-4 z-1" data-bs-theme="dark">
         <div class="container-fluid padding-side">
-            <a class="navbar-brand" href="index.html"><img src="images/badriLogo.png" alt="logo"style="margin-left: -55px;"></a>
+            <a class="navbar-brand" href="index.html"><img src="images/badriLogo.png" alt="logo" style="margin-left: -45px;"></a>
 
-            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel"style="background-color: #1e1128">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: #1e1128">
                 <div class="offcanvas-header">
                     <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5> -->
-                    <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
+                    <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body justify-content-end">
                     <div class="d-lg-none">
-                              <img src="images/badrinath.png" alt="img" class="img-fluid multi-border">
+                        <img src="images/badrinath.png" alt="img" class="img-fluid multi-border">
 
-<style>
-.multi-border {
-    border: 5px solid;
-    border-radius: 10px; /* optional rounded corners */
-    padding: 5px; /* space inside border */
-    animation: borderColorChange 3s linear infinite;
-}
-
-@keyframes borderColorChange {
-    0%   { border-color: red; }
-    20%  { border-color: orange; }
-    40%  { border-color: yellow; }
-    60%  { border-color: green; }
-    80%  { border-color: white; }
-    100% { border-color: purple; }
-}
-</style>
+                        <style>
+                            .multi-border {
+                                border: 5px solid;
+                                border-radius: 10px;
+                                /* optional rounded corners */
+                                padding: 5px;
+                                /* space inside border */
+                                animation: borderColorChange 3s linear infinite;
+                            }
+                            
+                            @keyframes borderColorChange {
+                                0% {
+                                    border-color: red;
+                                }
+                                20% {
+                                    border-color: orange;
+                                }
+                                40% {
+                                    border-color: yellow;
+                                }
+                                60% {
+                                    border-color: green;
+                                }
+                                80% {
+                                    border-color: white;
+                                }
+                                100% {
+                                    border-color: purple;
+                                }
+                            }
+                        </style>
                         <div class="text-center">
                             <a href="contact.html" class="btn button  text-white mt-4 position-relative pe-5">
                                 <span> Contact ME </span>
@@ -424,57 +432,57 @@
                             </a>
                         </div>
                     </div>
-                    
-                   
-                  <ul class="d-flex list-unstyled justify-content-center mt-4">
 
-                
-<li class="ms-4">
-  <a class="nav-link" href="https://github.com/BADRINATHGORE"  rel="noopener noreferrer">
-    <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+
+                    <ul class="d-flex list-unstyled justify-content-center mt-4">
+
+
+                        <li class="ms-4">
+                            <a class="nav-link" href="https://github.com/BADRINATHGORE" rel="noopener noreferrer">
+                                <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 0.2975C5.3725 0.2975 0 5.67 0 12.2975C0 17.5925 3.43875 22.0925 8.205 23.6825C8.805 23.7975 9.0225 23.4375 9.0225 23.1225C9.0225 22.8375 9.01 22.1325 9.005 21.1525C5.6725 21.8975 4.9675 19.5925 4.9675 19.5925C4.4225 18.1775 3.6325 17.7975 3.6325 17.7975C2.545 17.0825 3.7175 17.0975 3.7175 17.0975C4.9225 17.18 5.5475 18.3375 5.5475 18.3375C6.6175 20.1225 8.3625 19.5925 9.05 19.2825C9.16 18.5125 9.4675 17.9725 9.81 17.6775C7.15 17.3825 4.345 16.3125 4.345 11.5925C4.345 10.2825 4.795 9.2125 5.55 8.3725C5.42 8.0775 5.045 6.8525 5.67 5.1325C5.67 5.1325 6.6525 4.8175 9 6.3975C9.93 6.1275 10.92 6 11.91 6C12.9 6 13.89 6.1275 14.82 6.3975C17.16 4.8175 18.135 5.1325 18.135 5.1325C18.765 6.8525 18.39 8.0775 18.26 8.3725C19.02 9.2125 19.465 10.2825 19.465 11.5925C19.465 16.325 16.655 17.375 13.995 17.665C14.43 18.045 14.82 18.7875 14.82 19.8775C14.82 21.4575 14.805 22.7725 14.805 23.1225C14.805 23.4425 15.015 23.8075 15.63 23.6825C20.39 22.0875 23.82 17.5875 23.82 12.2975C23.82 5.67 18.45 0.2975 12 0.2975Z"/>
     </svg>
-  </a>
-</li>
-             
+                            </a>
+                        </li>
 
-    <li class="ms-4">
-        <a class="nav-link" href="https://www.linkedin.com/in/badrinath-gore-002246243" >
-            <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#0077B5" xmlns="http://www.w3.org/2000/svg">
+
+                        <li class="ms-4">
+                            <a class="nav-link" href="https://www.linkedin.com/in/badrinath-gore-002246243">
+                                <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#0077B5" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4v12h-4V8zm7.5 0h3.5v1.7h.05c.5-.95 1.75-1.95 3.6-1.95 3.85 0 4.56 2.55 4.56 5.85v6.4h-4v-5.67c0-1.35-.02-3.08-1.88-3.08-1.88 0-2.17 1.47-2.17 2.98v5.77h-4V8z"/>
             </svg>
-        </a>
-    </li>
+                            </a>
+                        </li>
 
-     <li class="ms-4">
-          <a class="nav-link" href="https://x.com/BadrinathGore" >
-        <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="skyblue" xmlns="http://www.w3.org/2000/svg">
+                        <li class="ms-4">
+                            <a class="nav-link" href="https://x.com/BadrinathGore">
+                                <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="skyblue" xmlns="http://www.w3.org/2000/svg">
             <path d="M14.85 10.68L22.2 2H20.13L13.97 9.26L9.06 2H2L9.71 12.86L2 22H4.07L10.57 14.34L15.78 22H23L14.85 10.68Z" />
         </svg>
-    </a>
-    </li>
-         <li class="ms-4">
-        <a class="nav-link" href="https://www.facebook.com/badrinath.gore.94"  >
-            <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#3b5998" xmlns="http://www.w3.org/2000/svg">
+                            </a>
+                        </li>
+                        <li class="ms-4">
+                            <a class="nav-link" href="https://www.facebook.com/badrinath.gore.94">
+                                <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#3b5998" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22 12C22 6.48 17.52 2 12 2S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H8.07v-2.89h2.37V9.76c0-2.34 1.39-3.64 3.52-3.64 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.17 0-1.53.73-1.53 1.48v1.78h2.61l-.42 2.89h-2.19v6.99C18.34 21.13 22 17 22 12z"/>
             </svg>
-        </a>
-    </li> 
+                            </a>
+                        </li>
 
-    
-    <li class="ms-4">
-        <a class="nav-link" href="https://www.instagram.com/badrigore_2002">
-            <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#E1306C" xmlns="http://www.w3.org/2000/svg">
+
+                        <li class="ms-4">
+                            <a class="nav-link" href="https://www.instagram.com/badrigore_2002">
+                                <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#E1306C" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8.75 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/>
             </svg>
-        </a>
-    </li>
+                            </a>
+                        </li>
 
 
-  </ul>
+                    </ul>
                     <br>
                     <br>
-                    
+
                     <br>
                     <br>
 
@@ -483,202 +491,162 @@
         </div>
     </nav>
 
-     
-     
-     
-     
-     <div style="padding: 20px">
-     
-     <div data-aos="fade-up"  
-      data-aos-duration="1400"  >
 
-  <h1>Technical Skills</h1>
-  
-  </div>
 
-  <div class="skills-container" data-aos="fade-up"  
-      data-aos-duration="1400">
 
-    <section class="skill-category frontend"data-aos="fade-up"  
-      data-aos-duration="1400"  >
-      <h2>Frontend</h2>
-      <div class="cards">
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" />
-          HTML5
-        </div>
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS" />
-          CSS
-        </div>
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" />
-          JavaScript
-        </div>
-        <div class="skill-card" >
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap" />
-          Bootstrap
-        </div>
-        <div class="skill-card" >
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" />
-          React
-        </div>
-      </div>
-    </section>
 
-    <section class="skill-category backend"data-aos="fade-up"  
-      data-aos-duration="1400">
-      <h2>Backend</h2>
-      <div class="cards">
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Core Java" />
-          Core Java
-        </div>
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Advanced Java" />
-          Advanced Java
-        </div>
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP" />
-          PHP
-        </div>
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C" />
-          C
-        </div>
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++" />
-          C++
-        </div>
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" />
-          Python
-        </div>
-      </div>
-    </section>
+    <div style="padding: 20px">
 
-    <section class="skill-category database" data-aos="fade-up"  
-      data-aos-duration="1400">
-      <h2>Database</h2>
-      <div class="cards">
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="MySQL" />
-          MySQL
-        </div>
-        <div class="skill-card">
-          <img src="https://img.favpng.com/16/7/14/oracle-database-oracle-corporation-postgresql-relational-database-management-system-png-favpng-793pMY7Hfi33KLVgtGyRAqk7k.jpg" alt="Oracle" style="background:rgb(30, 117, 135); border-radius: 10px; padding:5px;" />
-          Oracle
-        </div>
-        <div class="skill-card">
-          <img src="https://vectorseek.com/wp-content/uploads/2022/02/SQLite-Logo-Vector-730x730.jpg" alt="SQLite" />
-          SQLite
-        </div>
-      </div>
-    </section>
+        <div data-aos="fade-up" data-aos-duration="1400">
 
-    <section class="skill-category tools" data-aos="fade-up"  
-      data-aos-duration="1400">
-      <h2>Tools & Platforms</h2>
-      <div class="cards">
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" />
-          Git
-        </div>
-        <div class="skill-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
-          GitHub
-        </div>
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker" />
-          Docker
-        </div>
-        <div class="skill-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" style="background:white; border-radius: 10px; padding:5px;" />
-          AWS
-        </div>
-        <div class="skill-card">
-          <img src="https://files.readme.io/b8dc1d7-small-Render_logo_-_Black_1.jpg" alt="Render" />
-          Render
-        </div>
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg" alt="Firebase" />
-          Firebase
-        </div>
-        <div class="skill-card">
-          <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman" />
-          Postman
-        </div>
-      </div>
-    </section>
+            <h1>Technical Skills</h1>
 
-    <section class="skill-category code-editors"data-aos="fade-up"  
-      data-aos-duration="1400">
-      <h2>Code Editors & IDE's</h2>
-      <div class="cards">
-        <div class="skill-card">
-          <img src="https://www.razorman.net/wp-content/uploads/2023/11/image-214.png" alt="Android Studio" />
-          Android Studio
         </div>
-        <div class="skill-card">
-          <img src="https://i.pinimg.com/originals/d2/21/0b/d2210b1181d3a94156e494b6e42aa78a.png" alt="Turbo C" style="background:white; border-radius: 10px; padding:5px;" />
-          Turbo C
+
+        <div class="skills-container" data-aos="fade-up" data-aos-duration="1400">
+
+            <section class="skill-category frontend" data-aos="fade-up" data-aos-duration="1400">
+                <h2>Frontend</h2>
+                <div class="cards">
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" /> HTML5
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS" /> CSS
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" /> JavaScript
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap" /> Bootstrap
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" /> React
+                    </div>
+                </div>
+            </section>
+
+            <section class="skill-category backend" data-aos="fade-up" data-aos-duration="1400">
+                <h2>Backend</h2>
+                <div class="cards">
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Core Java" /> Core Java
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Advanced Java" /> Advanced Java
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP" /> PHP
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C" /> C
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++" /> C++
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" /> Python
+                    </div>
+                </div>
+            </section>
+
+            <section class="skill-category database" data-aos="fade-up" data-aos-duration="1400">
+                <h2>Database</h2>
+                <div class="cards">
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="MySQL" /> MySQL
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://img.favpng.com/16/7/14/oracle-database-oracle-corporation-postgresql-relational-database-management-system-png-favpng-793pMY7Hfi33KLVgtGyRAqk7k.jpg" alt="Oracle" style="background:rgb(30, 117, 135); border-radius: 10px; padding:5px;"
+                        /> Oracle
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://vectorseek.com/wp-content/uploads/2022/02/SQLite-Logo-Vector-730x730.jpg" alt="SQLite" /> SQLite
+                    </div>
+                </div>
+            </section>
+
+            <section class="skill-category tools" data-aos="fade-up" data-aos-duration="1400">
+                <h2>Tools & Platforms</h2>
+                <div class="cards">
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" /> Git
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" /> GitHub
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker" /> Docker
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" style="background:white; border-radius: 10px; padding:5px;" /> AWS
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://files.readme.io/b8dc1d7-small-Render_logo_-_Black_1.jpg" alt="Render" /> Render
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg" alt="Firebase" /> Firebase
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman" /> Postman
+                    </div>
+                </div>
+            </section>
+
+            <section class="skill-category code-editors" data-aos="fade-up" data-aos-duration="1400">
+                <h2>Code Editors & IDE's</h2>
+                <div class="cards">
+                    <div class="skill-card">
+                        <img src="https://www.razorman.net/wp-content/uploads/2023/11/image-214.png" alt="Android Studio" /> Android Studio
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://i.pinimg.com/originals/d2/21/0b/d2210b1181d3a94156e494b6e42aa78a.png" alt="Turbo C" style="background:white; border-radius: 10px; padding:5px;" /> Turbo C
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="VS Code" /> VS Code
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://miro.medium.com/v2/resize:fit:540/1*nNTk-j2uaKhxyj3GXsYNdg.png" alt="Eclipse IDE" /> Eclipse IDE
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://miro.medium.com/v2/resize:fit:540/1*nNTk-j2uaKhxyj3GXsYNdg.png" alt="IntelliJ IDEA" /> IntelliJ IDEA
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/PyCharm_Icon.svg" alt="PyCharm" /> PyCharm
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://logowik.com/content/uploads/images/sublime-text3125.jpg" alt="Sublime Text" /> Sublime Text
+                    </div>
+                </div>
+            </section>
+
+            <div data-aos="fade-up" data-aos-duration="1400">
+                <h1>Soft Skills</h1>
+            </div>
+
+            <section class="skill-category soft-skills" data-aos="fade-up" data-aos-duration="1400">
+                <h2>Soft Skills</h2>
+                <div class="cards">
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3079/3079111.png" alt="Communication" /> Communication
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968713.png" alt="Teamwork" /> Teamwork
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="Time Management" /> Time Management
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Problem Solving" /> Problem Solving
+                    </div>
+                </div>
+            </section>
+
         </div>
-        <div class="skill-card">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="VS Code" />
-          VS Code
-        </div>
-        <div class="skill-card">
-          <img src="https://miro.medium.com/v2/resize:fit:540/1*nNTk-j2uaKhxyj3GXsYNdg.png" alt="Eclipse IDE" />
-          Eclipse IDE
-        </div>
-        <div class="skill-card">
-          <img src="https://miro.medium.com/v2/resize:fit:540/1*nNTk-j2uaKhxyj3GXsYNdg.png" alt="IntelliJ IDEA" />
-          IntelliJ IDEA
-        </div>
-        <div class="skill-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/PyCharm_Icon.svg" alt="PyCharm" />
-          PyCharm
-        </div>
-        <div class="skill-card">
-          <img src="https://logowik.com/content/uploads/images/sublime-text3125.jpg" alt="Sublime Text" />
-          Sublime Text
-        </div>
-      </div>
-    </section>
-    
-    <div data-aos="fade-up"  
-      data-aos-duration="1400">
-    <h1>Soft Skills</h1>
+
     </div>
 
-    <section class="skill-category soft-skills"data-aos="fade-up"  
-      data-aos-duration="1400">
-      <h2>Soft Skills</h2>
-      <div class="cards">
-        <div class="skill-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/3079/3079111.png" alt="Communication" />
-          Communication
-        </div>
-        <div class="skill-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968713.png" alt="Teamwork" />
-          Teamwork
-        </div>
-        <div class="skill-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="Time Management" />
-          Time Management
-        </div>
-        <div class="skill-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Problem Solving" />
-          Problem Solving
-        </div>
-      </div>
-    </section>
 
-  </div>
-
-         </div>
-         
-               
     <nav id="side-nav" class="navbar-side p-2 p-lg-2 me-lg-2 text-center" data-bs-theme="dark">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -688,7 +656,7 @@
                     </svg>
                 </a>
             </li>
-          <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="about.html">
                     <svg width="34" height="34">
                         <use xlink:href="#person"></use>
@@ -702,8 +670,8 @@
                     </svg>
                 </a>
             </li>
-             
-                </a>
+
+            </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="contact.html">
@@ -711,80 +679,109 @@
                         <use xlink:href="#contact"></use>
                     </svg>
                 </a>
-            </li> 
+            </li>
         </ul>
     </nav>
-   
-        
-         <br>
-         
-       <br>  
-    
- <!-- Footer 
+
+
+    <br>
+
+    <br>
+
+    <!-- Footer 
 <footer class="text-center py-4" style="font-family: 'Inter', sans-serif;">
 --->
     <footer class="text-center py-4" style="font-family: 'Inter', sans-serif;">
-     
-     <p class="fs-6 animated-footer-text" data-aos="fade-up" data-aos-duration="1600" style="margin-top: -50px; line-height: 1.6">
-      
-      <!-- Line 1 -->
-    <span style="color: #87CEEB;">Designing</span>       <!-- Sky Blue -->
-    <span style="color: #d495df;">& Developing</span>    <!-- Purple -->
-    <span style="color: #FF6B6B;">with passion</span>    <!-- Light Red -->
-    <span style="color: #FFFFFF; text-shadow: 0 0 2px rgba(0,0,0,0.3);">and precision.</span><br>  <!-- White -->
 
-    <!-- Line 2 -->
-    <span style="color: #d495df;">Copyright ©</span>              <!-- Purple -->
-    <span id="year" style="color: #87CEEB;"></span>      <!-- Sky Blue -->
-    <span style="color: #ec6767;">Badrinath Gore.</span> <!-- Light Red -->
-    <span style="color: #FFFFFF; text-shadow: 0 0 2px rgba(0,0,0,0.3);">All Rights Reserved.</span>  <!-- White -->
-  </p>
-</footer>
+        <p class="fs-6 animated-footer-text" data-aos="fade-up" data-aos-duration="1600" style="margin-top: -50px; line-height: 1.6">
 
-<!-- Auto-update Year -->
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+            <!-- Line 1 -->
+            <span style="color: #87CEEB;">Designing</span>
+            <!-- Sky Blue -->
+            <span style="color: #d495df;">& Developing</span>
+            <!-- Purple -->
+            <span style="color: #FF6B6B;">with passion</span>
+            <!-- Light Red -->
+            <span style="color: #FFFFFF; text-shadow: 0 0 2px rgba(0,0,0,0.3);">and precision.</span><br>
+            <!-- White -->
 
-<!-- Animation -->
-<style>
-  .animated-footer-text span {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-in-out forwards;
-  }
+            <!-- Line 2 -->
+            <span style="color: #d495df;">Copyright ©</span>
+            <!-- Purple -->
+            <span id="year" style="color: #87CEEB;"></span>
+            <!-- Sky Blue -->
+            <span style="color: #ec6767;">Badrinath Gore.</span>
+            <!-- Light Red -->
+            <span style="color: #FFFFFF; text-shadow: 0 0 2px rgba(0,0,0,0.3);">All Rights Reserved.</span>
+            <!-- White -->
+        </p>
+    </footer>
 
-  /* Staggered animation delays */
-  .animated-footer-text span:nth-child(1) { animation-delay: 0.1s; }
-  .animated-footer-text span:nth-child(2) { animation-delay: 0.2s; }
-  .animated-footer-text span:nth-child(3) { animation-delay: 0.3s; }
-  .animated-footer-text span:nth-child(4) { animation-delay: 0.4s; }
-  .animated-footer-text span:nth-child(5) { animation-delay: 0.5s; }
-  .animated-footer-text span:nth-child(6) { animation-delay: 0.6s; }
-  .animated-footer-text span:nth-child(7) { animation-delay: 0.7s; }
-  .animated-footer-text span:nth-child(8) { animation-delay: 0.8s; }
+    <!-- Auto-update Year -->
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
+    <!-- Animation -->
+    <style>
+        .animated-footer-text span {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-in-out forwards;
+        }
+        /* Staggered animation delays */
+        
+        .animated-footer-text span:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        
+        .animated-footer-text span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .animated-footer-text span:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        
+        .animated-footer-text span:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+        
+        .animated-footer-text span:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+        
+        .animated-footer-text span:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+        
+        .animated-footer-text span:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+        
+        .animated-footer-text span:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 
 
-<br>
-<br>
+    <br>
+    <br>
     <!-- script ================================================== -->
     <script src="js/jquery-1.11.0.min.js"></script>
 
     <!-- Bootstarp script ================================================== -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
     <!-- Swiper script ================================================== -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
