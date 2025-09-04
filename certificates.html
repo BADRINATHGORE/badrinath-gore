@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badrinath Gore - Certification</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="icon" href="images/badriLogo1.png" sizes="32x32" type="image/x-icon">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!--Bootstrap ================================================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!--vendor css ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+
+
+    <!--Styles css ================================================== -->
+    <link rel="stylesheet" href="styles.css">
+
+
+    <!--Google Font css ================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+
+    <style>
+        /* Global Styles */
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        
+        h2 {
+            text-align: center;
+            padding: 2px;
+            font-size: 80px;
+            color: #398cdf;
+            animation: fadeDown 1s ease;
+        }
+        /* Grid Layout */
+        
+        .certificate-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        /* Certificate Card Styling */
+        
+        .certificate-card {
+            position: relative;
+            /* for pseudo-elements */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            opacity: 1;
+            transform: translateY(0);
+            border: 2px solid transparent;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            z-index: 0;
+            animation: none;
+            /* no animation on load */
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Hover animations like hobby-card */
+        
+        .certificate-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(75, 0, 130, 0.35);
+            animation: none;
+        }
+        /* Scale image inside certificate card on hover */
+        
+        .certificate-card:hover img {
+            transform: scale(1.05);
+            transition: transform 0.4s ease;
+        }
+        /* Image inside card */
+        
+        .certificate-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+            transition: transform 0.4s ease;
+        }
+        /* Certificate info text */
+        
+        .certificate-info {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .certificate-info h3 {
+            margin: 8px 0 5px;
+            font-size: 18px;
+        }
+        
+        .certificate-info p {
+            font-size: 14px;
+            margin: 0;
+        }
+        /* Card Color Themes */
+        
+        .card1 {
+            border-color: #e74c3c;
+            background: #fceaea;
+            animation-delay: 0.2s;
+        }
+        
+        .card2 {
+            border-color: #27ae60;
+            background: #eaf9f0;
+            animation-delay: 0.4s;
+        }
+        
+        .card3 {
+            border-color: #2980b9;
+            background: #eaf3fa;
+            animation-delay: 0.6s;
+        }
+        
+        .card4 {
+            border-color: #f39c12;
+            background: #fff6e9;
+            animation-delay: 0.8s;
+        }
+        
+        .card5 {
+            border-color: #8e44ad;
+            background: #f6ecfa;
+            animation-delay: 1s;
+        }
+        
+        .card6 {
+            border-color: #16a085;
+            background: #e9f8f6;
+            animation-delay: 1.2s;
+        }
+        /* Title Colors */
+        
+        .title-red {
+            color: #e74c3c;
+        }
+        
+        .title-green {
+            color: #27ae60;
+        }
+        
+        .title-blue {
+            color: #2980b9;
+        }
+        
+        .title-orange {
+            color: #f39c12;
+        }
+        
+        .title-purple {
+            color: #8e44ad;
+        }
+        
+        .title-teal {
+            color: #16a085;
+        }
+        /* Modal */
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            animation: zoomIn 0.3s ease;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 35px;
+            color: white;
+            cursor: pointer;
+        }
+        /* Glowing animated border on hover using pseudo-elements */
+        
+        .certificate-card::before {
+            content: "";
+            pointer-events: none;
+            position: absolute;
+            top: -4px;
+            bottom: -4px;
+            left: -4px;
+            right: -4px;
+            border-radius: 14px;
+            border: 2px solid transparent;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+        
+        .card1::before {
+            border-color: #e74c3c;
+            box-shadow: 0 0 10px #e74c3c;
+            animation: glowPulseRed 2s infinite;
+        }
+        
+        .card2::before {
+            border-color: #27ae60;
+            box-shadow: 0 0 10px #27ae60;
+            animation: glowPulseGreen 2s infinite;
+        }
+        
+        .card3::before {
+            border-color: #2980b9;
+            box-shadow: 0 0 10px #2980b9;
+            animation: glowPulseBlue 2s infinite;
+        }
+        
+        .card4::before {
+            border-color: #f39c12;
+            box-shadow: 0 0 10px #f39c12;
+            animation: glowPulseOrange 2s infinite;
+        }
+        
+        .card5::before {
+            border-color: #8e44ad;
+            box-shadow: 0 0 10px #8e44ad;
+            animation: glowPulsePurple 2s infinite;
+        }
+        
+        .card6::before {
+            border-color: #16a085;
+            box-shadow: 0 0 10px #16a085;
+            animation: glowPulseTeal 2s infinite;
+        }
+        /* Show glow on hover */
+        
+        .certificate-card:hover::before {
+            opacity: 1;
+        }
+        /* Animations */
+        
+        @keyframes slideInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        /* Glow pulse animations */
+        
+        @keyframes glowPulseRed {
+            0%,
+            100% {
+                box-shadow: 0 0 5px #e74c3c;
+            }
+            50% {
+                box-shadow: 0 0 20px #e74c3c;
+            }
+        }
+        
+        @keyframes glowPulseGreen {
+            0%,
+            100% {
+                box-shadow: 0 0 5px #27ae60;
+            }
+            50% {
+                box-shadow: 0 0 20px #27ae60;
+            }
+        }
+        
+        @keyframes glowPulseBlue {
+            0%,
+            100% {
+                box-shadow: 0 0 5px #2980b9;
+            }
+            50% {
+                box-shadow: 0 0 20px #2980b9;
+            }
+        }
+        
+        @keyframes glowPulseOrange {
+            0%,
+            100% {
+                box-shadow: 0 0 5px #f39c12;
+            }
+            50% {
+                box-shadow: 0 0 20px #f39c12;
+            }
+        }
+        
+        @keyframes glowPulsePurple {
+            0%,
+            100% {
+                box-shadow: 0 0 5px #8e44ad;
+            }
+            50% {
+                box-shadow: 0 0 20px #8e44ad;
+            }
+        }
+        
+        @keyframes glowPulseTeal {
+            0%,
+            100% {
+                box-shadow: 0 0 5px #16a085;
+            }
+            50% {
+                box-shadow: 0 0 20px #16a085;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="page-add" viewBox="0 0 20 20">
+            <path fill="currentColor"
+                d="M4 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5.207A5.5 5.5 0 0 0 14.5 9a5.5 5.5 0 0 0-3.163 1H7.5a.5.5 0 0 0 0 1h2.757a5.48 5.48 0 0 0-1.254 3.675A5.48 5.48 0 0 0 10.257 18H6a2 2 0 0 1-2-2zm8.5 2h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1m2 13a4.5 4.5 0 1 0 0-9a4.5 4.5 0 0 0 0 9m0-7a.5.5 0 0 1 .5.5V14h1.5a.5.5 0 0 1 0 1H15v1.5a.5.5 0 0 1-1 0V15h-1.5a.5.5 0 0 1 0-1H14v-1.5a.5.5 0 0 1 .5-.5" />
+        </symbol>
+        <symbol id="contact" viewBox="0 0 14 14">
+            <path fill="currentColor" fill-rule="evenodd"
+                d="M11.132.063H3.046A2.18 2.18 0 0 0 .869 2.18v9.574a2.177 2.177 0 0 0 2.177 2.175h9.037a.75.75 0 0 0 0-1.5h-.2V10.9a1.7 1.7 0 0 0 .95-1.527v-7.61A1.7 1.7 0 0 0 11.132.062ZM2.567 12.23a.677.677 0 0 1 .479-1.155h7.336v1.354H3.046a.68.68 0 0 1-.48-.199Zm6.01-3.906a1.7 1.7 0 0 1-1.053-.089a9.55 9.55 0 0 1-3.278-3.278A1.71 1.71 0 0 1 4.708 3l.246-.246a.533.533 0 0 1 .732-.096l.796.796a.533.533 0 0 1-.096.732a.533.533 0 0 0-.095.732L7.563 6.19a.533.533 0 0 0 .732-.095A.533.533 0 0 1 9.027 6l.796.795a.533.533 0 0 1-.096.732l-.246.247a1.7 1.7 0 0 1-.903.55Z"
+                clip-rule="evenodd" />
+        </symbol>
+        <symbol id="testimonial" viewBox="0 0 20 20">
+            <path fill="currentColor"
+                d="M4 3h12c.55 0 1.02.2 1.41.59S18 4.45 18 5v7c0 .55-.2 1.02-.59 1.41S16.55 14 16 14h-1l-5 5v-5H4c-.55 0-1.02-.2-1.41-.59S2 12.55 2 12V5c0-.55.2-1.02.59-1.41S3.45 3 4 3m11 2H4v1h11zm1 3H4v1h12zm-3 3H4v1h9z" />
+        </symbol>
+        <symbol id="layout" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3zm0 9a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3zm10-9a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3h-2a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z" />
+        </symbol>
+        <symbol id="person" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M12 12q-1.65 0-2.825-1.175T8 8t1.175-2.825T12 4t2.825 1.175T16 8t-1.175 2.825T12 12m-8 6v-.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2v.8q0 .825-.587 1.413T18 20H6q-.825 0-1.412-.587T4 18" />
+        </symbol>
+        <symbol id="home" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M4 19v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-3q-.425 0-.712-.288T14 20v-5q0-.425-.288-.712T13 14h-2q-.425 0-.712.288T10 15v5q0 .425-.288.713T9 21H6q-.825 0-1.412-.587T4 19" />
+        </symbol>
+        <symbol id="quote-left" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M3.691 6.292C5.094 4.771 7.217 4 10 4h1v2.819l-.804.161c-1.37.274-2.323.813-2.833 1.604A2.9 2.9 0 0 0 6.925 10H10a1 1 0 0 1 1 1v7c0 1.103-.897 2-2 2H3a1 1 0 0 1-1-1v-5l.003-2.919c-.009-.111-.199-2.741 1.688-4.789M20 20h-6a1 1 0 0 1-1-1v-5l.003-2.919c-.009-.111-.199-2.741 1.688-4.789C16.094 4.771 18.217 4 21 4h1v2.819l-.804.161c-1.37.274-2.323.813-2.833 1.604A2.9 2.9 0 0 0 17.925 10H21a1 1 0 0 1 1 1v7c0 1.103-.897 2-2 2" />
+        </symbol>
+        <symbol id="arrow-right" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </symbol>
+        <symbol id="arrow-left" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </symbol>
+        <symbol id="facebook" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M15.12 5.32H17V2.14A26 26 0 0 0 14.26 2c-2.72 0-4.58 1.66-4.58 4.7v2.62H6.61v3.56h3.07V22h3.68v-9.12h3.06l.46-3.56h-3.52V7.05c0-1.05.28-1.73 1.76-1.73" />
+        </symbol>
+        <symbol id="instagram" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M17.34 5.46a1.2 1.2 0 1 0 1.2 1.2a1.2 1.2 0 0 0-1.2-1.2m4.6 2.42a7.6 7.6 0 0 0-.46-2.43a4.9 4.9 0 0 0-1.16-1.77a4.7 4.7 0 0 0-1.77-1.15a7.3 7.3 0 0 0-2.43-.47C15.06 2 14.72 2 12 2s-3.06 0-4.12.06a7.3 7.3 0 0 0-2.43.47a4.8 4.8 0 0 0-1.77 1.15a4.7 4.7 0 0 0-1.15 1.77a7.3 7.3 0 0 0-.47 2.43C2 8.94 2 9.28 2 12s0 3.06.06 4.12a7.3 7.3 0 0 0 .47 2.43a4.7 4.7 0 0 0 1.15 1.77a4.8 4.8 0 0 0 1.77 1.15a7.3 7.3 0 0 0 2.43.47C8.94 22 9.28 22 12 22s3.06 0 4.12-.06a7.3 7.3 0 0 0 2.43-.47a4.7 4.7 0 0 0 1.77-1.15a4.85 4.85 0 0 0 1.16-1.77a7.6 7.6 0 0 0 .46-2.43c0-1.06.06-1.4.06-4.12s0-3.06-.06-4.12M20.14 16a5.6 5.6 0 0 1-.34 1.86a3.06 3.06 0 0 1-.75 1.15a3.2 3.2 0 0 1-1.15.75a5.6 5.6 0 0 1-1.86.34c-1 .05-1.37.06-4 .06s-3 0-4-.06a5.7 5.7 0 0 1-1.94-.3a3.3 3.3 0 0 1-1.1-.75a3 3 0 0 1-.74-1.15a5.5 5.5 0 0 1-.4-1.9c0-1-.06-1.37-.06-4s0-3 .06-4a5.5 5.5 0 0 1 .35-1.9A3 3 0 0 1 5 5a3.1 3.1 0 0 1 1.1-.8A5.7 5.7 0 0 1 8 3.86c1 0 1.37-.06 4-.06s3 0 4 .06a5.6 5.6 0 0 1 1.86.34a3.06 3.06 0 0 1 1.19.8a3.1 3.1 0 0 1 .75 1.1a5.6 5.6 0 0 1 .34 1.9c.05 1 .06 1.37.06 4s-.01 3-.06 4M12 6.87A5.13 5.13 0 1 0 17.14 12A5.12 5.12 0 0 0 12 6.87m0 8.46A3.33 3.33 0 1 1 15.33 12A3.33 3.33 0 0 1 12 15.33" />
+        </symbol>
+        <symbol id="twitter" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M22.991 3.95a1 1 0 0 0-1.51-.86a7.5 7.5 0 0 1-1.874.794a5.15 5.15 0 0 0-3.374-1.242a5.23 5.23 0 0 0-5.223 5.063a11.03 11.03 0 0 1-6.814-3.924a1.01 1.01 0 0 0-.857-.365a1 1 0 0 0-.785.5a5.28 5.28 0 0 0-.242 4.769l-.002.001a1.04 1.04 0 0 0-.496.89a3 3 0 0 0 .027.439a5.2 5.2 0 0 0 1.568 3.312a1 1 0 0 0-.066.77a5.2 5.2 0 0 0 2.362 2.922a7.5 7.5 0 0 1-3.59.448A1 1 0 0 0 1.45 19.3a12.94 12.94 0 0 0 7.01 2.061a12.79 12.79 0 0 0 12.465-9.363a12.8 12.8 0 0 0 .535-3.646l-.001-.2a5.77 5.77 0 0 0 1.532-4.202m-3.306 3.212a1 1 0 0 0-.234.702c.01.165.009.331.009.488a10.8 10.8 0 0 1-.454 3.08a10.685 10.685 0 0 1-10.546 7.93a11 11 0 0 1-2.55-.301a9.5 9.5 0 0 0 2.942-1.564a1 1 0 0 0-.602-1.786a3.2 3.2 0 0 1-2.214-.935q.224-.042.445-.105a1 1 0 0 0-.08-1.943a3.2 3.2 0 0 1-2.25-1.726a5 5 0 0 0 .545.046a1.02 1.02 0 0 0 .984-.696a1 1 0 0 0-.4-1.137a3.2 3.2 0 0 1-1.425-2.673q0-.1.006-.198a13 13 0 0 0 8.21 3.48a1.02 1.02 0 0 0 .817-.36a1 1 0 0 0 .206-.867a3.2 3.2 0 0 1-.087-.729a3.23 3.23 0 0 1 3.226-3.226a3.18 3.18 0 0 1 2.345 1.02a.99.99 0 0 0 .921.298a9 9 0 0 0 1.212-.322a6.7 6.7 0 0 1-1.026 1.524" />
+        </symbol>
+        <symbol id="skype" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M15.14 11.813a5 5 0 0 0-1.292-.593c-.28-.085-.59-.168-.91-.247c-.28-.078-.612-.158-1.022-.248a9.3 9.3 0 0 1-1.436-.424a1.5 1.5 0 0 1-.616-.447a.84.84 0 0 1-.16-.566a.97.97 0 0 1 .205-.597a1.6 1.6 0 0 1 .7-.475A4 4 0 0 1 12.031 8a3.8 3.8 0 0 1 1.106.146a2.1 2.1 0 0 1 .663.322a1.2 1.2 0 0 1 .325.343a1 1 0 1 0 1.761-.948a3.15 3.15 0 0 0-.837-.958a4 4 0 0 0-1.319-.669A5.8 5.8 0 0 0 12.032 6a6 6 0 0 0-2.145.35A3.55 3.55 0 0 0 8.31 7.492a2.98 2.98 0 0 0-.604 1.797a2.84 2.84 0 0 0 .58 1.792a3.5 3.5 0 0 0 1.438 1.072a11 11 0 0 0 1.307.408c.008.003.014.01.022.012c.192.058.498.135.94.23c.173.038.335.079.497.12c.016.004.039.009.054.014l.018.002c.248.064.487.129.706.196a3 3 0 0 1 .763.344a1.1 1.1 0 0 1 .363.368a1.2 1.2 0 0 1 .118.585a1.15 1.15 0 0 1-.214.732a1.76 1.76 0 0 1-.802.585a3.8 3.8 0 0 1-1.487.252a3.7 3.7 0 0 1-1.703-.344a1.76 1.76 0 0 1-.616-.547a1 1 0 0 1-.202-.503a1 1 0 0 0-2 0a2.94 2.94 0 0 0 .556 1.64a3.8 3.8 0 0 0 1.342 1.187a5.6 5.6 0 0 0 2.623.567a5.7 5.7 0 0 0 2.254-.405a3.7 3.7 0 0 0 1.665-1.273a3.15 3.15 0 0 0 .584-1.926a3.1 3.1 0 0 0-.375-1.53a3.2 3.2 0 0 0-.997-1.053m7.221 1.878A10.49 10.49 0 0 0 10.31 1.64a6.499 6.499 0 0 0-8.67 8.67a10.49 10.49 0 0 0 12.05 12.05a6.499 6.499 0 0 0 8.67-8.67M16.5 21a4.5 4.5 0 0 1-2.17-.558a1 1 0 0 0-.677-.106A8.492 8.492 0 0 1 3.5 12a8.6 8.6 0 0 1 .164-1.654a1 1 0 0 0-.106-.677A4.5 4.5 0 0 1 9.67 3.558a1 1 0 0 0 .678.106A8.492 8.492 0 0 1 20.5 12a8.6 8.6 0 0 1-.164 1.654a1 1 0 0 0 .106.677A4.5 4.5 0 0 1 16.5 21" />
+        </symbol>
+        <symbol id="linkedin" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M17.5 8.999a5.4 5.4 0 0 0-2.565.645A1 1 0 0 0 14 8.999h-4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-5.5a1 1 0 1 1 2 0v5.5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-7.5a5.507 5.507 0 0 0-5.5-5.5m3.5 12h-2v-4.5a3 3 0 1 0-6 0v4.5h-2v-10h2v.703a1 1 0 0 0 1.781.625A3.483 3.483 0 0 1 21 14.5Zm-14-12H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-12a1 1 0 0 0-1-1m-1 12H4v-10h2ZM5.015 1.542a3.233 3.233 0 1 0-.057 6.457h.028a3.233 3.233 0 1 0 .029-6.457m-.029 4.457h-.028a1.222 1.222 0 0 1-1.37-1.228c0-.747.56-1.229 1.427-1.229A1.234 1.234 0 0 1 6.41 4.771c0 .746-.56 1.228-1.425 1.228" />
+        </symbol>
+        <symbol id="dribbble" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m0 2a7.94 7.94 0 0 1 5.51 2.22a25 25 0 0 1-4.83 2.18a29 29 0 0 0-2.87-4.09A8 8 0 0 1 12 4M7.89 5.15A27 27 0 0 1 10.7 9a25 25 0 0 1-6 .74h-.36a8 8 0 0 1 3.55-4.59M6 17.31A7.9 7.9 0 0 1 4 12v-.29h.68a26.7 26.7 0 0 0 7-1c.32.61.62 1.24.91 1.89a14.3 14.3 0 0 0-4.29 2.41l-.3.24a21 21 0 0 0-2 2.06M12 20a7.9 7.9 0 0 1-4.47-1.37a18 18 0 0 1 1.56-1.58l.32-.27a12.6 12.6 0 0 1 4-2.27a32 32 0 0 1 1.4 5A8.1 8.1 0 0 1 12 20m4.63-1.49a35 35 0 0 0-1.28-4.46h.34a.25.25 0 0 1 .12 0h.69a9.4 9.4 0 0 1 3.09.53a7.94 7.94 0 0 1-2.96 3.93M16.5 12h-.62a1.6 1.6 0 0 0-.39 0a7 7 0 0 0-.81.1h-.1c-.29-.67-.59-1.32-.92-2a26.6 26.6 0 0 0 5.13-2.4A8 8 0 0 1 20 12v.51a11.5 11.5 0 0 0-3.5-.51" />
+        </symbol>
+        <symbol id="search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path fill="currentColor"
+                d="M19 3C13.488 3 9 7.488 9 13c0 2.395.84 4.59 2.25 6.313L3.281 27.28l1.439 1.44l7.968-7.969A9.922 9.922 0 0 0 19 23c5.512 0 10-4.488 10-10S24.512 3 19 3zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8s-8-3.57-8-8s3.57-8 8-8z" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 0 16 16">
+            <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+        </symbol>
+    </svg>
+
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <nav id="header-nav" class="navbar navbar-expand-lg py-4 z-1" data-bs-theme="dark">
+        <div class="container-fluid padding-side">
+            <a class="navbar-brand" href="index.html"><img src="images/badriLogo.png" alt="logo" style="margin-left: -45px;"></a>
+
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: #1e1128">
+                <div class="offcanvas-header">
+                    <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5> -->
+                    <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body justify-content-end">
+                    <div class="d-lg-none">
+                        <img src="images/badrinath.png" alt="img" class="img-fluid multi-border">
+
+                        <style>
+                            .multi-border {
+                                border: 5px solid;
+                                border-radius: 10px;
+                                /* optional rounded corners */
+                                padding: 5px;
+                                /* space inside border */
+                                animation: borderColorChange 3s linear infinite;
+                            }
+                            
+                            @keyframes borderColorChange {
+                                0% {
+                                    border-color: red;
+                                }
+                                20% {
+                                    border-color: orange;
+                                }
+                                40% {
+                                    border-color: yellow;
+                                }
+                                60% {
+                                    border-color: green;
+                                }
+                                80% {
+                                    border-color: white;
+                                }
+                                100% {
+                                    border-color: purple;
+                                }
+                            }
+                        </style>
+                        <div class="text-center">
+                            <a href="contact.html" class="btn button  text-white mt-4 position-relative pe-5">
+                                <span> Contact ME </span>
+                                <div class="position-absolute top-50 end-0 translate-middle-y me-3">
+                                    <svg class="arrow-right text-white p-1" width="28" height="28">
+                                        <use xlink:href="#arrow-right"></use>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <ul class="d-flex list-unstyled justify-content-center mt-4">
+
+
+                        <li class="ms-4">
+                            <a class="nav-link" href="https://github.com/BADRINATHGORE" rel="noopener noreferrer">
+                                <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0.2975C5.3725 0.2975 0 5.67 0 12.2975C0 17.5925 3.43875 22.0925 8.205 23.6825C8.805 23.7975 9.0225 23.4375 9.0225 23.1225C9.0225 22.8375 9.01 22.1325 9.005 21.1525C5.6725 21.8975 4.9675 19.5925 4.9675 19.5925C4.4225 18.1775 3.6325 17.7975 3.6325 17.7975C2.545 17.0825 3.7175 17.0975 3.7175 17.0975C4.9225 17.18 5.5475 18.3375 5.5475 18.3375C6.6175 20.1225 8.3625 19.5925 9.05 19.2825C9.16 18.5125 9.4675 17.9725 9.81 17.6775C7.15 17.3825 4.345 16.3125 4.345 11.5925C4.345 10.2825 4.795 9.2125 5.55 8.3725C5.42 8.0775 5.045 6.8525 5.67 5.1325C5.67 5.1325 6.6525 4.8175 9 6.3975C9.93 6.1275 10.92 6 11.91 6C12.9 6 13.89 6.1275 14.82 6.3975C17.16 4.8175 18.135 5.1325 18.135 5.1325C18.765 6.8525 18.39 8.0775 18.26 8.3725C19.02 9.2125 19.465 10.2825 19.465 11.5925C19.465 16.325 16.655 17.375 13.995 17.665C14.43 18.045 14.82 18.7875 14.82 19.8775C14.82 21.4575 14.805 22.7725 14.805 23.1225C14.805 23.4425 15.015 23.8075 15.63 23.6825C20.39 22.0875 23.82 17.5875 23.82 12.2975C23.82 5.67 18.45 0.2975 12 0.2975Z"/>
+    </svg>
+                            </a>
+                        </li>
+
+
+                        <li class="ms-4">
+                            <a class="nav-link" href="https://www.linkedin.com/in/badrinath-gore-002246243">
+                                <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#0077B5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4v12h-4V8zm7.5 0h3.5v1.7h.05c.5-.95 1.75-1.95 3.6-1.95 3.85 0 4.56 2.55 4.56 5.85v6.4h-4v-5.67c0-1.35-.02-3.08-1.88-3.08-1.88 0-2.17 1.47-2.17 2.98v5.77h-4V8z"/>
+            </svg>
+                            </a>
+                        </li>
+
+                        <li class="ms-4">
+                            <a class="nav-link" href="https://x.com/BadrinathGore">
+                                <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="skyblue" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.85 10.68L22.2 2H20.13L13.97 9.26L9.06 2H2L9.71 12.86L2 22H4.07L10.57 14.34L15.78 22H23L14.85 10.68Z" />
+        </svg>
+                            </a>
+                        </li>
+                        <li class="ms-4">
+                            <a class="nav-link" href="https://www.facebook.com/badrinath.gore.94">
+                                <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#3b5998" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 12C22 6.48 17.52 2 12 2S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H8.07v-2.89h2.37V9.76c0-2.34 1.39-3.64 3.52-3.64 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.17 0-1.53.73-1.53 1.48v1.78h2.61l-.42 2.89h-2.19v6.99C18.34 21.13 22 17 22 12z"/>
+            </svg>
+                            </a>
+                        </li>
+
+
+                        <li class="ms-4">
+                            <a class="nav-link" href="https://www.instagram.com/badrigore_2002">
+                                <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#E1306C" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8.75 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/>
+            </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+
+                    <br>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div data-aos="fade-up" data-aos-duration="1400">
+        <h2>My Certificates</h2>
+    </div>
+
+    <div class="certificate-container" data-aos="fade-up" data-aos-duration="1400">
+
+        <!-- Certificate 1 -->
+
+        <div class="certificate-card card1" data-aos="fade-up" data-aos-duration="1400">
+            <img src="images/JavaWorkshop.jpg" alt="Certificate 1" onclick="openModal(this)">
+            <div class="certificate-info">
+                <h3 class="title-red">Java & Career Skills Workshop Certificate</h3>
+                <p>Core training in Java programming fundamentals, Soft skills, Resume building, Interview preparation, Mentorship, Personality development, and Professional event exposure.</p>
+            </div>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="certificate-card card2" data-aos="fade-up" data-aos-duration="1400">
+            <img src="images/cyber.jpg" alt="Certificate 2" onclick="openModal(this)">
+            <div class="certificate-info">
+                <h3 class="title-green">Cybersecurity Basics Certification</h3>
+                <p>Title: Cybersecurity Basics Webinar Attendance Certificate. Issued by: Anuradha Engineering College, Chikhli.</p>
+            </div>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="certificate-card card3" data-aos="fade-up" data-aos-duration="1400">
+            <img src="images/ResearchPaper.jpg" alt="Certificate 3" onclick="openModal(this)">
+            <div class="certificate-info">
+                <h3 class="title-blue">Research Paper Presentation Certificate</h3>
+                <p>"Green Technology & AI: Pathways to Sustainable Development (NCGTAI-2025)"</p>
+            </div>
+        </div>
+
+        <!-- Certificate 4 -->
+        <div class="certificate-card card4" data-aos="fade-up" data-aos-duration="1400">
+            <img src="images/AIML.jpg" alt="Certificate 4" onclick="openModal(this)">
+            <div class="certificate-info">
+                <h3 class="title-orange">AI & ML FDP Workshop Certificate</h3>
+                <p>One-Week Workshop cum FDP on AI & ML. Duration: 21st October 2024 to 26th October 2024. Location: Anuradha Engineering College, Chikhli.</p>
+            </div>
+        </div>
+
+        <!-- Certificate 5 -->
+        <div class="certificate-card card5" data-aos="fade-up" data-aos-duration="1400">
+            <img src="images/Internship.jpg" alt="Certificate 5" onclick="openModal(this)">
+            <div class="certificate-info">
+                <h3 class="title-purple">Android Development Internship Certificate</h3>
+                <p>Certificate of Completion. Intern: Mr. Gore Badrinath Ashok. Company: Mountreach Solution Pvt. Ltd.</p>
+            </div>
+        </div>
+
+        <!-- Certificate 6 -->
+        <div class="certificate-card card6" data-aos="fade-up" data-aos-duration="1400">
+            <img src="images/IndustrialTraning.jpg" alt="Certificate 6" onclick="openModal(this)">
+            <div class="certificate-info">
+                <h3 class="title-teal">Android Development – Industrial Training Certificate</h3>
+                <p>Completed an Industrial Training program in Android Development. Gained exposure to various processes. Recognized as sincere, hardworking, and inquisitive.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="imgModal" class="modal" onclick="closeModal()">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(img) {
+            const modal = document.getElementById("imgModal");
+            const modalImg = document.getElementById("modalImage");
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById("imgModal").style.display = "none";
+        }
+    </script>
+
+
+    <nav id="side-nav" class="navbar-side p-2 p-lg-2 me-lg-2 text-center" data-bs-theme="dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="index.html">
+                    <svg width="34" height="34">
+                        <use xlink:href="#home"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">
+                    <svg width="34" height="34">
+                        <use xlink:href="#person"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="portfolio.html">
+                    <svg width="34" height="34">
+                        <use xlink:href="#layout"></use>
+                    </svg>
+                </a>
+            </li>
+
+            </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">
+                    <svg width="34" height="34">
+                        <use xlink:href="#contact"></use>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <br>
+
+    <br>
+
+    <!-- Footer 
+<footer class="text-center py-4" style="font-family: 'Inter', sans-serif;">
+--->
+    <footer class="text-center py-4" style="font-family: 'Inter', sans-serif;">
+
+        <p class="fs-6 animated-footer-text" data-aos="fade-up" data-aos-duration="1600" style="margin-top: -50px; line-height: 1.6">
+
+            <!-- Line 1 -->
+            <span style="color: #87CEEB;">Designing</span>
+            <!-- Sky Blue -->
+            <span style="color: #d495df;">& Developing</span>
+            <!-- Purple -->
+            <span style="color: #FF6B6B;">with passion</span>
+            <!-- Light Red -->
+            <span style="color: #FFFFFF; text-shadow: 0 0 2px rgba(0,0,0,0.3);">and precision.</span><br>
+            <!-- White -->
+
+            <!-- Line 2 -->
+            <span style="color: #d495df;">Copyright ©</span>
+            <!-- Purple -->
+            <span id="year" style="color: #87CEEB;"></span>
+            <!-- Sky Blue -->
+            <span style="color: #ec6767;">Badrinath Gore.</span>
+            <!-- Light Red -->
+            <span style="color: #FFFFFF; text-shadow: 0 0 2px rgba(0,0,0,0.3);">All Rights Reserved.</span>
+            <!-- White -->
+        </p>
+    </footer>
+
+    <!-- Auto-update Year -->
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Animation -->
+    <style>
+        .animated-footer-text span {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-in-out forwards;
+        }
+        /* Staggered animation delays */
+        
+        .animated-footer-text span:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        
+        .animated-footer-text span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .animated-footer-text span:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        
+        .animated-footer-text span:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+        
+        .animated-footer-text span:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+        
+        .animated-footer-text span:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+        
+        .animated-footer-text span:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+        
+        .animated-footer-text span:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <br>
+    <br>
+    <!-- script ================================================== -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+
+    <!-- Bootstarp script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <!-- Swiper script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!--iconify script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
