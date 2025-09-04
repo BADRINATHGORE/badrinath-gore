@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-
         // Subject: must be at least 3 characters and not a single word like "Hi"
         if (subject.length < 2 || subject.split(/\s+/).length < 1) {
             alert("Subject must be at least 2 characters long.");
@@ -66,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Prevent repeat submission
         if (sessionStorage.getItem("email_sent") === "true") {
-            alert("You have already submitted a form in this session.");
+            alert("You have already sent a message in this session.");
             return;
         }
 
@@ -80,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Send Email
         emailjs.sendForm("service_vzpsmcs", "template_hxlnzk1", form)
             .then(() => {
-                alert("Form sumbitted successfully");
+                window.location.href = "thank.html";
                 sessionStorage.setItem("email_sent", "true");
                 form.reset();
                 resetButton();

@@ -241,7 +241,6 @@
                         </p>
                     </div>
 
-
                     <style>
                         /* Typing effect styles */
                         
@@ -317,7 +316,7 @@
                         /* Card styles */
                         
                         .custom-card {
-                            transition: transform 0.4s ease, box-shadow 0.4s ease;
+                            transition: transform 0.3s ease, box-shadow 0.3s ease;
                             cursor: pointer;
                             border-radius: 12px;
                             display: flex;
@@ -336,13 +335,32 @@
                             /* Add border, color defined below */
                             box-sizing: border-box;
                         }
-                        /* Hover animations on card */
+                        /* Different border colors for each card */
+                        
+                        .custom-card:nth-child(1) {
+                            border-color: #ff6ec4;
+                            /* pinkish */
+                        }
+                        
+                        .custom-card:nth-child(2) {
+                            border-color: #7873f5;
+                            /* purple */
+                        }
+                        
+                        .custom-card:nth-child(3) {
+                            border-color: #4ade80;
+                            /* green */
+                        }
+                        
+                        .custom-card:nth-child(4) {
+                            border-color: #fb7185;
+                            /* reddish-pink */
+                        }
                         
                         .custom-card:hover {
-                            transform: translateY(-10px) scale(1.05);
+                            transform: scale(1.05);
                             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
                         }
-                        /* On click scaling */
                         
                         .custom-card:active {
                             transform: scale(0.95);
@@ -361,63 +379,48 @@
                             margin-bottom: 1rem;
                             background-color: #ddd;
                             box-sizing: border-box;
-                            transition: transform 0.4s ease;
-                            /* Smooth zoom */
-                        }
-                        /* Hover zoom image */
-                        
-                        .custom-card:hover .card-img-top {
-                            transform: scale(1.05);
                         }
                         /* Different border colors for each card */
                         
                         .custom-card:nth-child(1) {
-                            border-color: #ff6ec4;
+                            border-color: #ff9800;
+                            /* orange */
                         }
                         
                         .custom-card:nth-child(2) {
-                            border-color: #7873f5;
+                            border-color: #03a9f4;
+                            /* light blue */
                         }
                         
                         .custom-card:nth-child(3) {
-                            border-color: #4ade80;
+                            border-color: #9c27b0;
+                            /* deep purple */
                         }
                         
                         .custom-card:nth-child(4) {
-                            border-color: #fb7185;
-                        }
-                        
-                        .custom-card:nth-child(5) {
-                            border-color: #5095de;
-                        }
-                        
-                        .custom-card:nth-child(6) {
-                            border-color: #0fd09d;
+                            border-color: #8bc34a;
+                            /* light green */
                         }
                         /* Different border colors for images (NOT matching the card) */
                         
                         .custom-card:nth-child(1) .card-img-top {
                             border-color: #4caf50;
+                            /* green */
                         }
                         
                         .custom-card:nth-child(2) .card-img-top {
                             border-color: #e91e63;
+                            /* pink */
                         }
                         
                         .custom-card:nth-child(3) .card-img-top {
                             border-color: #2196f3;
+                            /* blue */
                         }
                         
                         .custom-card:nth-child(4) .card-img-top {
                             border-color: #ff5722;
-                        }
-                        
-                        .custom-card:nth-child(5) .card-img-top {
-                            border-color: #06e70e;
-                        }
-                        
-                        .custom-card:nth-child(6) .card-img-top {
-                            border-color: #e80ed2;
+                            /* deep orange */
                         }
                         /* Adjust image height for smaller devices */
                         
@@ -525,9 +528,6 @@
                         }
                     </style>
 
-
-
-
                     <div style="padding: 10px">
                         <div class="col-lg-9 px-0 mt-4" style="width: 100%;">
                             <div class="card-container">
@@ -555,21 +555,8 @@
 
                                 <!-- Card 4 -->
                                 <a href="education.html" class="custom-card animated-border" data-aos="fade-up" data-aos-duration="1400" style="background-color: #fff8f1; color: purple;">
-                                    <img src="images/educations.jpg" class="card-img-top" alt="Education" style="padding: 1px" />
+                                    <img src="images/education.jpeg" class="card-img-top" alt="Education" style="padding: 1px" />
                                     <h4 style="color: red;">Education</h4>
-                                    <p class="view-more-text">Click here to view more</p>
-                                </a>
-
-                                <a href="certificates.html" class="custom-card animated-border" data-aos="fade-up" data-aos-duration="1400">
-                                    <img src="images/certifications.png" class="card-img-top" alt="Professional Summary" style="padding: 1px" />
-                                    <h4 style="color: green;">Certification</h4>
-                                    <p class="view-more-text">Click here to view more</p>
-                                </a>
-
-
-                                <a href="exp.html" class="custom-card animated-border" data-aos="fade-up" data-aos-duration="1400" style="background-color: #f1f4f9; color: purple;">
-                                    <img src="images/experience.png" class="card-img-top" alt="Hobbies" style="padding: 1px" />
-                                    <h4 style="color: brown;">Work Experience </h4>
                                     <p class="view-more-text">Click here to view more</p>
                                 </a>
 
@@ -733,8 +720,6 @@
         </ul>
     </nav>
 
-
-    <br>
 
     <br>
 

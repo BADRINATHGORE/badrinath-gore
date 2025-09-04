@@ -1,482 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Work Experience & Projects</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Chat Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f4f9ff;
-            color: #2c3e50;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
         }
         
-        h1,
-        h2,
-        h3 {
-            margin-bottom: 0.5em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        section {
-            margin-bottom: 40px;
-        }
-        
-        .company,
-        .project {
-            padding: 25px;
-            border-radius: 12px;
-            border: 2px solid #dcdcdc;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-            transition: transform 0.3s ease, box-shadow 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .company:hover,
-        .project:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .company:hover .company-header,
-        .project:hover .project-header,
-        .company:hover p,
-        .project:hover p,
-        .company:hover .ai-tag,
-        .project:hover .ai-tag {
-            animation: slideIn 0.6s forwards;
-        }
-        
-        .company:hover .photo-gallery img,
-        .project:hover .photo-gallery img {
-            animation: popImage 0.6s ease-in-out;
-        }
-        
-        .company-header,
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        
-        .date {
-            color: #888;
-            font-size: 0.9em;
-        }
-        
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .photo-gallery img {
+        .container {
             width: 100%;
-            border-radius: 6px;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+        }
+        
+        .header {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .bot-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: white;
+        }
+        
+        .header-text h1 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+        
+        .header-text p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        .chat-container {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 15px;
+            border-radius: 18px;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+            line-height: 1.5;
+        }
+        
+        .bot-message {
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom-left-radius: 5px;
+            color: white;
+            align-self: flex-start;
+        }
+        
+        .user-message {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            border-bottom-right-radius: 5px;
+            color: white;
+            align-self: flex-end;
+        }
+        
+        .message-time {
+            display: block;
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 8px;
+            text-align: right;
+        }
+        
+        .input-container {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 12px;
+        }
+        
+        .message-input {
+            flex: 1;
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: background 0.3s;
+        }
+        
+        .message-input:focus {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .message-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .send-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            border: none;
+            color: white;
+            font-size: 20px;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s, border-color 0.3s;
-            border: 3px solid #ccc;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .photo-gallery img:hover {
+        .send-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(52, 152, 219, 0.3);
-            border-color: #3498db;
+            box-shadow: 0 0 15px rgba(106, 17, 203, 0.5);
         }
         
-        .ai-tag {
+        .send-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .typing-indicator {
+            display: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 18px;
+            align-self: flex-start;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .typing-dots {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
             display: inline-block;
-            background: #d1f0e3;
-            color: #117a65;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8em;
-            margin-left: 8px;
-            transition: transform 0.3s ease;
+            animation: bounce 1.5s infinite ease-in-out both;
         }
         
-        .company:hover .ai-tag,
-        .project:hover .ai-tag {
-            animation: bounce 0.8s ease-in-out;
+        .typing-dots span:nth-child(1) {
+            animation-delay: -0.32s;
         }
         
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.8s forwards;
+        .typing-dots span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+        
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+            40% {
+                transform: scale(1);
+            }
         }
         
         @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
         
-        @keyframes slideIn {
-            0% {
-                opacity: 0;
-                transform: translateX(-15px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .welcome-message {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255, 255, 255, 0.9);
         }
         
-        @keyframes bounce {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
+        .welcome-message h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #a1c4fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
-        @keyframes popImage {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.07);
-            }
-            100% {
-                transform: scale(1);
-            }
+        .welcome-message p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
         
-        .lightbox-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: none;
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
         }
         
-        .lightbox-overlay img {
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-        }
-        
-        .close-btn {
-            background: #e74c3c;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
+        .suggestion {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 50px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            font-size: 0.9rem;
         }
         
-        .close-btn:hover {
-            background: #c0392b;
+        .suggestion:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
         
-        @media (max-width: 600px) {
-            .company-header,
-            .project-header {
-                flex-direction: column;
-                align-items: flex-start;
+        .api-key-container {
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .api-key-input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        
+        .api-key-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .save-btn {
+            padding: 12px 20px;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            border: none;
+            color: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .save-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        .info-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8rem;
+            margin-top: 8px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                height: 95vh;
+                border-radius: 15px;
             }
-        }
-        /* Light background variations */
-        
-        .bg-lightblue {
-            background: #e6f2ff;
-            border: 2px solid #99c2ff;
-        }
-        
-        .bg-lightgreen {
-            background: #e6ffe6;
-            border: 2px solid #99ff99;
-        }
-        
-        .bg-lightyellow {
-            background: #fff9e6;
-            border: 2px solid #fff299;
-        }
-        
-        .bg-lightpink {
-            background: #ffe6f0;
-            border: 2px solid #ff99c2;
-        }
-        
-        .bg-lightlavender {
-            background: #f2e6ff;
-            border: 2px solid #c299ff;
-        }
-        
-        .bg-lightcoral {
-            background: #ffe6e6;
-            border: 2px solid #ff9999;
-        }
-        
-        .bg-lightmint {
-            background: #e6fff9;
-            border: 2px solid #99ffe6;
-        }
-        
-        .bg-lightpeach {
-            background: #fff0e6;
-            border: 2px solid #ffbb99;
-        }
-        
-        .bg-lightaqua {
-            background: #e6ffff;
-            border: 2px solid #99ffff;
-        }
-        
-        .bg-lightgray {
-            background: #f2f2f2;
-            border: 2px solid #cccccc;
+            
+            .message {
+                max-width: 90%;
+            }
+            
+            .header {
+                padding: 15px;
+            }
+            
+            .welcome-message h2 {
+                font-size: 1.8rem;
+            }
+            
+            .suggestions {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
-
 <body>
-
-    <h1>Work Experience</h1>
-
-    <!-- TRAINING SECTION -->
-    <section>
-        <h2>Workshop</h2>
-        <div class="company fade-in bg-lightblue">
-            <div class="company-header">
-                <h2>Python Workshop – Seventh Sense Talent Solutions Pvt Ltd Bangalore Karnataka</h2>
-                <span class="date">Start: 21 Oct 2024 - End: 26 Oct 2024</span>
+    <div class="container">
+        <div class="header">
+            <div class="bot-avatar">
+                <i class="fas fa-robot"></i>
             </div>
-            <p>Covered Python, <strong>Pandas</strong>, <strong> NumPy</strong>,<strong> SciPy</strong>,<strong> Matplotlib</strong>,<strong> Seaborn</strong>, Machine Learning basics, and data visualizations. <span class="ai-tag">Pycharm </span></p>
-            <div class="photo-gallery">
-                <img src="images/sevenSenth.png" alt="Python 1">
-                <img src="images/sevenSenth1.png" alt="Python 2">
-                <img src="images/sevenSenth2.jpg" alt="Python 3">
-                <img src="images/AIML.jpg" alt="Python 4">
-
+            <div class="header-text">
+                <h1>AI Assistant</h1>
+                <p>Online • Powered by OpenAI</p>
             </div>
         </div>
-    </section>
-
-
-    <!-- INTERNSHIP SECTION -->
-    <section>
-        <h2>Internship</h2>
-        <div class="company fade-in bg-lightgreen">
-            <div class="company-header">
-                <h3>App Development Internship – Mountreach Solution Pvt Ltd Amravati Maharashtra</h3>
-                <span class="date">Start: 01 Nov 2021 - End: 15 Jan 2022</span>
-            </div>
-            <p>Worked on live Smart College Managment System Android Project, UIs, APIs, and MySql DB. <span class="ai-tag"> SDK, JDK, Postman</span></p>
-            <div class="photo-gallery">
-                <img src="images/gpm7.jpg" alt="Intern 1">
-                <img src="images/gpm10.jpg" alt="Intern 2">
-                <img src="images/gpm8.jpg" alt="Intern 3">
-                <img src="images/Internship.jpg" alt="Intern 4">
+        
+        <div class="chat-container" id="chatContainer">
+            <div class="welcome-message">
+                <h2>Hello! I'm Your AI Assistant</h2>
+                <p>I can answer questions, provide information, generate content, and help with creative tasks. How can I assist you today?</p>
+                
+                <div class="suggestions">
+                    <div class="suggestion" data-prompt="Explain quantum computing in simple terms">Explain quantum computing</div>
+                    <div class="suggestion" data-prompt="Write a short poem about technology">Write a poem</div>
+                    <div class="suggestion" data-prompt="What are the latest trends in AI?">AI trends</div>
+                    <div class="suggestion" data-prompt="How do I improve my coding skills?">Coding tips</div>
+                </div>
             </div>
         </div>
-    </section>
-
-
-    <section>
-        <h2>Industrial Training</h2>
-        <div class="company fade-in bg-lightyellow">
-            <div class="company-header">
-                <h3>Industrial Training – Android, Mountreach Solution Pvt Ltd Amravati Maharashtra</h3>
-                <span class="date">Start: 04 Aug 2021 - End: 30 Step 2023</span>
+        
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="typing-dots">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <p>Industrial training in Android development using Android Studio, XML/Java, UI and Clone <span class="ai-tag">SDK, JDK</span></p>
-            <div class="photo-gallery">
-                <img src="images/Pro12.png" alt="Android T1">
-                <img src="images/Pro13.png" alt="Android T2">
-                <img src="images/Pro14.png" alt="Android T3">
-                <img src="images/Pro9.png" alt="Android T4">
-                <img src="images/Pro11.png" alt="Android T5">
-                <img src="images/Pro16.png" alt="Android T6">
-                <img src="images/Pro10.png" alt="Android T7">
-                <img src="images/Pro8.png" alt="Android T8">
-                <img src="images/Pro9.png" alt="Android T9">
-                <img src="images/IndustrialTraning.jpg" alt="Android T10">
-            </div>
+            AI Assistant is thinking...
         </div>
-    </section>
-
-    <!-- FINAL YEAR: Bachelor of Engineering -->
-    <h1>Projects</h1>
-
-
-    <h3>India Website</h3>
-
-    <div class="project fade-in bg-lightpink">
-        <div class="project-header">
-            <h3>Land of Ayurveda</h3>
-            <span class="date">Start: 05 Aug 2025 - End: 08 Aug 2025</span>
+        
+        <div class="input-container">
+            <input type="text" class="message-input" id="messageInput" placeholder="Type your message here...">
+            <button class="send-btn" id="sendBtn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
         </div>
-        <p> Developed a responsive website showcasing India’s beauty, culture, tourism, economy, technology, and diverse states with an interactive and informative design. We are winner third price of hackethon in Naresh IT Hyderabad <span class="ai-tag">HTML, CSS</span></p>
-        <div class="photo-gallery">
-            <img src="images/protfolio1.png" alt="India 1">
-            <img src="images/protfolio2.png" alt="India 2">
-            <img src="images/protfolio4.png" alt="India 4">
-            <img src="images/protfolio3.png" alt="India 3">
-            <img src="images/protfolio5.png" alt="India 5">
-            <img src="images/protfolio6.png" alt="India 6">
+        
+        <div class="api-key-container">
+            <input type="password" class="api-key-input" id="apiKeyInput" placeholder="Enter your OpenAI API key...">
+            <button class="save-btn" id="saveBtn">Save Key</button>
         </div>
-    </div>
-
-    <h3>Image Search Engine</h3>
-
-    <div class="project fade-in bg-lightlavender">
-        <div class="project-header">
-            <h3>Image Search Engine</h3>
-            <span class="date">Start: 25 Jul 2025 - End: 30 Jul 2025</span>
-        </div>
-        <p> Developed a responsive web-based image search engine using API integration to fetch and display images dynamically.<span class="ai-tag">HTML, CSS, JS</span></p>
-        <div class="photo-gallery">
-            <img src="images/protfolio1.png" alt="imageSearchEngin 1">
-            <img src="images/protfolio2.png" alt="imageSearchEngin 2">
-            <img src="images/protfolio4.png" alt="imageSearchEngin 4">
-            <img src="images/protfolio3.png" alt="imageSearchEngin 3">
-            <img src="images/protfolio5.png" alt="imageSearchEngin 5">
-            <img src="images/protfolio6.png" alt="imageSearchEngin 6">
-        </div>
-    </div>
-
-
-
-    <h3>Calculator</h3>
-
-    <div class="project fade-in bg-lightcoral">
-        <div class="project-header">
-            <h3>Calculator</h3>
-            <span class="date">Start: 10 Jul 2025 - End: 12 Jul 2025</span>
-        </div>
-        <p>Developed a responsive web-based calculator for performing basic arithmetic operations. <span class="ai-tag">HTML, CSS, JS</span></p>
-        <div class="photo-gallery">
-            <img src="images/protfolio1.png" alt="cal 1">
-            <img src="images/protfolio2.png" alt="cal 2">
-            <img src="images/protfolio4.png" alt="cal 4">
-            <img src="images/protfolio3.png" alt="cal 3">
-            <img src="images/protfolio5.png" alt="cal 5">
-            <img src="images/protfolio6.png" alt="cal 6">
-        </div>
-    </div>
-
-
-
-    <h3>Portfolio</h3>
-
-    <div class="project fade-in bg-lightgray">
-        <div class="project-header">
-            <h3>Portfolio</h3>
-            <span class="date">Start: 25 May 2025 - End: 30 Jun 2025</span>
-        </div>
-        <p>Created personal portfolio website showcasing projects and skills. <span class="ai-tag">HTML, CSS, JS</span></p>
-        <div class="photo-gallery">
-            <img src="images/protfolio1.png" alt="Portfolio 1">
-            <img src="images/protfolio2.png" alt="Portfolio 2">
-            <img src="images/protfolio4.png" alt="Portfolio 4">
-            <img src="images/protfolio3.png" alt="Portfolio 3">
-            <img src="images/protfolio5.png" alt="Portfolio 5">
-            <img src="images/protfolio6.png" alt="Portfolio 6">
-        </div>
-    </div>
-
-
-    <section>
-
-        <h3>Final Year - Bachelor of Engineering</h3>
-        <div class="project fade-in bg-lightpeach">
-            <div class="project-header">
-                <h3> A Graph Based Approch To Detect Drift In Text Data - Anuradha college of engineering</h3>
-                <span class="date">Start: 25 Nov 2024 - End: 20 Apr 2025</span>
-            </div>
-            <p> Achieved improved topic evolution tracking and enhanced robustness of NLP models when exposed to changing text streams. <span class="ai-tag">Python, ML Notebook Jupiter</span></p>
-            <div class="photo-gallery">
-                <img src="images/aec9.jpg" alt="Smart 1">
-                <img src="images/aec10.jpg" alt="Smart 2">
-                <img src="images/aec11.jpg" alt="Smart 3">
-                <img src="images/aec12.jpg" alt="Smart 4">
-                <img src="images/aec13.jpg" alt="Smart 5">
-            </div>
-        </div>
-    </section>
-
-
-    <!-- FINAL YEAR: Diploma in College Management -->
-    <section>
-        <h3>Final Year - Diploma in Engineering</h3>
-        <div class="project fade-in bg-lightaqua">
-            <div class="project-header">
-                <h3>Smart College Managment Android Application - Government Polytechnic, Murtizapur</h3>
-                <span class="date">Start: 20 Nov 2021 - End: 10 Apr 2022</span>
-            </div>
-            <p> Designed Student, Staff and Admin panal <span class="ai-tag">SDK, JDK, POSTMAN</span></p>
-            <div class="photo-gallery">
-                <img src="images/gpm7.jpg" alt="Login 1">
-                <img src="images/gpm8.jpg" alt="Login 2">
-                <img src="images/gpm9.jpg" alt="Login 3">
-                <img src="images/gpm10.jpg" alt="Login 4">
-                <img src="images/gpm12.jpg" alt="Login 5">
-                <img src="images/gpm11.jpg" alt="Login 6">
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <!-- LIGHTBOX -->
-    <div class="lightbox-overlay" id="lightbox">
-        <img id="lightbox-img" src="" alt="Zoomed">
-        <button class="close-btn" onclick="closeLightbox()">*</button>
+        <div class="info-text">This key is stored locally in your browser and not sent to any server</div>
     </div>
 
     <script>
-        // Show lightbox on image click
-        const lightbox = document.getElementById("lightbox");
-        const lightboxImg = document.getElementById("lightbox-img");
-
-        document.querySelectorAll('.photo-gallery img').forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightbox.style.display = "flex";
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageInput = document.getElementById('messageInput');
+            const sendBtn = document.getElementById('sendBtn');
+            const typingIndicator = document.getElementById('typingIndicator');
+            const apiKeyInput = document.getElementById('apiKeyInput');
+            const saveBtn = document.getElementById('saveBtn');
+            
+            // Load saved API key
+            const savedApiKey = localStorage.getItem('openaiApiKey');
+            if (savedApiKey) {
+                apiKeyInput.value = savedApiKey;
+            }
+            
+            // Save API key to localStorage
+            saveBtn.addEventListener('click', function() {
+                const key = apiKeyInput.value.trim();
+                if (key) {
+                    localStorage.setItem('openaiApiKey', key);
+                    addMessage("API key saved successfully! You can now chat with the AI.", 'bot');
+                } else {
+                    addMessage("Please enter a valid OpenAI API key.", 'bot');
+                }
             });
-        });
+            
+            // Add a message to the chat
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.classList.add(sender === 'bot' ? 'bot-message' : 'user-message');
+                
+                // Format the current time
+                const now = new Date();
+                const timeString = now.getHours().toString().padStart(2, '0') + ':' + 
+                                  now.getMinutes().toString().padStart(2, '0');
+                
+                // Convert markdown to HTML
+                const htmlContent = marked.parse(text);
+                
+                messageDiv.innerHTML = `${htmlContent}<span class="message-time">${timeString}</span>`;
+                chatContainer.appendChild(messageDiv);
+                
+                // Scroll to the bottom
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+            
+            // Get AI response from OpenAI API
+            async function getAIResponse(userMessage) {
+                const apiKey = localStorage.getItem('openaiApiKey');
+                if (!apiKey) {
+                    addMessage("Please enter your OpenAI API key to use this feature.", 'bot');
+                    return;
+                }
+                
+                // Show typing indicator
+                typingIndicator.style.display = 'block';
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+                
+                // Hide welcome message after first interaction
+                document.querySelector('.welcome-message').style.display = 'none';
+                
+                try {
+                    // In a real implementation, you would call the OpenAI API here
+                    // For this demo, we'll simulate the API call with a timeout
+                    
+                    // Simulate API call delay
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    // This is where the actual API call would happen:
+                    /*
+                    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${apiKey}`
+                        },
+                        body: JSON.stringify({
+                            model: "gpt-3.5-turbo",
+                            messages: [
+                                {role: "system", content: "You are a helpful assistant."},
+                                {role: "user", content: userMessage}
+                            ],
+                            temperature: 0.7
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    const aiResponse = data.choices[0].message.content;
+                    */
+                    
+                    // For demo purposes, generate a realistic response based on input
+                    const aiResponse = generateDemoResponse(userMessage);
+                    
+                    // Hide typing indicator
+                    typingIndicator.style.display = 'none';
+                    
+                    // Add AI response to chat
+                    addMessage(aiResponse, 'bot');
+                    
+                } catch (error) {
+                    // Hide typing indicator
+                    typingIndicator.style.display = 'none';
+                    
+                    // Show error message
+                    addMessage(`Error: ${error.message || 'Failed to get response from AI'}`, 'bot');
+                }
+            }
+            
+            // Generate a realistic demo response (simulating OpenAI API)
+            function generateDemoResponse(userMessage) {
+                const lowerCaseMsg = userMessage.toLowerCase();
+                
+                if (lowerCaseMsg.includes('hello') || lowerCaseMsg.includes('hi')) {
+                    return "Hello there! I'm an AI assistant powered by OpenAI technology. How can I help you today?";
+                } 
+                else if (lowerCaseMsg.includes('quantum')) {
+                    return "Quantum computing leverages quantum mechanics to process information. Unlike classical computers that use bits (0s and 1s), quantum computers use **qubits** which can exist in multiple states simultaneously through superposition. This allows quantum computers to solve certain complex problems much faster than traditional computers.\n\nKey concepts:\n- **Superposition**: Qubits can be in multiple states at once\n- **Entanglement**: Qubits can be linked, with the state of one affecting others\n- **Quantum interference**: Amplifies correct solutions and cancels incorrect ones\n\nCurrent applications include cryptography, drug discovery, and optimization problems.";
+                } 
+                else if (lowerCaseMsg.includes('poem')) {
+                    return `In circuits deep and silicon bright,
+A digital mind takes flight.
+From data streams, it learns and grows,
+Where logic flows and knowledge shows.
 
-        function closeLightbox() {
-            lightbox.style.display = "none";
-        }
+It answers queries, solves the tough,
+Handles requests, smooth and rough.
+A tireless worker, day and night,
+In artificial, boundless light.
 
-        // Animate fade-ins on load
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.fade-in').forEach((el, idx) => {
-                el.style.animationDelay = `${idx * 0.2}s`;
+So ask away, don't be shy,
+This AI friend will surely try,
+To help you with what you may seek,
+In bytes and bits, both strong and meek.`;
+                } 
+                else if (lowerCaseMsg.includes('trend') || lowerCaseMsg.includes('ai')) {
+                    return "Here are some key AI trends in 2023:\n\n1. **Generative AI**: Models like GPT-4 and DALL-E creating text, images, and code\n2. **AI Ethics**: Increased focus on responsible AI development and bias mitigation\n3. **Multimodal AI**: Systems that can process multiple types of data (text, images, audio)\n4. **Edge AI**: AI processing moving to devices rather than cloud servers\n5. **AI in Healthcare**: Diagnostic tools, drug discovery, and personalized medicine\n\nThese innovations are transforming industries and creating new possibilities across many sectors.";
+                } 
+                else if (lowerCaseMsg.includes('code') || lowerCaseMsg.includes('program')) {
+                    return "To improve your coding skills:\n\n1. **Practice Daily**: Consistent coding is key to improvement\n2. **Build Projects**: Create real applications to solve problems\n3. **Learn Algorithms**: Understand data structures and algorithms\n4. **Read Code**: Study well-written code from open-source projects\n5. **Debug Systematically**: Learn to troubleshoot effectively\n6. **Collaborate**: Contribute to team projects or open-source\n\nHere's a simple Python example:\n```python\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n-1)\n\nprint(factorial(5))  # Output: 120\n```";
+                } 
+                else if (lowerCaseMsg.includes('weather')) {
+                    return "I can provide general weather information, but for real-time data, I recommend checking a weather service. Currently, I can tell you that in most places:\n\n- Spring brings mild temperatures and occasional rain\n- Summer is warm to hot with longer daylight hours\n- Fall features cooling temperatures and colorful foliage\n- Winter brings colder temperatures and potential snow\n\nWould you like me to look up the weather for a specific location?";
+                } 
+                else {
+                    // Generate a relevant response for other queries
+                    return `I understand you're asking about "${userMessage}". As an AI assistant, I can provide information on a wide range of topics. Here's a detailed response:\n\nArtificial intelligence systems like me analyze patterns in data to generate responses. We're trained on diverse datasets to handle various queries. For your question, I would typically access relevant information from my knowledge base and provide a comprehensive answer.\n\nIf you have a specific question about technology, science, literature, or general knowledge, I'd be happy to help!`;
+                }
+            }
+            
+            // Handle sending a message
+            function sendMessage() {
+                const message = messageInput.value.trim();
+                if (message) {
+                    addMessage(message, 'user');
+                    messageInput.value = '';
+                    
+                    getAIResponse(message);
+                }
+            }
+            
+            // Event listeners
+            sendBtn.addEventListener('click', sendMessage);
+            
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
             });
+            
+            // Add event listeners for suggestions
+            document.querySelectorAll('.suggestion').forEach(button => {
+                button.addEventListener('click', function() {
+                    const prompt = this.getAttribute('data-prompt');
+                    messageInput.value = prompt;
+                    sendMessage();
+                });
+            });
+            
+            // Initial bot message
+            setTimeout(() => {
+                addMessage("Hello! I'm an AI assistant powered by OpenAI. Enter your API key below to start our conversation.", 'bot');
+            }, 1000);
         });
     </script>
-
 </body>
-
 </html>
