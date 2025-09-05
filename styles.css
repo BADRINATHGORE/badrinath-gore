@@ -593,20 +593,26 @@ Section Styles
      bottom: -450px;
  }
  
+ .container-size {
+     max-width: 5000px;
+     padding: 20px;
+     margin: 0 auto;
+ }
+ 
  .logo-img {
      margin-left: 0;
      /* Default for mobile/tablet */
  }
  
- @media (min-width: 1025px) {
+ @media (min-width: 1200px) {
      .logo-img {
-         margin-left: -110px;
+         margin-left: -130px;
          /* Apply only on larger screens */
      }
  }
  
- @media (min-width: 1025px) and (max-width: 1920px) {
+ @media (min-width: 1200px) and (max-width: 1920px) {
      .logo-img {
-         margin-left: -110px;
+         margin-left: px
      }
  }
