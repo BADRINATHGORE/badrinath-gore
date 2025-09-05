@@ -609,6 +609,9 @@ Section Styles
          margin-left: -130px;
          /* Apply only on larger screens */
      }
+     .item {
+         margin-right: -125px;
+     }
  }
  
  @media (min-width: 1200px) and (max-width: 1920px) {
