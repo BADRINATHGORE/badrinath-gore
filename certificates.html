@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badrinath Gore - Certification</title>
+    <title>Badrinath Gore - Hobbies</title>
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="icon" href="images/badriLogo1.png" sizes="60x60" type="image/x-icon">
+    <link rel="icon" href="images/badriLogo1.png" ssizes="60x60" type="image/x-icon">
 
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
@@ -52,7 +52,7 @@
         
         .certificate-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
             padding: 2px;
             max-width: 3200px;
@@ -362,6 +362,7 @@
         }
     </style>
 
+
 </head>
 
 <body>
@@ -557,87 +558,97 @@
     </nav>
 
 
-    <div data-aos="fade-up" data-aos-duration="1400">
-        <h2>My Certificates</h2>
+    <div style="padding: 20px">
+
+
+        <div data-aos="fade-up" data-aos-duration="1400">
+            <h2>My Certificates</h2>
+        </div>
+
+        <div class="certificate-container" data-aos="fade-up" data-aos-duration="1400" style="padding: 20px;">
+
+            <!-- Certificate 1 -->
+
+            <div class="certificate-card card1" data-aos="fade-up" data-aos-duration="1400">
+                <img src="images/JavaWorkshop.jpg" loading="lazy" alt="Certificate 1" onclick="openModal(this)">
+                <div class="certificate-info">
+                    <h3 class="title-red">Java & Career Skills Workshop Certificate</h3>
+                    <p>Core training in Java programming fundamentals, Soft skills, Resume building, Interview preparation, Mentorship, Personality development, and Professional event exposure.</p>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="certificate-card card2" data-aos="fade-up" data-aos-duration="1400">
+                <img src="images/cyber.jpg" loading="lazy" alt="Certificate 2" onclick="openModal(this)">
+                <div class="certificate-info">
+                    <h3 class="title-green">Cybersecurity Basics Certification</h3>
+                    <p>Title: Cybersecurity Basics Webinar Attendance Certificate. Issued by: Anuradha Engineering College, Chikhli.</p>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="certificate-card card3" data-aos="fade-up" data-aos-duration="1400">
+                <img src="images/ResearchPaper.jpg" loading="lazy" alt="Certificate 3" onclick="openModal(this)">
+                <div class="certificate-info">
+                    <h3 class="title-blue">Research Paper Presentation Certificate</h3>
+                    <p>"Green Technology & AI: Pathways to Sustainable Development (NCGTAI-2025)"</p>
+                </div>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="certificate-card card4" data-aos="fade-up" data-aos-duration="1400">
+                <img src="images/AIML.jpg" loading="lazy" alt="Certificate 4" onclick="openModal(this)">
+                <div class="certificate-info">
+                    <h3 class="title-orange">AI & ML FDP Workshop Certificate</h3>
+                    <p>One-Week Workshop cum FDP on AI & ML. Duration: 21st October 2024 to 26th October 2024. Location: Anuradha Engineering College, Chikhli.</p>
+                </div>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="certificate-card card5" data-aos="fade-up" data-aos-duration="1400">
+                <img src="images/Internship.jpg" loading="lazy" alt="Certificate 5" onclick="openModal(this)">
+                <div class="certificate-info">
+                    <h3 class="title-purple">Android Development Internship Certificate</h3>
+                    <p>Certificate of Completion. Intern: Mr. Gore Badrinath Ashok. Company: Mountreach Solution Pvt. Ltd.</p>
+                </div>
+            </div>
+
+            <!-- Certificate 6 -->
+            <div class="certificate-card card6" data-aos="fade-up" data-aos-duration="1400">
+                <img src="images/IndustrialTraning.jpg" loading="lazy" alt="Certificate 6" onclick="openModal(this)">
+                <div class="certificate-info">
+                    <h3 class="title-teal">Android Development – Industrial Training Certificate</h3>
+                    <p>Completed an Industrial Training program in Android Development. Gained exposure to various processes. Recognized as sincere, hardworking, and inquisitive.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Modal -->
+        <div id="imgModal" class="modal" onclick="closeModal()">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+
+        <script>
+            function openModal(img) {
+                const modal = document.getElementById("imgModal");
+                const modalImg = document.getElementById("modalImage");
+                modal.style.display = "flex";
+                modalImg.src = img.src;
+            }
+
+            function closeModal() {
+                document.getElementById("imgModal").style.display = "none";
+            }
+        </script>
     </div>
 
-    <div class="certificate-container" data-aos="fade-up" data-aos-duration="1400" style="padding: 20px;">
 
-        <!-- Certificate 1 -->
 
-        <div class="certificate-card card1" data-aos="fade-up" data-aos-duration="1400">
-            <img src="images/JavaWorkshop.jpg" loading="lazy" alt="Certificate 1" onclick="openModal(this)">
-            <div class="certificate-info">
-                <h3 class="title-red">Java & Career Skills Workshop Certificate</h3>
-                <p>Core training in Java programming fundamentals, Soft skills, Resume building, Interview preparation, Mentorship, Personality development, and Professional event exposure.</p>
-            </div>
-        </div>
 
-        <!-- Certificate 2 -->
-        <div class="certificate-card card2" data-aos="fade-up" data-aos-duration="1400">
-            <img src="images/cyber.jpg" loading="lazy" alt="Certificate 2" onclick="openModal(this)">
-            <div class="certificate-info">
-                <h3 class="title-green">Cybersecurity Basics Certification</h3>
-                <p>Title: Cybersecurity Basics Webinar Attendance Certificate. Issued by: Anuradha Engineering College, Chikhli.</p>
-            </div>
-        </div>
 
-        <!-- Certificate 3 -->
-        <div class="certificate-card card3" data-aos="fade-up" data-aos-duration="1400">
-            <img src="images/ResearchPaper.jpg" loading="lazy" alt="Certificate 3" onclick="openModal(this)">
-            <div class="certificate-info">
-                <h3 class="title-blue">Research Paper Presentation Certificate</h3>
-                <p>"Green Technology & AI: Pathways to Sustainable Development (NCGTAI-2025)"</p>
-            </div>
-        </div>
 
-        <!-- Certificate 4 -->
-        <div class="certificate-card card4" data-aos="fade-up" data-aos-duration="1400">
-            <img src="images/AIML.jpg" loading="lazy" alt="Certificate 4" onclick="openModal(this)">
-            <div class="certificate-info">
-                <h3 class="title-orange">AI & ML FDP Workshop Certificate</h3>
-                <p>One-Week Workshop cum FDP on AI & ML. Duration: 21st October 2024 to 26th October 2024. Location: Anuradha Engineering College, Chikhli.</p>
-            </div>
-        </div>
-
-        <!-- Certificate 5 -->
-        <div class="certificate-card card5" data-aos="fade-up" data-aos-duration="1400">
-            <img src="images/Internship.jpg" loading="lazy" alt="Certificate 5" onclick="openModal(this)">
-            <div class="certificate-info">
-                <h3 class="title-purple">Android Development Internship Certificate</h3>
-                <p>Certificate of Completion. Intern: Mr. Gore Badrinath Ashok. Company: Mountreach Solution Pvt. Ltd.</p>
-            </div>
-        </div>
-
-        <!-- Certificate 6 -->
-        <div class="certificate-card card6" data-aos="fade-up" data-aos-duration="1400">
-            <img src="images/IndustrialTraning.jpg" loading="lazy" alt="Certificate 6" onclick="openModal(this)">
-            <div class="certificate-info">
-                <h3 class="title-teal">Android Development – Industrial Training Certificate</h3>
-                <p>Completed an Industrial Training program in Android Development. Gained exposure to various processes. Recognized as sincere, hardworking, and inquisitive.</p>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Modal -->
-    <div id="imgModal" class="modal" onclick="closeModal()">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
-
-    <script>
-        function openModal(img) {
-            const modal = document.getElementById("imgModal");
-            const modalImg = document.getElementById("modalImage");
-            modal.style.display = "flex";
-            modalImg.src = img.src;
-        }
-
-        function closeModal() {
-            document.getElementById("imgModal").style.display = "none";
-        }
-    </script>
 
 
     <nav id="side-nav" class="navbar-side p-2 p-lg-2 me-lg-2 text-center" data-bs-theme="dark">
