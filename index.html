@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Badrinath Gore</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="SRC/style/style.css">
+
+    <!-- Home Emoji Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E⚡%3C/text%3E%3C/svg%3E">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+
+    <!-- Hello -->
+    <header class="header" id="header">
+        <a href="index.html" class="logo"><span class="main-icon"></span><span>Badri❤️</span></a>
+
+        <div class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="SRC/pages/skills.html">Skills</a>
+            <a href="SRC/pages/education.html">Education</a>
+            <a href="SRC/pages/gallery.html">Gallery</a>
+            <a href="SRC/pages/career.html">Career</a>
+            <a href="SRC/pages/hobbies.html">Hobbies</a>
+            <a href="SRC/pages/testimonials.html">Projects & Works</a>
+        </div>
+
+        <div class="main">
+            <a href="SRC/pages/contact.html" class="user main-items"><i class="fas fa-envelope cm-icon"></i>Contact
+                Me</a>
+            <div class="main-items menu-icon-container" id="menu-icon-js">
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </div>
+    </header>
+    <div class="page">
+        <section class="about" id="about">
+            <div class="about-content">
+                <div class="column right">
+                    <img src="Assets/banner-img.jpeg" alt="Banner" fetchpriority="high">
+                </div>
+                <div class="column left">
+                    <div class="text">Hello i'm Badrinath Gore and I'm a <span id="typed" class="iAm"></span></div>
+                    <p>
+                        I am a Java Full Stack Developer with a strong passion for building scalable, efficient, and user-focused applications. With a solid foundation in both frontend and backend technologies, I specialize in transforming complex ideas into reliable, high-performance
+                        web solutions. Driven by problem-solving and continuous learning, I aim to deliver clean, maintainable, and impactful software. </p>
+                    <br>
+                    <div class="buttons">
+                        <a href="SRC/pages/BadrinathResume.pdf">Download CV</a>
+                        <a href="SRC/pages/contact.html" class="cm-button">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="left">
+                &copy; <span id="current-year"></span> • Badrinath Gore • All Rights Reserved.
+            </div>
+
+            <script>
+                // Get the current year
+                const currentYear = new Date().getFullYear();
+
+                // Set the year in the span with id 'current-year'
+                document.getElementById("current-year").textContent = currentYear;
+            </script>
+
+            <div class="right">
+                <div class="social">
+                    <a href="https://www.facebook.com/badrinath.gore.94" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://www.instagram.com/badrigore_2002" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/badrinath-gore-002246243/" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://github.com/BADRINATHGORE" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+
+        </footer>
+        </div>
+
+        <div class="nav-touch-close" id="nav-tc-js"></div>
+
+        <script type="text/javascript" src="SRC/script/script.js"></script>
+
+        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+        <script>
+            var typed = new Typed('#typed', {
+                strings: ['Software Engineer', 'Database Engineer', 'Web Developer', 'App Developer', 'Java Full Stack Developer'],
+                typeSpeed: 60,
+            });
+        </script>
+
+</body>
+
+</html>

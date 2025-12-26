@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="../style/style.css">
+
+    <!-- Career favicon -->
+    <link rel="icon" href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+      <text y='.9em' font-size='90'>📩</text>
+    </svg>" type="image/svg+xml">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+
+
+    <header class="header" id="header">
+        <a href="../../index.html" class="logo"><span class="main-icon"></span><span>Badri❤️</span></a>
+
+        <div class="navbar">
+            <a href="../../index.html">Home</a>
+            <a href="./skills.html">Skills</a>
+            <a href="./education.html">Education</a>
+            <a href="./gallery.html">Gallery</a>
+            <a href="./career.html">Career</a>
+            <a href="./hobbies.html">Hobbies</a>
+            <a href="./testimonials.html">Projects & Works</a>
+        </div>
+
+        <div class="main">
+            <a href="contact.html" class="user main-items active"><i class="fas fa-envelope cm-icon"></i>Contact Me</a>
+            <div class="main-items menu-icon-container" id="menu-icon-js">
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page">
+        <main class="contact-main">
+            <div class="contact-full">
+
+                <section class="contact-form">
+                    <h1>Contact Me</h1>
+                    <div class="border-line"></div>
+                    <!-- <p>Feel free to get in touch with me by filling out the form below.</p> -->
+
+                    <form id="contactForm" class="form-section">
+
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Mobile Number *</label>
+                            <input type="text" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <!-- CAPTCHA -->
+                        <div class="col-lg-12 mb-4 captcha-box">
+                            <label><strong>CAPTCHA:</strong> <span id="captcha-question"></span></label>
+                            <input type="number" id="captcha-answer" placeholder="Enter answer" required />
+                        </div>
+
+                        <!-- Error messages -->
+                        <div class="error" style="display:none;">
+                            <i class="fa-solid fa-circle-xmark error-icon"></i> Please fill out all the fields
+                        </div>
+
+                        <div class="email-error" style="display:none;">
+                            <i class="fa-solid fa-circle-xmark error-icon"></i> Email address is not valid
+                        </div>
+
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submit-btn">
+        
+        <div  class="submit-text">Submit </div>
+    </button>
+
+                    </form>
+
+                    <!-- EmailJS -->
+                    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+                    <!-- Correct JS file -->
+                    <script src="contact-form.js"></script>
+
+                </section>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="left">
+                &copy; <span id="current-year"></span> • Badrinath Gore • All Rights Reserved.
+            </div>
+
+            <script>
+                // Get the current year
+                const currentYear = new Date().getFullYear();
+
+                // Set the year in the span with id 'current-year'
+                document.getElementById("current-year").textContent = currentYear;
+            </script>
+
+            <div class="right">
+                <div class="social">
+                    <a href="https://www.facebook.com/badrinath.gore.94" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://www.instagram.com/badrigore_2002" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/badrinath-gore-002246243/" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://github.com/BADRINATHGORE" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+
+        </footer>
+        </div>
+
+
+
+        <div class="nav-touch-close" id="nav-tc-js"></div>
+
+        <script type="text/javascript" src="../script/script.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+            (function() {
+                emailjs.init("Email Js API Key (keep it in .env file or seperately)");
+            })();
+        </script>
+
+</body>
+
+</html>

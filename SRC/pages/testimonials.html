@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects & Works</title>
+    <link rel="stylesheet" href="../style/style.css">
+
+    <!-- Projects favicon -->
+    <link rel="icon" href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+      <text y='.9em' font-size='90'>🛠️</text>
+    </svg>" type="image/svg+xml">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+
+<body>
+
+
+    <header class="header" id="header">
+        <a href="../../index.html" class="logo"><span class="main-icon"></span><span>Badri❤️</span></a>
+
+        <div class="navbar">
+            <a href="../../index.html">Home</a>
+            <a href="./skills.html">Skills</a>
+            <a href="./education.html">Education</a>
+            <a href="./gallery.html">Gallery</a>
+            <a href="./career.html">Career</a>
+            <a href="./hobbies.html">Hobbies</a>
+            <a href="./testimonials.html" class="active">Projects & Works</a>
+            <div class="border-line"></div>
+
+        </div>
+
+        <div class="main">
+            <a href="contact.html" class="user main-items"><i class="fas fa-envelope cm-icon"></i>Contact Me</a>
+            <div class="main-items menu-icon-container" id="menu-icon-js">
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .projects-section {
+            padding: 2rem;
+        }
+        
+        .projects-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .project {
+            margin-bottom: 3rem;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .project-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        
+        .project-dates {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-description {
+            margin: 0.5rem 0 1rem 0;
+        }
+        
+        .project-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        /* Grid layout for images */
+        
+        .project-images {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 images per row on desktop */
+            gap: 1rem;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        /* Lightbox Styles */
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+        /* Responsive Adjustments */
+        
+        @media (max-width: 1024px) {
+            .project-images {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 per row on tablet */
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .project-images {
+                grid-template-columns: repeat(1, 1fr);
+                /* 1 per row on mobile */
+            }
+            .project-name {
+                font-size: 1.3rem;
+            }
+            .project-title {
+                font-size: 1rem;
+            }
+            .project-description {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <div class="page">
+        <main class="testimonials-main">
+
+            <div class="testimonials-section">
+                <div class="testimonials-header">
+                    <div class="header-text">Projects & Works</div>
+                    <div class="header-line"></div>
+                </div>
+                <section class="projects-section">
+
+                    <div class="project">
+                        <h3 style="color: black;">Land of Ayurveda</h3>
+                        <span class="date" style="color: white;">Start: 05 Aug 2025 - End: 08 Aug 2025</span>
+                        <p>
+                            Developed a responsive website showcasing India’s beauty, culture, tourism, economy, technology,<br> and diverse states with an interactive and informative design.<br> We are winner of third prize in Hackathon at Naresh IT
+                            Hyderabad
+                            <span class="ai-tag"><b>Used HTML, CSS</b></span>
+                        </p>
+                        <a href="https://badrinathgore.github.io/India/index.html" target="_blank" class="project-link">View Live</a>
+                        <div class="project-images">
+                            <img src="../../Assets/testimonials/India1_13_11zon.jpeg" alt="Project 2 Image 1" fetchpriority="high" class="project-image">
+                            <img src="../../Assets/testimonials/India2_14_11zon.jpeg" alt="Project 2 Image 2" fetchpriority="high" class="project-image">
+                            <img src="../../Assets/testimonials/India3_15_11zon.jpeg" alt="Project 2 Image 3" fetchpriority="high" class="project-image">
+                            <img src="../../Assets/testimonials/India4_16_11zon.jpeg" alt="Project 2 Image 4" fetchpriority="high" class="project-image">
+                            <img src="../../Assets/testimonials/India5_17_11zon.jpeg" alt="Project 2 Image 3" fetchpriority="high" class="project-image">
+                            <img src="../../Assets/testimonials/India6_18_11zon.jpeg" alt="Project 2 Image 4" fetchpriority="high" class="project-image">
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <h3 style="color: black;">Image Search Engine</h3>
+                        <span class="date" style="color: white;">Start: 25 Jul 2025 - End: 30 Jul 2025</span>
+                        <p>
+                            <p> Developed a responsive web-based image search engine using API integration to fetch and display images dynamically.<span class="ai-tag"><b>Used HTML, CSS, JS</b></span></p>
+                        </p>
+                        <a href="https://badrinathgore.github.io/ImageSearch/" target="_blank" class="project-link">View Live</a>
+                        <div class="project-images">
+                            <img src="../../Assets/testimonials/ImageProject1_9_11zon.jpeg" alt="Project 2 Image 1" fetchpriority="high" class="project-image">
+                            <img src="../../Assets/testimonials/ImageProject2_10_11zon.jpeg" alt="Project 2 Image 2" fetchpriority="high" class="project-image">
+                            <img src="../../Assets/testimonials/ImageProject3_11_11zon.jpeg" alt="Project 2 Image 3" fetchpriority="high" class="project-image">
+                            <img src="../../Assets/testimonials/ImageProject4_12_11zon.jpeg" alt="Project 2 Image 4" fetchpriority="high" class="project-image">
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <h3 style="color: black;">Calculator</h3>
+                        <span class="date" style="color: white;">Start: 10 Jul 2025 - End: 12 Jul 2025</span>
+                        <p>Developed a responsive web-based calculator for performing basic arithmetic operations. <span class="ai-tag "><b>Used HTML, CSS, JS</b></span></p>
+
+                        <a href="https://badrinathgore.github.io/Calculator/" target="_blank" class="project-link">View Live</a>
+                        <div class="project-images">
+                            <img src="../../Assets/testimonials/cal1_1_11zon.jpeg" alt="Project 2 Image 1" class="project-image">
+                            <img src="../../Assets/testimonials/cal2_2_11zon.jpeg" alt="Project 2 Image 2" class="project-image">
+                            <img src="../../Assets/testimonials/cal3_3_11zon.jpeg" alt="Project 2 Image 3" class="project-image">
+                            <img src="../../Assets/testimonials/cal4_4_11zon.jpeg" alt="Project 2 Image 4" class="project-image">
+                        </div>
+                    </div>
+
+
+                    <div class="project">
+                        <h3 style="color: black;">Portfolio</h3>
+                        <span class="date" style="color: white;">Start: 25 May 2025 - End: 30 Jun 2025</span>
+                        <p>Created personal portfolio website showcasing projects and skills. <span class="ai-tag "><b>Used HTML, CSS, JS</b></span></p>
+
+                        <a href="https://badrinathgore.github.io/badri/index.html" target="_blank" class="project-link">View Live</a>
+                        <div class="project-images">
+                            <img src="../../Assets/testimonials/protfolio1_1_11zon.jpeg" alt="Project 2 Image 1" class="project-image">
+                            <img src="../../Assets/testimonials/protfolio2_2_11zon.jpeg" alt="Project 2 Image 2" class="project-image">
+                            <img src="../../Assets/testimonials/protfolio3_3_11zon.jpeg" alt="Project 2 Image 3" class="project-image">
+                            <img src="../../Assets/testimonials/protfolio4_4_11zon.jpeg" alt="Project 2 Image 4" class="project-image">
+                            <img src="../../Assets/testimonials/protfolio5_5_11zon.jpeg" alt="Project 2 Image 3" class="project-image">
+                            <img src="../../Assets/testimonials/protfolio6_6_11zon.jpeg" alt="Project 2 Image 4" class="project-image">
+                        </div>
+                    </div>
+
+                    <!-- Project Template -->
+                    <div class="project">
+                        <h3 class="project-name">Workshop</h3>
+                        <p class="project-title"><b>Python Workshop</b> – Seventh Sense Talent Solutions Pvt Ltd Bangalore Karnataka</p>
+                        <span class="date" style="color: white;">Start: 21 Oct 2024 - End: 26 Oct 2024</span>
+                        <p>Covered Python, <strong>Pandas</strong>, <strong> NumPy</strong>,<strong> SciPy</strong>,<strong> Matplotlib</strong>,<strong> Seaborn</strong>, Machine Learning basics, and data visualizations. <span class="ai-tag">Pycharm </span></p>
+
+
+                        <div class="project-images">
+                            <img src="../../Assets/testimonials/AIML_27_11zon.jpeg" alt="Project 1 Image 1" class="project-image">
+                            <img src="../../Assets/testimonials/sevenSenth_7_11zon.jpeg" alt="Project 1 Image 2" class="project-image">
+                            <img src="../../Assets/testimonials/sevenSenth1_8_11zon.jpeg" alt="Project 1 Image 3" class="project-image">
+                            <img src="../../Assets/testimonials/sevenSenth2_15_11zon.jpeg" alt="Project 1 Image 4" class="project-image">
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <h3 class="project-name">Final Year - Bachelor of Engineering</h3>
+                        <p class="project-title"> <b>A Graph Based Approch To Detect Drift In Text Data</b> - Anuradha college of engineering</p>
+                        <span class="date" style="color: white;">Start: 25 Nov 2024 - End: 20 Apr 2025</span>
+                        <p> Achieved improved topic evolution tracking and <br>enhanced robustness of NLP models when exposed to changing text streams. <span class="ai-tag "><b>Used Python, ML Notebook Jupiter</b></span></p>
+
+                        <div class="project-images">
+                            <img src="../../Assets/testimonials/aec9_22_11zon.jpeg" alt="Project 1 Image 1" class="project-image">
+                            <img src="../../Assets/testimonials/aec10_23_11zon.jpeg" alt="Project 1 Image 2" class="project-image">
+                            <img src="../../Assets/testimonials/aec11_24_11zon.jpeg" alt="Project 1 Image 3" class="project-image">
+                            <img src="../../Assets/testimonials/aec12_25_11zon.jpeg" alt="Project 1 Image 4" class="project-image">
+                            <img src="../../Assets/testimonials/aec13_26_11zon.jpeg" alt="Project 1 Image 1" class="project-image">
+                        </div>
+                    </div>
+                    <!-- Repeat for Projects 2–9 -->
+                    <div class="project">
+                        <h3 class="project-name">Internship</h3>
+                        <p class="project-title"><b>App Development Internship</b> – Mountreach Solution Pvt Ltd Amravati Maharashtra</p>
+                        <span class="date" style="color: white;">Start: 01 Nov 2021 - End: 15 Jan 2022</span>
+                        <p>Worked on live Smart College Managment System Android Project, UIs, APIs, and MySql DB. <span class="ai-tag"><b>Used SDK, JDK, Postman</b></span></p>
+                        <div class="project-images">
+                            <img src="../../Assets/testimonials/gpm7_9_11zon.jpeg" alt="Project 2 Image 1" class="project-image">
+                            <img src="../../Assets/testimonials/gpm10_12_11zon.jpeg" alt="Project 2 Image 2" class="project-image">
+                            <img src="../../Assets/testimonials/gpm8_10_11zon.jpeg" alt="Project 2 Image 3" class="project-image">
+                            <img src="../../Assets/testimonials/Internship_29_11zon.jpeg" alt="Project 2 Image 4" class="project-image">
+                        </div>
+                    </div>
+
+
+
+                    <div class="project">
+                        <h3 class="project-name">Industrial Training</h3>
+                        <p class="project-title"><b>Industrial Training Android App Development</b> - Mountreach Solution Pvt Ltd Amravati Maharashtra</p>
+                        <span class="date" style="color: white;">Start: 04 Aug 2021 - End: 30 Step 2021</span>
+                        <p>Worked on live Smart College Managment System Android Project, UIs, APIs, and MySql DB. <span class="ai-tag"><b>Used SDK, JDK</b></span></p>
+
+
+                        <div class="project-images">
+                            <img src="../../Assets/testimonials/Pro12_25_11zon.jpeg" alt="Project 1 Image 1" class="project-image">
+                            <img src="../../Assets/testimonials/Pro13_26_11zon.jpeg" alt="Project 1 Image 2" class="project-image">
+                            <img src="../../Assets/testimonials/Pro14_27_11zon.jpeg" alt="Project 1 Image 3" class="project-image">
+                            <img src="../../Assets/testimonials/Pro9_22_11zon.jpeg" alt="Project 1 Image 4" class="project-image">
+                            <img src="../../Assets/testimonials/Pro11_24_11zon.jpeg" alt="Project 1 Image 1" class="project-image">
+                            <img src="../../Assets/testimonials/Pro16_29_11zon.jpeg" alt="Project 1 Image 2" class="project-image">
+                            <img src="../../Assets/testimonials/Pro10_23_11zon.jpeg" alt="Project 1 Image 3" class="project-image">
+                            <img src="../../Assets/testimonials/IndustrialTraning_28_11zon.jpeg" alt="Project 1 Image 4" class="project-image">
+                        </div>
+                    </div>
+
+
+
+                    <div class="project">
+                        <h3 class="project-name">Final Year - Diploma in Engineering</h3>
+                        <p class="project-title"><b> Smart College Managment Android Application</b> - Government Polytechnic, Murtizapur</p>
+                        <span class="date" style="color: white;">Start: 20 Nov 2021 - End: 10 Apr 2022</span>
+                        <p> Designed Student, Staff and Admin panal <span class="ai-tag "><b>Used SDK, JDK, POSTMAN</b></span></p>
+
+                        <div class="project-images">
+                            <img src="../../Assets/testimonials/gpm7_9_11zon.jpeg" alt="Project 1 Image 1" class="project-image">
+                            <img src="../../Assets/testimonials/gpm8_10_11zon.jpeg" alt="Project 1 Image 2" class="project-image">
+                            <img src="../../Assets/testimonials/gpm9_11_11zon.jpeg" alt="Project 1 Image 3" class="project-image">
+                            <img src="../../Assets/testimonials/gpm10_12_11zon.jpeg" alt="Project 1 Image 4" class="project-image">
+                            <img src="../../Assets/testimonials/gpm11_13_11zon.jpeg" alt="Project 1 Image 5" class="project-image">
+                            <img src="../../Assets/testimonials/gpm12_14_11zon.jpeg" alt="Project 1 Image 6" class="project-image">
+                        </div>
+                    </div>
+
+
+
+                    <!-- Repeat for Projects 2–9 -->
+
+                    <!-- Add Projects 3–9 similarly -->
+                </section>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        document.querySelectorAll(".project-image").forEach(img => {
+                            img.loading = "lazy";
+                            img.decoding = "async";
+                        });
+                    });
+
+                    const lightbox = document.createElement('div');
+                    const lightboxImg = document.createElement('img');
+                    const closeBtn = document.createElement('span');
+
+                    let isZoomed = false;
+                    let isDragging = false;
+                    let startX = 0,
+                        startY = 0;
+                    let translateX = 0,
+                        translateY = 0;
+                    const ZOOM_LEVEL = 2;
+
+                    // Setup lightbox
+                    lightbox.id = 'lightbox';
+                    lightbox.style.cssText = `
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    `;
+
+                    lightboxImg.style.cssText = `
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 8px;
+        transition: transform 0.25s ease;
+        cursor: zoom-in;
+        user-select: none;
+    `;
+
+                    // Close button
+                    closeBtn.innerHTML = '&times;';
+                    closeBtn.style.cssText = `
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        color: #fff;
+        cursor: pointer;
+        user-select: none;
+    `;
+
+                    lightbox.appendChild(lightboxImg);
+                    lightbox.appendChild(closeBtn);
+                    document.body.appendChild(lightbox);
+
+                    // Open lightbox
+                    document.querySelectorAll('.project-image').forEach(img => {
+                        img.addEventListener('click', () => {
+                            lightboxImg.src = img.src;
+                            resetZoom();
+                            lightbox.style.display = 'flex';
+                            document.body.style.overflow = 'hidden';
+                        });
+                    });
+
+                    // Click to zoom toward click position
+                    lightboxImg.addEventListener('dblclick', (e) => {
+                        if (!isZoomed) {
+                            isZoomed = true;
+
+                            // Get click position relative to image
+                            const rect = lightboxImg.getBoundingClientRect();
+                            const offsetX = e.clientX - rect.left;
+                            const offsetY = e.clientY - rect.top;
+
+                            // Calculate percentage for transform-origin
+                            const originX = (offsetX / rect.width) * 100;
+                            const originY = (offsetY / rect.height) * 100;
+
+                            lightboxImg.style.transformOrigin = `${originX}% ${originY}%`;
+                            lightboxImg.style.transform = `scale(${ZOOM_LEVEL}) translate(0px, 0px)`;
+                            lightboxImg.style.cursor = 'grab';
+                        } else {
+                            resetZoom();
+                        }
+                    });
+
+                    // Drag to move image
+                    lightboxImg.addEventListener('mousedown', (e) => {
+                        if (!isZoomed) return;
+                        isDragging = true;
+                        startX = e.clientX - translateX;
+                        startY = e.clientY - translateY;
+                        lightboxImg.style.cursor = 'grabbing';
+                        e.preventDefault();
+                    });
+
+                    document.addEventListener('mousemove', (e) => {
+                        if (!isDragging || !isZoomed) return;
+                        translateX = e.clientX - startX;
+                        translateY = e.clientY - startY;
+                        lightboxImg.style.transform = `scale(${ZOOM_LEVEL}) translate(${translateX}px, ${translateY}px)`;
+                    });
+
+                    document.addEventListener('mouseup', () => {
+                        if (!isDragging) return;
+                        isDragging = false;
+                        if (isZoomed) lightboxImg.style.cursor = 'grab';
+                    });
+
+                    // Close when clicking outside image
+                    lightbox.addEventListener('click', (e) => {
+                        if (e.target === lightbox) closeLightbox();
+                    });
+
+                    // Close button
+                    closeBtn.addEventListener('click', closeLightbox);
+
+                    // ESC key close
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+                            closeLightbox();
+                        }
+                    });
+
+                    function resetZoom() {
+                        isZoomed = false;
+                        translateX = 0;
+                        translateY = 0;
+                        lightboxImg.style.transformOrigin = 'center center';
+                        lightboxImg.style.transform = 'scale(1) translate(0px, 0px)';
+                        lightboxImg.style.cursor = 'zoom-in';
+                    }
+
+                    function closeLightbox() {
+                        lightbox.style.display = 'none';
+                        resetZoom();
+                        document.body.style.overflow = '';
+                    }
+                </script>
+
+
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="left">
+                &copy; <span id="current-year"></span> • Badrinath Gore • All Rights Reserved.
+            </div>
+
+            <script>
+                // Get the current year
+                const currentYear = new Date().getFullYear();
+
+                // Set the year in the span with id 'current-year'
+                document.getElementById("current-year").textContent = currentYear;
+            </script>
+
+            <div class="right">
+                <div class="social">
+                    <a href="https://www.facebook.com/badrinath.gore.94" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://www.instagram.com/badrigore_2002" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/badrinath-gore-002246243/" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://github.com/BADRINATHGORE" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+
+        </footer>
+        </div>
+
+        <div class="nav-touch-close" id="nav-tc-js"></div>
+
+        <script type="text/javascript" src="../script/script.js"></script>
+
+</body>
+
+</html>

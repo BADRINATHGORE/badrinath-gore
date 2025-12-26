@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+
+    <!-- Education favicon: Graduation Cap -->
+    <link rel="icon" href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+      <text y='.9em' font-size='90'>📸</text>
+    </svg>" type="image/svg+xml">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+
+    <style>
+        /* Gallery images */
+        
+        .images img {
+            cursor: pointer;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        /* Modal hidden by default */
+        
+        .image-modal {
+            display: none;
+            /* ✅ VERY IMPORTANT */
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        /* Image inside modal */
+        
+        .modal-content {
+            max-width: 95vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        /* Close button */
+        
+        .close {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            font-size: 34px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        /* Mobile support */
+        
+        @media (max-width: 768px) {
+            .modal-content {
+                max-height: 80vh;
+            }
+        }
+    </style>
+
+
+    <header class="header" id="header">
+        <a href="../../index.html" class="logo"><span class="main-icon"></span><span>Badri❤️</span></a>
+
+        <div class="navbar">
+            <a href="../../index.html">Home</a>
+            <a href="./skills.html">Skills</a>
+            <a href="./education.html">Education</a>
+            <a href="./gallery.html" class="active">Gallery</a>
+            <a href="./career.html">Career</a>
+            <a href="./hobbies.html">Hobbies</a>
+            <a href="./testimonials.html">Projects & Works</a>
+        </div>
+
+
+        <div class="main">
+            <a href="contact.html" class="user main-items"><i class="fas fa-envelope cm-icon"></i>Contact Me</a>
+            <div class="main-items menu-icon-container" id="menu-icon-js">
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page">
+        <main class="gallery-main">
+            <div class="gallery-section">
+                <div class="column nepal">
+                    <div class="header">
+                        <div class="header-line"></div>
+                        <div class="text">- AEC- <i class="fa-solid fa-camera"></i></div>
+                        <div class="header-line right"></div>
+                    </div>
+                    <div class="images">
+                        <div class="first image-column">
+                            <img src="../../Assets/testimonials/aec22_2_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/aec2_16_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/aec20_4_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/aec16_9_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/aec19_5_11zon.jpeg" alt="">
+                        </div>
+                        <div class="second image-column">
+                            <img src="../../Assets/testimonials/aec4_18_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/aec5_19_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/aec7_20_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/aec14_7_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/aec3_17_11zon.jpeg" alt="">
+                        </div>
+                        <div class="third image-column">
+
+                            <img src="../../Assets/testimonials/aec8_21_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/aec15_7_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/aec1_6_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/aec18_12_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/aec21_3_11zon.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="column australia">
+                    <div class="header">
+                        <div class="header-line"></div>
+                        <div class="text"> -GPM- <i class="fa-solid fa-camera"></i></div>
+                        <div class="header-line right"></div>
+                    </div>
+                    <div class="images">
+                        <div class="first image-column">
+                            <img src="../../Assets/testimonials/gmp1_10_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/gpm2_5_11zon.jpeg" alt="">
+                        </div>
+                        <br>
+                        <div class="second image-column">
+                            <img src="../../Assets/testimonials/gpm4_6_11zon.jpeg" alt="">
+                            <img src="../../Assets/testimonials/gpm5_7_11zon.jpeg" alt="">
+                        </div>
+                        <div class="second image-column">
+                            <img src="../../Assets/testimonials/gpm6_8_11zon.jpeg" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="left">
+                &copy; <span id="current-year"></span> • Badrinath Gore • All Rights Reserved.
+            </div>
+
+            <script>
+                // Get the current year
+                const currentYear = new Date().getFullYear();
+
+                // Set the year in the span with id 'current-year'
+                document.getElementById("current-year").textContent = currentYear;
+            </script>
+
+            <div class="right">
+                <div class="social">
+                    <a href="https://www.facebook.com/badrinath.gore.94" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://www.instagram.com/badrigore_2002" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/badrinath-gore-002246243/" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://github.com/BADRINATHGORE" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+
+        </footer>
+        </div>
+
+        <div class="nav-touch-close" id="nav-tc-js"></div>
+
+        <script type="text/javascript" src="../script/script.js"></script>
+
+        <!-- Image Modal -->
+        <div id="imageModal" class="image-modal">
+            <span class="close">&times;</span>
+            <img id="modalImg" class="modal-content">
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // Lazy-load all images
+                document.querySelectorAll(".images img").forEach(img => {
+                    img.loading = "lazy";
+                    img.decoding = "async";
+
+                    // Open modal on click
+                    img.addEventListener("click", () => openModal(img.src));
+                });
+
+                // Modal elements
+                const modal = document.getElementById("imageModal");
+                const modalImg = document.getElementById("modalImg");
+                const closeBtn = document.querySelector(".close");
+
+                let isZoomed = false;
+                let isDragging = false;
+                let startX = 0,
+                    startY = 0;
+                let translateX = 0,
+                    translateY = 0;
+                const ZOOM_LEVEL = 2;
+
+                // Open modal
+                function openModal(imgSrc) {
+                    modal.style.display = "flex";
+                    modalImg.src = imgSrc;
+                    resetZoom();
+                    document.body.style.overflow = "hidden";
+                }
+
+                // Close modal
+                function closeModal() {
+                    modal.style.display = "none";
+                    resetZoom();
+                    document.body.style.overflow = "";
+                }
+
+                // Reset zoom
+                function resetZoom() {
+                    isZoomed = false;
+                    translateX = 0;
+                    translateY = 0;
+                    modalImg.style.transformOrigin = "center center";
+                    modalImg.style.transform = "scale(1) translate(0px, 0px)";
+                    modalImg.style.cursor = "zoom-in";
+                }
+
+                // Double-click to zoom
+                modalImg.addEventListener("dblclick", (e) => {
+                    if (!isZoomed) {
+                        isZoomed = true;
+                        const rect = modalImg.getBoundingClientRect();
+                        const offsetX = e.clientX - rect.left;
+                        const offsetY = e.clientY - rect.top;
+                        const originX = (offsetX / rect.width) * 100;
+                        const originY = (offsetY / rect.height) * 100;
+                        modalImg.style.transformOrigin = `${originX}% ${originY}%`;
+                        modalImg.style.transform = `scale(${ZOOM_LEVEL}) translate(0px, 0px)`;
+                        modalImg.style.cursor = "grab";
+                    } else {
+                        resetZoom();
+                    }
+                });
+
+                // Drag to move image
+                modalImg.addEventListener("mousedown", (e) => {
+                    if (!isZoomed) return;
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    modalImg.style.cursor = "grabbing";
+                    e.preventDefault();
+                });
+
+                document.addEventListener("mousemove", (e) => {
+                    if (!isDragging || !isZoomed) return;
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    modalImg.style.transform = `scale(${ZOOM_LEVEL}) translate(${translateX}px, ${translateY}px)`;
+                });
+
+                document.addEventListener("mouseup", () => {
+                    if (!isZoomed) return;
+                    isDragging = false;
+                    modalImg.style.cursor = "grab";
+                });
+
+                // Smooth transform
+                modalImg.style.transition = "transform 0.25s ease";
+
+                // Close modal
+                closeBtn.addEventListener("click", closeModal);
+
+                // Click outside image closes modal
+                modal.addEventListener("click", (e) => {
+                    if (e.target === modal) closeModal();
+                });
+
+                // ESC key closes modal
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "Escape") closeModal();
+                });
+
+                // Footer current year
+                const currentYear = new Date().getFullYear();
+                const yearSpan = document.getElementById("current-year");
+                if (yearSpan) yearSpan.textContent = currentYear;
+            });
+        </script>
+
+
+
+</body>
+
+</html>
