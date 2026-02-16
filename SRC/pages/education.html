@@ -18,6 +18,20 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 
+<style>
+    .header-text {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    
+    .header-line {
+        width: 80px;
+        /* Adjust length of underline */
+        height: 3px;
+        background-color: rgb(175, 57, 57);
+        margin-top: 6px;
+    }
+</style>
 
 <body>
 
@@ -28,7 +42,7 @@
         <div class="navbar">
             <a href="../../index.html">Home</a>
             <a href="./skills.html">Skills</a>
-            <a href="./education.html" class="active">Education</a>
+            <a href="./education.html" class="active">Background</a>
             <a href="./gallery.html">Gallery</a>
             <a href="./career.html">Career</a>
             <a href="./hobbies.html">Hobbies</a>
@@ -46,43 +60,102 @@
 
 
     <div class="page">
+
         <main class="education-main">
             <div class="education-section">
 
+                <!-- Work Experience Header -->
+                <div class="header">
+                    <div class="header-text">Work Experience</div>
+                    <div class="header-line"></div>
+                </div>
+
+                <!-- Java Full Stack Developer Training -->
                 <div class="study second">
                     <div class="image">
-                        <img src="../../Assets/education/two.jpeg" alt="Education Image" id="zoomImage" fetchpriority="high">
+                        <img src="../../Assets/testimonials/nit.webp" alt="Java Full Stack Training" id="zoomImage" fetchpriority="high">
+                    </div>
+                    <div id="overlay"></div>
+                    <div class="line"></div>
+                    <div class="texts">
+                        <div class="header">Java Full Stack Developer Trainee</div>
+                        <div class="name">Naresh I Technologies</div>
+                        <div class="title">Full Stack Development Training</div>
+                        <div class="year">2025 - Present</div>
+                        <div class="text">
+                            Undergoing comprehensive training in Java Full Stack Development, covering HTML, CSS, JavaScript, Core Java, Advanced Java, SQL, Oracle PL/SQL, React.js, Spring Core, Spring Boot, and Microservices architecture. Gaining hands-on experience in building
+                            end-to-end web applications using modern development practices and tools.
+                        </div>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <!-- Android App Developer Internship -->
+                <div class="study third">
+                    <div class="image">
+                        <img src="../../Assets/testimonials/mount.jpg" alt="Android Developer Internship" fetchpriority="high">
+                    </div>
+                    <div class="line"></div>
+                    <div class="texts">
+                        <div class="header">Android App Developer Intern</div>
+                        <div class="name">Mountreach Solutions Pvt. Ltd.</div>
+                        <div class="title">Android App Development</div>
+                        <div class="year">2021 - 2022</div>
+                        <div class="text">
+                            Worked as an Android App Developer Intern and developed a College Management Application using Java and Android SDK. Designed user-friendly interfaces and implemented features such as student registration, attendance management, and notifications. Integrated
+                            backend APIs and managed data using Oracle Database. Performed API testing with Postman and deployed backend services using XAMPP Server. Gained hands-on experience in mobile application development, debugging, and real-time
+                            project implementation.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Header -->
+                <div class="header">
+                    <div class="header-text">Education</div>
+                    <div class="header-line"></div>
+                </div>
+
+                <!-- Bachelor of Engineering -->
+                <div class="study second">
+                    <div class="image">
+                        <img src="../../Assets/education/two.jpeg" alt="Bachelor of Engineering" id="zoomImage" fetchpriority="high">
                     </div>
                     <div id="overlay"></div>
                     <div class="line"></div>
                     <div class="texts">
                         <div class="header">Bachelor of Engineering</div>
-                        <div class="name">Anuradha College of Engineering and Technology Chikhli</div>
+                        <div class="name">Anuradha College of Engineering and Technology, Chikhli</div>
                         <div class="name">Sant Gadge Baba Amaravati University</div>
-                        <div class="year">2022-2025</div>
+                        <div class="year">2022 - 2025</div>
                         <div class="text">
-                            Successfully completed a full-time Bachelor of Engineering in Computer Science and Engineering.
+                            Successfully completed a full-time Bachelor of Engineering in Computer Science and Engineering, gaining hands-on experience in software development, algorithms, and modern programming practices.
                         </div>
-
                     </div>
                 </div>
-                <br>
-                <br>
+
+
+                <!-- Diploma in Engineering -->
                 <div class="study third">
                     <div class="image">
-                        <img src="../../Assets/education/one.jpeg" alt="" fetchpriority="high">
+                        <img src="../../Assets/education/one.jpeg" alt="Diploma in Engineering" fetchpriority="high">
                     </div>
                     <div class="line"></div>
                     <div class="texts">
                         <div class="header">Diploma in Engineering</div>
                         <div class="name">Government Polytechnic, Murtizapur</div>
                         <div class="name">Maharashtra State Board of Technical Education</div>
-                        <div class="year">2020-2022</div>
-                        <div class="text">Completed a full-time Diploma program in Information Technology.</div>
+                        <div class="year">2020 - 2022</div>
+                        <div class="text">
+                            Completed a full-time Diploma program in Information Technology, covering core IT subjects, programming, networking, and database management.
+                        </div>
                     </div>
                 </div>
+
             </div>
         </main>
+
+
         <footer class="footer">
             <div class="left">
                 <strong>
