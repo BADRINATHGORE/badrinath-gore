@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Name: first + last
         if (!/^[A-Za-z\s]+$/.test(name) || name.split(/\s+/).length < 2) {
-            
+
             alert("Name must include at least first name and surname.\nExample: Badrinath Gore");
 
             return;
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Phone
-        if (!/^\d{10}$/.test(phone)) { 
+        if (!/^\d{10}$/.test(phone)) {
             alert("Please enter a valid 10-digit mobile number.\nMake sure all digits are correct.");
 
             return;
@@ -92,14 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
             "template_hxlnzk1",
             form
         ).then(() => {
-            alert("Form submitted successfully!\nThank you for filling out the form 🙏");
+            alert("Hi " + name + " 😊\n\nYour form has been submitted successfully!\nThank you for filling it out!");
             sessionStorage.setItem("email_sent", "true");
             form.reset();
             generateCaptcha();
             resetButton();
             location.reload();
         }).catch((error) => {
-           alert("Form submission failed due to a technical issue.\nPlease try again later.");
+            alert("Form submission failed due to a technical issue.\nPlease try again later.");
 
             console.error("EmailJS Error:", error);
             generateCaptcha();
@@ -120,4 +120,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
