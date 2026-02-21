@@ -92,8 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "template_hxlnzk1",
             form
         ).then(() => {
+            submitBtn.innerText = "Submitted...";
             alert("Hi " + name + " 😊\n\nYour form has been submitted successfully!\nThank you for filling it out!");
-             submitBtn.innerText = "Submitted...";
             sessionStorage.setItem("email_sent", "true");
             form.reset();
             generateCaptcha();
@@ -122,4 +122,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
 
