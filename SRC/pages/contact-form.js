@@ -106,7 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
             resetButton();
             location.reload();
         });
-
+        
+        document.getElementById("yearField").value = new Date().getFullYear();
+        
         function resetButton() {
             submitBtn.disabled = false;
             submitBtn.innerHTML = `
@@ -118,5 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>`;
         }
     });
+
 
 });
