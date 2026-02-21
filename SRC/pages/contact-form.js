@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Disable button
         submitBtn.disabled = true;
         submitBtn.innerText = "Submitting...";
-
+        document.getElementById("yearField").value = new Date().getFullYear();
         // ---- SEND EMAIL ----
         emailjs.sendForm(
             "service_vzpsmcs",
@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             form
         ).then(() => {
             alert("Hi " + name + " 😊\n\nYour form has been submitted successfully!\nThank you for filling it out!");
+             submitBtn.innerText = "Submitted...";
             sessionStorage.setItem("email_sent", "true");
             form.reset();
             generateCaptcha();
@@ -106,9 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
             resetButton();
             location.reload();
         });
-        
-        document.getElementById("yearField").value = new Date().getFullYear();
-        
+   
         function resetButton() {
             submitBtn.disabled = false;
             submitBtn.innerHTML = `
@@ -123,3 +122,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
