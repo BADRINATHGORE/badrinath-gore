@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Disable button
         submitBtn.disabled = true;
         submitBtn.innerText = "Submitting...";
-        document.getElementById("yearField").value = new Date().getFullYear();
+        document.getElementById("current-year").value = new Date().getFullYear();
         // ---- SEND EMAIL ----
         emailjs.sendForm(
             "service_vzpsmcs",
@@ -122,5 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
 
 
