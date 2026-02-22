@@ -1,25 +1,55 @@
 // Wait until page loads
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Initialize EmailJS AFTER library loads
+    // Initialize EmailJS
     emailjs.init("2jAwNzHJGwYSaZTMe");
 
     let num1, num2;
+    const form = document.getElementById("contactForm");
+    const submitBtn = document.getElementById("submit-btn");
 
-    // Generate CAPTCHA
+    // ---------------- CAPTCHA ----------------
     function generateCaptcha() {
         num1 = Math.floor(Math.random() * 10) + 1;
         num2 = Math.floor(Math.random() * 10) + 1;
         document.getElementById("captcha-question").innerText =
-            `${num1} + ${num2} = ?`;
+            `${num1} + ${num2} = ? 🤔`;
     }
 
     generateCaptcha();
 
-    const form = document.getElementById("contactForm");
-    const submitBtn = document.getElementById("submit-btn");
+    // ---------------- EMAIL VALIDATION ----------------
+    async function validateEmail(email) {
+        // 1️⃣ Regex format check
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            alert("❌ Oops! Please enter a valid email address: " + email);
+            return false; // stop submission
+        }
 
-    form.addEventListener("submit", function(e) {
+        // 2️⃣ Call API to check SMTP
+        try {
+            const response = await fetch(`https://apilayer.net/api/check?access_key=56fc7ddf40b8ac5b7890c7e639268bd4&email=${encodeURIComponent(email)}`);
+            const data = await response.json();
+
+            // 3️⃣ Check SMTP and warn user if fails
+            if (data.smtp_check !== true) {
+                const proceed = confirm(
+                    "❌ Incorrect email!\nPlease enter the correct email.\n\nYour email: " + email
+                );
+                if (!proceed) return false;
+            }
+
+            return true; // email passed validation
+
+        } catch (error) {
+            console.error("Email validation error:", error);
+            alert("❌ Sorry! We couldn't verify your email right now. Please try again later.");
+            return false;
+        }
+    }
+
+    // ---------------- FORM SUBMIT ----------------
+    form.addEventListener("submit", async function(e) {
         e.preventDefault();
 
         const name = form.name.value.trim();
@@ -27,49 +57,41 @@ document.addEventListener("DOMContentLoaded", () => {
         const phone = form.phone.value.trim();
         const subject = form.subject.value.trim();
         const message = form.message.value.trim();
-        const userAnswer = parseInt(
-            document.getElementById("captcha-answer").value
-        );
+        const userAnswer = parseInt(document.getElementById("captcha-answer").value);
 
-        // ---- VALIDATIONS ----
+        // -------- VALIDATIONS --------
 
-        // Name: first + last
+        // Name validation
         if (!/^[A-Za-z\s]+$/.test(name) || name.split(/\s+/).length < 2) {
-
-            alert("Name must include at least first name and surname.\nExample: Badrinath Gore");
-
+            alert("❌ Name must include at least first name and surname.\nExample: Badrinath Gore");
             return;
         }
 
-        // Email
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            alert("Please enter a valid email address.");
-            return;
-        }
+        // Email validation with SMTP check
+        const isEmailValidResult = await validateEmail(email);
+        if (!isEmailValidResult) return;
 
-        // Phone
+        // Phone validation
         if (!/^\d{10}$/.test(phone)) {
-            alert("Please enter a valid 10-digit mobile number.\nMake sure all digits are correct.");
-
+            alert("📱 Please enter a valid 10-digit mobile number.");
             return;
         }
 
-        // Subject
+        // Subject validation
         if (subject.length < 2) {
-            alert("Subject must be at least 2 characters.");
+            alert("📝 Subject must be at least 2 characters long.");
             return;
         }
 
-        // Message
+        // Message validation
         if (message.split(/\s+/).length < 2) {
-            alert("Message must contain at least 2 words.");
+            alert("💬 Message must contain at least 2 words.");
             return;
         }
 
-        // CAPTCHA
+        // CAPTCHA validation
         if (userAnswer !== (num1 + num2)) {
-            alert("Incorrect captcha answer.\nEnter the correct captcha answer.");
-
+            alert("❌ Incorrect captcha answer. Try again! 🤓");
             generateCaptcha();
             document.getElementById("captcha-answer").value = "";
             return;
@@ -77,51 +99,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Prevent multiple submissions
         if (sessionStorage.getItem("email_sent") === "true") {
-            alert("You have already submitted the form.\nPlease do not submit again.");
-
+            alert("✅ You have already submitted the form. Thank you! 🙏");
             return;
         }
 
-        // Disable button
+        // -------- ADD FULL DATE + TIME --------
+        const now = new Date();
+        const formattedTime = now.toLocaleString("en-IN", {
+            weekday: "long",
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true,
+            timeZoneName: "short"
+        });
+
+        document.getElementById("time").value = formattedTime;
+        document.getElementById("year").value = now.getFullYear();
+
+        // Disable button while submitting
         submitBtn.disabled = true;
-        submitBtn.innerText = "Submitting..."; 
-        // ---- SEND EMAIL ----
+        submitBtn.innerText = "Submitting... ⏳";
+
+        // -------- SEND EMAIL --------
         emailjs.sendForm(
             "service_vzpsmcs",
             "template_hxlnzk1",
             form
         ).then(() => {
-            submitBtn.innerText = "Submitted...";
-            alert("Hi " + name + " 😊\n\nYour form has been submitted successfully!\nThank you for filling it out!");
+
+            alert("🎉 Hi " + name + "!\n\nYour form has been submitted successfully.\nThank you for reaching out! 😊");
+
             sessionStorage.setItem("email_sent", "true");
+
             form.reset();
             generateCaptcha();
             resetButton();
-            location.reload();
+
         }).catch((error) => {
-            alert("Form submission failed due to a technical issue.\nPlease try again later.");
 
             console.error("EmailJS Error:", error);
+            alert("❌ Form submission failed. Please try again later. 🙏");
+
             generateCaptcha();
             resetButton();
-            location.reload();
         });
-   
+
+        // -------- RESET BUTTON --------
         function resetButton() {
             submitBtn.disabled = false;
-            submitBtn.innerHTML = `
-                <span>Submit</span>
-                <div class="position-absolute top-50 end-0 translate-middle-y me-3">
-                    <svg class="arrow-right text-white p-1" width="28" height="28">
-                        <use xlink:href="#arrow-right"></use>
-                    </svg>
-                </div>`;
+            submitBtn.innerHTML = "Submit";
         }
+
     });
 
-
 });
-
-
-
-
