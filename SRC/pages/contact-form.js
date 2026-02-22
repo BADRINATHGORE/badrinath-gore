@@ -1,10 +1,12 @@
-// Wait until page loads
+ // Wait until page loads
 document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize EmailJS
     emailjs.init("2jAwNzHJGwYSaZTMe");
 
     let num1, num2;
+    let isSubmitting = false; // 🔒 Hard lock for one-click submit
+
     const form = document.getElementById("contactForm");
     const submitBtn = document.getElementById("submit-btn");
 
@@ -20,18 +22,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ---------------- EMAIL VALIDATION ----------------
     async function validateEmail(email) {
+
         // 1️⃣ Regex format check
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             alert("❌ Oops! Please enter a valid email address: " + email);
-            return false; // stop submission
+            return false;
         }
 
-        // 2️⃣ Call API to check SMTP
+        // 2️⃣ SMTP API check (with timeout for faster fail)
         try {
-            const response = await fetch(`https://apilayer.net/api/check?access_key=56fc7ddf40b8ac5b7890c7e639268bd4&email=${encodeURIComponent(email)}`);
+
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 5000);
+
+            const response = await fetch(
+                `https://apilayer.net/api/check?access_key=56fc7ddf40b8ac5b7890c7e639268bd4&email=${encodeURIComponent(email)}`,
+                { signal: controller.signal }
+            );
+
+            clearTimeout(timeout);
+
             const data = await response.json();
 
-            // 3️⃣ Check SMTP and warn user if fails
+            // 3️⃣ Keep your original confirm logic (NOT changed)
             if (data.smtp_check !== true) {
                 const proceed = confirm(
                     "❌ Incorrect email!\nPlease enter the correct email.\n\nYour email: " + email
@@ -39,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!proceed) return false;
             }
 
-            return true; // email passed validation
+            return true;
 
         } catch (error) {
             console.error("Email validation error:", error);
@@ -48,9 +61,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // ---------------- RESET BUTTON ----------------
+    function resetButton() {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit";
+        isSubmitting = false;
+    }
+
     // ---------------- FORM SUBMIT ----------------
     form.addEventListener("submit", async function(e) {
+
         e.preventDefault();
+
+        // 🚫 Prevent multiple clicks instantly
+        if (isSubmitting) return;
+        isSubmitting = true;
+
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Submitting... ⏳";
 
         const name = form.name.value.trim();
         const email = form.email.value.trim();
@@ -64,28 +92,35 @@ document.addEventListener("DOMContentLoaded", () => {
         // Name validation
         if (!/^[A-Za-z\s]+$/.test(name) || name.split(/\s+/).length < 2) {
             alert("❌ Name must include at least first name and surname.\nExample: Badrinath Gore");
+            resetButton();
             return;
         }
 
         // Email validation with SMTP check
         const isEmailValidResult = await validateEmail(email);
-        if (!isEmailValidResult) return;
+        if (!isEmailValidResult) {
+            resetButton();
+            return;
+        }
 
         // Phone validation
         if (!/^\d{10}$/.test(phone)) {
             alert("📱 Please enter a valid 10-digit mobile number.");
+            resetButton();
             return;
         }
 
         // Subject validation
         if (subject.length < 2) {
             alert("📝 Subject must be at least 2 characters long.");
+            resetButton();
             return;
         }
 
         // Message validation
         if (message.split(/\s+/).length < 2) {
             alert("💬 Message must contain at least 2 words.");
+            resetButton();
             return;
         }
 
@@ -94,12 +129,14 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("❌ Incorrect captcha answer. Try again! 🤓");
             generateCaptcha();
             document.getElementById("captcha-answer").value = "";
+            resetButton();
             return;
         }
 
-        // Prevent multiple submissions
+        // Prevent session re-submit
         if (sessionStorage.getItem("email_sent") === "true") {
             alert("✅ You have already submitted the form. Thank you! 🙏");
+            resetButton();
             return;
         }
 
@@ -120,16 +157,14 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("time").value = formattedTime;
         document.getElementById("year").value = now.getFullYear();
 
-        // Disable button while submitting
-        submitBtn.disabled = true;
-        submitBtn.innerText = "Submitting... ⏳";
-
         // -------- SEND EMAIL --------
-        emailjs.sendForm(
-            "service_vzpsmcs",
-            "template_hxlnzk1",
-            form
-        ).then(() => {
+        try {
+
+            await emailjs.sendForm(
+                "service_vzpsmcs",
+                "template_hxlnzk1",
+                form
+            );
 
             alert("🎉 Hi " + name + "!\n\nYour form has been submitted successfully.\nThank you for reaching out! 😊");
 
@@ -139,23 +174,15 @@ document.addEventListener("DOMContentLoaded", () => {
             generateCaptcha();
             resetButton();
 
-        }).catch((error) => {
+        } catch (error) {
 
             console.error("EmailJS Error:", error);
             alert("❌ Form submission failed. Please try again later. 🙏");
 
             generateCaptcha();
             resetButton();
-        });
-
-        // -------- RESET BUTTON --------
-        function resetButton() {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = "Submit";
         }
 
     });
 
-
 });
-
