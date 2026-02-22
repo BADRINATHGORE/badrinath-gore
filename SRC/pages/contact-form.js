@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         num1 = Math.floor(Math.random() * 10) + 1;
         num2 = Math.floor(Math.random() * 10) + 1;
         document.getElementById("captcha-question").innerText =
-            `${num1} + ${num2} = ? 🤔`;
+            `${num1} + ${num2} = 🤔`;
     }
 
     generateCaptcha();
@@ -155,5 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     });
+
 
 });
