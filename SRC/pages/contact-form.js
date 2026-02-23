@@ -52,10 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
         // Delay SMTP check (debounce)
         emailCheckTimeout = setTimeout(async() => {
             try {
-                const response = await fetch(
-                    `https://apilayer.net/api/check?access_key=56fc7ddf40b8ac5b7890c7e639268bd4&email=${encodeURIComponent(email)}`
-                );
+                // mailnoxlayer api
+              //  const response = await fetch(
+                //    `https://apilayer.net/api/check?access_key=56fc7ddf40b8ac5b7890c7e639268bd4&email=${encodeURIComponent(email)}`
+            //    );
 
+const response = await fetch(
+    `https://apilayer.net/api/check?access_key=74f27bc7d6d1f9180206a661f159cc8c&email=${encodeURIComponent(email)}`
+);
+                
                 const data = await response.json();
 
                 if (data.smtp_check === true) {
@@ -193,5 +198,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     });
+
 
 });
