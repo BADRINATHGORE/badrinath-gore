@@ -53,14 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
         emailCheckTimeout = setTimeout(async() => {
             try {
                 // mailnoxlayer api
-              //  const response = await fetch(
+                //  const response = await fetch(
                 //    `https://apilayer.net/api/check?access_key=56fc7ddf40b8ac5b7890c7e639268bd4&email=${encodeURIComponent(email)}`
-            //    );
+                //    );
 
-const response = await fetch(
-    `https://apilayer.net/api/check?access_key=74f27bc7d6d1f9180206a661f159cc8c&email=${encodeURIComponent(email)}`
-);
-                
+                const response = await fetch(
+                    `https://apilayer.net/api/check?access_key=74f27bc7d6d1f9180206a661f159cc8c&email=${encodeURIComponent(email)}`
+                );
+
                 const data = await response.json();
 
                 if (data.smtp_check === true) {
@@ -125,17 +125,6 @@ const response = await fetch(
             return;
         }
 
-        if (!/^\d{10}$/.test(phone)) {
-            alert("📱 Please enter a valid 10-digit mobile number.");
-            resetButton();
-            return;
-        }
-
-        if (subject.length < 1) {
-            alert("📝 Subject must be at least 1 characters long.");
-            resetButton();
-            return;
-        }
 
         if (message.split(/\s+/).length < 1) {
             alert("💬 Message must contain at least 1 words.");
